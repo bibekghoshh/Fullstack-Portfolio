@@ -17,11 +17,12 @@ const Timeline = () => {
 
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [date, setDate] = useState("");
+  const [startdate, setStartdate] = useState("");
+  const [enddate, setEnddate] = useState("");
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    await dispatch(addTimeline(title, description, date));
+    await dispatch(addTimeline(title, description, startdate, enddate));
     dispatch(getUser());
   };
   const deleteHandler = async (id) => {
@@ -79,9 +80,16 @@ const Timeline = () => {
           />
           <input
             type="date"
-            placeholder="Date"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
+            placeholder="Start Date"
+            value={startdate}
+            onChange={(e) => setStartdate(e.target.value)}
+            className="adminPanelInputs"
+          />
+          <input
+            type="date"
+            placeholder="End Date"
+            value={enddate}
+            onChange={(e) => setEnddate(e.target.value)}
             className="adminPanelInputs"
           />
 
@@ -100,11 +108,11 @@ const Timeline = () => {
             user.timeline.map((item) => (
               <div className="youtubeCard" key={item._id}>
                 <Typography variant="h6">{item.title}</Typography>
-                <Typography variant="body1" style={{ letterSpacing: "2px" }}>
+                <Typography variant="body1" style={{ letterSpacing: "1px" }}>
                   {item.description}
                 </Typography>
-                <Typography variant="body1" style={{ fontWeight: 600 }}>
-                  {item.date.toString().split("T")[0]}
+                <Typography variant="body1" style={{ fontWeight: 500 }}>
+                  {item.startdate.toString().split("T")[0]} <i> To </i> {item.enddate.toString().split("T")[0]}
                 </Typography>
 
                 <Button

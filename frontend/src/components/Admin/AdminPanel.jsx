@@ -4,6 +4,7 @@ import { Button, Typography } from "@mui/material";
 import { AiOutlineProject } from "react-icons/ai";
 import { FaYoutube } from "react-icons/fa";
 import { MdTimeline } from "react-icons/md";
+import { DiCode } from "react-icons/di";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logout, updateUser } from "../../actions/user";
@@ -19,14 +20,14 @@ const AdminPanel = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [skills, setSkills] = useState({});
+  // const [skills, setSkills] = useState({});
   const [about, setAbout] = useState({});
 
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(updateUser(name, email, password, skills, about));
+    dispatch(updateUser(name, email, password, about));
 
-    console.log(name, email, password, skills, about);
+    console.log(name, email, password, about);
   };
 
   const logoutHandler = () => {
@@ -46,35 +47,35 @@ const AdminPanel = () => {
     };
   };
 
-  const handleImages = (e, val) => {
-    const file = e.target.files[0];
-    const Reader = new FileReader();
+  // const handleImages = (e, val) => {
+  //   const file = e.target.files[0];
+  //   const Reader = new FileReader();
 
-    Reader.readAsDataURL(file);
+  //   Reader.readAsDataURL(file);
 
-    Reader.onload = () => {
-      if (Reader.readyState === 2) {
-        if (val === 1) {
-          setSkills({ ...skills, image1: Reader.result });
-        }
-        if (val === 2) {
-          setSkills({ ...skills, image2: Reader.result });
-        }
-        if (val === 3) {
-          setSkills({ ...skills, image3: Reader.result });
-        }
-        if (val === 4) {
-          setSkills({ ...skills, image4: Reader.result });
-        }
-        if (val === 5) {
-          setSkills({ ...skills, image5: Reader.result });
-        }
-        if (val === 6) {
-          setSkills({ ...skills, image6: Reader.result });
-        }
-      }
-    };
-  };
+  //   Reader.onload = () => {
+  //     if (Reader.readyState === 2) {
+  //       if (val === 1) {
+  //         setSkills({ ...skills, image1: Reader.result });
+  //       }
+  //       if (val === 2) {
+  //         setSkills({ ...skills, image2: Reader.result });
+  //       }
+  //       if (val === 3) {
+  //         setSkills({ ...skills, image3: Reader.result });
+  //       }
+  //       if (val === 4) {
+  //         setSkills({ ...skills, image4: Reader.result });
+  //       }
+  //       if (val === 5) {
+  //         setSkills({ ...skills, image5: Reader.result });
+  //       }
+  //       if (val === 6) {
+  //         setSkills({ ...skills, image6: Reader.result });
+  //       }
+  //     }
+  //   };
+  // };
 
   useEffect(() => {
     if (error) {
@@ -131,7 +132,7 @@ const AdminPanel = () => {
             className="adminPanelInputs"
           />
 
-          <div className="adminPanelSkill">
+          {/* <div className="adminPanelSkill">
             <div>
               <Typography>SKILL 1</Typography>
               <input
@@ -191,7 +192,7 @@ const AdminPanel = () => {
                 className="adminPanelFileUpload"
               />
             </div>
-          </div>
+          </div> */}
 
           <div className="adminPanelAbout">
             <fieldset>
@@ -250,11 +251,12 @@ const AdminPanel = () => {
             TIMELINE <MdTimeline />
           </Link>
           <Link to="/admin/youtube">
-            YOUTUBE <FaYoutube />
+            VIDOES <FaYoutube />
           </Link>
           <Link to="/admin/project">
             PROJECTS <AiOutlineProject />
           </Link>
+          <Link to="/admin/skill">SKILLS <DiCode/></Link>
 
           <Button type="submit" variant="contained" disabled={loading}>
             Update

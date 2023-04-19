@@ -10,6 +10,8 @@ import { Event } from "@mui/icons-material";
 import Typography from "@mui/material/Typography";
 
 const TimeLine = ({ timelines = [] }) => {   
+
+
   return (
     <div>
        <Timeline position="alternate">
@@ -21,7 +23,9 @@ const TimeLine = ({ timelines = [] }) => {
               variant="body2"
               color="text.secondary"
             >
-               {item.date.toString().split("T")[0]}
+               Start - {item.startdate.toString().split("T")[0]}  
+                <br /> 
+               End - {item.enddate.toString().split("T")[0]}
             </TimelineOppositeContent>
 
              <TimelineSeparator>

@@ -91,8 +91,7 @@ export const loadUser = () => async (dispatch) => {
   }
 };
 
-export const updateUser =
-  (name, email, password, skills, about) => async (dispatch) => {
+export const updateUser = (name, email, password, about) => async (dispatch) => {
     try {
       dispatch({
         type: "UPDATE_USER_REQUEST",
@@ -104,7 +103,6 @@ export const updateUser =
           name,
           email,
           password,
-          skills,
           about,
         },
         {
@@ -126,7 +124,7 @@ export const updateUser =
     }
   };
 
-export const addTimeline = (title, description, date) => async (dispatch) => {
+export const addTimeline = (title, description, startdate, enddate) => async (dispatch) => {
   try {
     dispatch({
       type: "ADD_TIMELINE_REQUEST",
@@ -137,7 +135,8 @@ export const addTimeline = (title, description, date) => async (dispatch) => {
       {
         title,
         description,
-        date,
+        startdate,
+        enddate,
       },
       {
         headers: {
@@ -206,6 +205,54 @@ export const addYoutube = (title, url, image) => async (dispatch) => {
   }
 };
 
+export const addSkills = (title, image) => async (dispatch) => {
+  try {
+    dispatch({
+      type: "ADD_SKILL_REQUEST",
+    });
+
+    const { data } = await axios.post(
+      "/api/v1/admin/skill/add",
+      { title, image },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    dispatch({
+      type: "ADD_SKILL_SUCCESS",
+      payload: data.message,
+    });
+  } catch (error) {
+    dispatch({
+      type: "ADD_SKILL_FAILURE",
+      payload: error.response.data.message,
+    });
+  }
+};
+
+export const deleteSkills = (id) => async (dispatch) => {
+  try {
+    dispatch({
+      type: "DELETE_SKILL_REQUEST",
+    });
+
+    const { data } = await axios.delete(`/api/v1/admin/skill/${id}`);
+
+    dispatch({
+      type: "DELETE_SKILL_SUCCESS",
+      payload: data.message,
+    });
+  } catch (error) {
+    dispatch({
+      type: "DELETE_SKILL_FAILURE",
+      payload: error.response.data.message,
+    });
+  }
+};
+
 export const deleteYoutube = (id) => async (dispatch) => {
   try {
     dispatch({
@@ -226,8 +273,7 @@ export const deleteYoutube = (id) => async (dispatch) => {
   }
 };
 
-export const addProject =
-  (title, url, image, description, techStack) => async (dispatch) => {
+export const addProject = (title, url, image, description, techStack) => async (dispatch) => {
     try {
       dispatch({
         type: "ADD_PROJECT_REQUEST",

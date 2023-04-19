@@ -125,91 +125,91 @@ export const updateUser = async (req, res) => {
       user.password = password;
     }
 
-    if (skills) {
-      if (skills.image1) {
-        if(user.skills.image1.public_id)
-        await cloudinary.v2.uploader.destroy(user.skills.image1.public_id);
+    // if (skills) {
+    //   if (skills.image1) {
+    //     if(user.skills.image1.public_id)
+    //     await cloudinary.v2.uploader.destroy(user.skills.image1.public_id);
 
-        const myCloud = await cloudinary.v2.uploader.upload(skills.image1, {
-          folder: "portfolio",
-        });
+    //     const myCloud = await cloudinary.v2.uploader.upload(skills.image1, {
+    //       folder: "portfolio",
+    //     });
 
-        user.skills.image1 = {
-          public_id: myCloud.public_id,
-          url: myCloud.secure_url,
-        };
-      }
+    //     user.skills.image1 = {
+    //       public_id: myCloud.public_id,
+    //       url: myCloud.secure_url,
+    //     };
+    //   }
 
-      if (skills.image2) {
-        if(user.skills.image2.public_id)
-        await cloudinary.v2.uploader.destroy(user.skills.image2.public_id);
+    //   if (skills.image2) {
+    //     if(user.skills.image2.public_id)
+    //     await cloudinary.v2.uploader.destroy(user.skills.image2.public_id);
 
-        const myCloud = await cloudinary.v2.uploader.upload(skills.image2, {
-          folder: "portfolio",
-        });
+    //     const myCloud = await cloudinary.v2.uploader.upload(skills.image2, {
+    //       folder: "portfolio",
+    //     });
 
-        user.skills.image2 = {
-          public_id: myCloud.public_id,
-          url: myCloud.secure_url,
-        };
-      }
+    //     user.skills.image2 = {
+    //       public_id: myCloud.public_id,
+    //       url: myCloud.secure_url,
+    //     };
+    //   }
 
-      if (skills.image3) {
-        if(user.skills.image3.public_id)
-        await cloudinary.v2.uploader.destroy(user.skills.image3.public_id);
+    //   if (skills.image3) {
+    //     if(user.skills.image3.public_id)
+    //     await cloudinary.v2.uploader.destroy(user.skills.image3.public_id);
 
-        const myCloud = await cloudinary.v2.uploader.upload(skills.image3, {
-          folder: "portfolio",
-        });
+    //     const myCloud = await cloudinary.v2.uploader.upload(skills.image3, {
+    //       folder: "portfolio",
+    //     });
 
-        user.skills.image3 = {
-          public_id: myCloud.public_id,
-          url: myCloud.secure_url,
-        };
-      }
+    //     user.skills.image3 = {
+    //       public_id: myCloud.public_id,
+    //       url: myCloud.secure_url,
+    //     };
+    //   }
 
-      if (skills.image4) {
-        if(user.skills.image4.public_id)
-        await cloudinary.v2.uploader.destroy(user.skills.image4.public_id);
+    //   if (skills.image4) {
+    //     if(user.skills.image4.public_id)
+    //     await cloudinary.v2.uploader.destroy(user.skills.image4.public_id);
 
-        const myCloud = await cloudinary.v2.uploader.upload(skills.image4, {
-          folder: "portfolio",
-        });
+    //     const myCloud = await cloudinary.v2.uploader.upload(skills.image4, {
+    //       folder: "portfolio",
+    //     });
 
-        user.skills.image4 = {
-          public_id: myCloud.public_id,
-          url: myCloud.secure_url,
-        };
-      }
+    //     user.skills.image4 = {
+    //       public_id: myCloud.public_id,
+    //       url: myCloud.secure_url,
+    //     };
+    //   }
 
-      if (skills.image5) {
-        if(user.skills.image5.public_id)
-        await cloudinary.v2.uploader.destroy(user.skills.image5.public_id);
+    //   if (skills.image5) {
+    //     if(user.skills.image5.public_id)
+    //     await cloudinary.v2.uploader.destroy(user.skills.image5.public_id);
 
-        const myCloud = await cloudinary.v2.uploader.upload(skills.image5, {
-          folder: "portfolio",
-        });
+    //     const myCloud = await cloudinary.v2.uploader.upload(skills.image5, {
+    //       folder: "portfolio",
+    //     });
 
-        user.skills.image5 = {
-          public_id: myCloud.public_id,
-          url: myCloud.secure_url,
-        };
-      }
+    //     user.skills.image5 = {
+    //       public_id: myCloud.public_id,
+    //       url: myCloud.secure_url,
+    //     };
+    //   }
 
-      if (skills.image6) {
-        if(user.skills.image6.public_id)
-        await cloudinary.v2.uploader.destroy(user.skills.image6.public_id);
+    //   if (skills.image6) {
+    //     if(user.skills.image6.public_id)
+    //     await cloudinary.v2.uploader.destroy(user.skills.image6.public_id);
 
-        const myCloud = await cloudinary.v2.uploader.upload(skills.image6, {
-          folder: "portfolio",
-        });
+    //     const myCloud = await cloudinary.v2.uploader.upload(skills.image6, {
+    //       folder: "portfolio",
+    //     });
 
-        user.skills.image6 = {
-          public_id: myCloud.public_id,
-          url: myCloud.secure_url,
-        };
-      }
-    }
+    //     user.skills.image6 = {
+    //       public_id: myCloud.public_id,
+    //       url: myCloud.secure_url,
+    //     };
+    //   }
+    // }
 
     if (about) {
       if (about.name) {
@@ -258,16 +258,48 @@ export const updateUser = async (req, res) => {
   }
 };
 
+export const addSkills = async (req, res) => {
+  try {
+    const {title, image } = req.body;
+
+    const user = await User.findById(req.user._id);
+
+    const myCloud = await cloudinary.v2.uploader.upload(image, {
+      folder: "portfolio",
+    });
+    user.skills.unshift({
+      title,
+      image: {
+        public_id: myCloud.public_id,
+        url: myCloud.secure_url,
+      },
+    });
+
+    await user.save();
+
+    res.status(200).json({
+      success: true,
+      message: "Added To Youtube Videos",
+    });
+  } catch (error) {
+    return res.status(400).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
 export const addTimeline = async (req, res) => {
   try {
-    const { title, description, date } = req.body;
+    const { title, description, startdate , enddate} = req.body;
 
     const user = await User.findById(req.user._id);
 
     user.timeline.unshift({
       title,
       description,
-      date,
+      startdate,
+      enddate,
     });
 
     await user.save();

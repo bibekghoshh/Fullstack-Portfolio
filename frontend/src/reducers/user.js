@@ -129,6 +129,30 @@ export const updateReducer = createReducer(
       state.error = action.payload;
     },
 
+    ADD_SKILL_REQUEST: (state) => {
+      state.loading = true;
+    },
+    ADD_SKILL_SUCCESS: (state, action) => {
+      state.loading = false;
+      state.message = action.payload;
+    },
+    ADD_SKILL_FAILURE: (state, action) => {
+      state.loading = false;
+      state.error = action.payload;
+    },
+
+    DELETE_SKILL_REQUEST: (state) => {
+      state.loading = true;
+    },
+    DELETE_SKILL_SUCCESS: (state, action) => {
+      state.loading = false;
+      state.message = action.payload;
+    },
+    DELETE_SKILL_FAILURE: (state, action) => {
+      state.loading = false;
+      state.error = action.payload;
+    },
+
     DELETE_YOUTUBE_REQUEST: (state) => {
       state.loading = true;
     },

@@ -17,37 +17,48 @@ const userSchema = new mongoose.Schema({
     {
       title: String,
       description: String,
-      date: Date,
+      startdate: Date,
+      enddate: Date,
     },
   ],
 
-  skills: {
-    image1: {
-      public_id: String,
-      url: String,
+  skills: [
+    {
+      title: String,
+      image: {
+        public_id: String,
+        url: String,
+      },
     },
+  ],
 
-    image2: {
-      public_id: String,
-      url: String,
-    },
-    image3: {
-      public_id: String,
-      url: String,
-    },
-    image4: {
-      public_id: String,
-      url: String,
-    },
-    image5: {
-      public_id: String,
-      url: String,
-    },
-    image6: {
-      public_id: String,
-      url: String,
-    },
-  },
+  // skills: {
+  //   image1: {
+  //     public_id: String,
+  //     url: String,
+  //   },
+
+  //   image2: {
+  //     public_id: String,
+  //     url: String,
+  //   },
+  //   image3: {
+  //     public_id: String,
+  //     url: String,
+  //   },
+  //   image4: {
+  //     public_id: String,
+  //     url: String,
+  //   },
+  //   image5: {
+  //     public_id: String,
+  //     url: String,
+  //   },
+  //   image6: {
+  //     public_id: String,
+  //     url: String,
+  //   },
+  // },
 
   youtube: [
     {

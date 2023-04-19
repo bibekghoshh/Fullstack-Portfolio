@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./components/Home/Home";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import About from "./components/About/About";
 import Projects from "./components/Projects/Projects";
 import Contact from "./components/Contact/Contact";
 import Login from "./components/Login/Login";
@@ -14,6 +13,7 @@ import AdminPanel from "./components/Admin/AdminPanel";
 import Timeline from "./components/Admin/Timeline";
 import Youtube from "./components/Admin/Youtube";
 import Project from "./components/Admin/Project";
+import Skill from "./components/Admin/Skill"
 import Loader from "./components/Loader/Loader";
 
 function App() {
@@ -46,7 +46,6 @@ function App() {
                 />
               }
             />
-            <Route path="/about" element={<About about={user.about} />} />
 
             <Route
               path="/projects"
@@ -69,6 +68,10 @@ function App() {
             <Route
               path="/admin/project"
               element={isAuthenticated ? <Project /> : <Login />}
+            />
+            <Route
+              path="/admin/skill"
+              element={isAuthenticated ? <Skill/> : <Login />}
             />
           </Routes>
 
