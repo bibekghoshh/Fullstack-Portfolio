@@ -10,7 +10,7 @@
     text-align: center;
     color: rgba(22, 20, 20, 0.904);
     padding: 4vmax;
-    font-family: Montserrat,sans-serif;
+    font-family: Sono , sans-serif;
   }
 
   
@@ -24,6 +24,8 @@
     /* overflow-x: hidden; */
     width: 100%;
     transition: 0.7s;
+    clip-path: polygon(0 14%, 100% 0, 100% 85%, 0 100%);
+    
   }
   
   .homeSkills > h3 {
@@ -32,22 +34,24 @@
     color: white;
     margin-bottom: 4vmax;
     font-size: 4vmax;
+    font-family: Sono , sans-serif;
   }
   
   
   .homeYoutube {
-    background-color: white;
-    padding-top: 4vmax;
+    background-color: rgb(255, 255, 255);
+    padding-top: 1vmax;
     box-sizing: border-box;
-    min-height: 750px;
+    /* min-height: 750px; */
     display: block;
-    margin-top: -5px;
+    /* margin-top: -5px; */
   }
   
   .homeYoutube > h3 {
     text-align: center;
     color: rgba(22, 20, 20, 0.904);
     padding: 4vmax;
+    font-family: Sono , sans-serif;
   }
   
   .homeYoutubeWrapper {
