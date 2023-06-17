@@ -39,17 +39,23 @@ function App() {
               path="/"
               element={
                 <Home
-                  youtubes={user.youtube}
-                  timelines={user.timeline}
-                  skills={user.skills}
-                  about={user.about}
+                  // youtubes={user.youtube}
+                  // timelines={user.timeline}
+                  // skills={user.skills}
+                  // about={user.about}
+
+                  youtubes={user && user.youtube ? user.youtube : []}
+                  timelines={user && user.timeline ? user.timeline : []}
+                  skills={user && user.skills ? user.skills : []}
+                  about={user && user.about ? user.about : ""}
                 />
               }
             />
 
             <Route
               path="/projects"
-              element={<Projects projects={user.projects} />}
+              // element={<Projects projects={user.projects} />}
+              element={user && user.projects ? <Projects projects={user.projects} /> : null}
             />
 
             <Route path="/contact" element={<Contact />} />

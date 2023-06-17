@@ -47,36 +47,6 @@ const AdminPanel = () => {
     };
   };
 
-  // const handleImages = (e, val) => {
-  //   const file = e.target.files[0];
-  //   const Reader = new FileReader();
-
-  //   Reader.readAsDataURL(file);
-
-  //   Reader.onload = () => {
-  //     if (Reader.readyState === 2) {
-  //       if (val === 1) {
-  //         setSkills({ ...skills, image1: Reader.result });
-  //       }
-  //       if (val === 2) {
-  //         setSkills({ ...skills, image2: Reader.result });
-  //       }
-  //       if (val === 3) {
-  //         setSkills({ ...skills, image3: Reader.result });
-  //       }
-  //       if (val === 4) {
-  //         setSkills({ ...skills, image4: Reader.result });
-  //       }
-  //       if (val === 5) {
-  //         setSkills({ ...skills, image5: Reader.result });
-  //       }
-  //       if (val === 6) {
-  //         setSkills({ ...skills, image6: Reader.result });
-  //       }
-  //     }
-  //   };
-  // };
-
   useEffect(() => {
     if (error) {
       alert.error(error);
