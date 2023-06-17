@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useAlert } from "react-alert";
+import { toast } from 'react-toastify';
 import { useDispatch, useSelector } from "react-redux";
 import { addYoutube, getUser } from "../../actions/user";
 import { MdKeyboardBackspace } from "react-icons/md";
@@ -14,7 +14,6 @@ const Youtube = () => {
   const { user } = useSelector((state) => state.user);
 
   const dispatch = useDispatch();
-  const alert = useAlert();
 
   const [title, setTitle] = useState("");
   const [url, setUrl] = useState("");
@@ -41,18 +40,18 @@ const Youtube = () => {
 
   useEffect(() => {
     if (error) {
-      alert.error(error);
+      toast.error(error);
       dispatch({ type: "CLEAR_ERRORS" });
     }
     if (message) {
-      alert.success(message);
+      toast.success(message);
       dispatch({ type: "CLEAR_MESSAGE" });
     }
     if (loginMessage) {
       alert.success(loginMessage);
       dispatch({ type: "CLEAR_MESSAGE" });
     }
-  }, [alert, error, message, dispatch, loginMessage]);
+  }, [error, message, dispatch, loginMessage]);
 
   return (
     <div className="adminPanel">

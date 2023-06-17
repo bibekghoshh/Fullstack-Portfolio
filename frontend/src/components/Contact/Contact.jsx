@@ -2,7 +2,7 @@ import { Button, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";  
 import { useDispatch, useSelector } from "react-redux";
 import "./Contact.css";
-import { useAlert } from "react-alert";
+import { toast } from 'react-toastify';
 import { contactUs } from "../../actions/user";
 
 
@@ -11,7 +11,6 @@ const Contact = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const dispatch = useDispatch();
-  const alert = useAlert();
 
   const {
     loading,
@@ -26,14 +25,14 @@ const Contact = () => {
 
     useEffect(() => {
       if (error) {
-        alert.error(error);
+        toast.error(error);
         dispatch({ type: "CLEAR_ERRORS" });
       }
       if (alertMessage) {
-        alert.success(alertMessage);
+        toast.success(alertMessage);
         dispatch({ type: "CLEAR_MESSAGE" });
       }
-    }, [alert, error, alertMessage, dispatch]);
+    }, [error, alertMessage, dispatch]);
 
   return (
         <div className="contact">
