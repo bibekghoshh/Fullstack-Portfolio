@@ -15,7 +15,21 @@
     color: white;
     width: 80%;
   }
-  
+  .mail-icon{
+    font-size: 35px;
+    margin-right: 35px;
+    color: white;
+  }
+  .mail-icon:hover{
+    color: rgb(187, 106, 30);
+  }
+  .call-icon{
+    font-size: 35px;
+    color: white;
+  }
+  .call-icon:hover{
+    color: rgb(36, 190, 22);
+  }
   .footer > div > h6 {
     color: white;
     padding: 10px 0;
@@ -36,13 +50,16 @@
     color: rgb(64, 88, 226);
   }
   .footer > div > a:nth-child(3):hover {
-    color: rgb(241, 59, 59);
+    color: rgb(71, 59, 241);
   }
   .footer > div > a:nth-child(4):hover {
-    color: rgb(119, 61, 212);
+    color: rgb(40, 107, 231);
   }
   .footer > div > a:nth-child(5):hover {
     color: rgb(64, 88, 226);
+  }
+  .footer > div > a:nth-child(6):hover {
+    color: rgb(206, 43, 138);
   }
   
   .footerContactBtn {
