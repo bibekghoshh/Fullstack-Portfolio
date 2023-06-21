@@ -125,36 +125,6 @@ export const updateUser = async (req, res) => {
       user.password = password;
     }
 
-    
-
-    //   if (skills.image4) {
-    //     if(user.skills.image4.public_id)
-    //     await cloudinary.v2.uploader.destroy(user.skills.image4.public_id);
-
-    //     const myCloud = await cloudinary.v2.uploader.upload(skills.image4, {
-    //       folder: "portfolio",
-    //     });
-
-    //     user.skills.image4 = {
-    //       public_id: myCloud.public_id,
-    //       url: myCloud.secure_url,
-    //     };
-    //   }
-
-    //   if (skills.image5) {
-    //     if(user.skills.image5.public_id)
-    //     await cloudinary.v2.uploader.destroy(user.skills.image5.public_id);
-
-    //     const myCloud = await cloudinary.v2.uploader.upload(skills.image5, {
-    //       folder: "portfolio",
-    //     });
-
-    //     user.skills.image5 = {
-    //       public_id: myCloud.public_id,
-    //       url: myCloud.secure_url,
-    //     };
-    //   }
-
 
     if (about) {
       if (about.name) {
