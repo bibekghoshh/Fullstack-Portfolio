@@ -3,9 +3,16 @@ import "./Loader.css";
 
 const Loader = () => {
   return (
-    <div className="loadingPage">
-      <div className="loadingCircle"></div>
-    </div>
+    <div class="container">
+<div class="sound-wave">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+ </div>
   );
 };
 
