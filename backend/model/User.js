@@ -33,23 +33,6 @@ const userSchema = new mongoose.Schema({
   ],
 
   // skills: {
-  //   image1: {
-  //     public_id: String,
-  //     url: String,
-  //   },
-
-  //   image2: {
-  //     public_id: String,
-  //     url: String,
-  //   },
-  //   image3: {
-  //     public_id: String,
-  //     url: String,
-  //   },
-  //   image4: {
-  //     public_id: String,
-  //     url: String,
-  //   },
   //   image5: {
   //     public_id: String,
   //     url: String,
@@ -73,7 +56,8 @@ const userSchema = new mongoose.Schema({
 
   projects: [
     {
-      url: String,
+      githubUrl: String,
+      liveUrl: String,
       title: String,
       image: {
         public_id: String,

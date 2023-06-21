@@ -16,14 +16,15 @@ const Project = () => {
   const dispatch = useDispatch();
 
   const [title, setTitle] = useState("");
-  const [url, setUrl] = useState("");
+  const [githubUrl, setGithubUrl] = useState("");
+  const [liveUrl, setLiveUrl] = useState("");
   const [image, setImage] = useState("");
   const [description, setDescription] = useState("");
   const [techStack, setTechStack] = useState("");
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    await dispatch(addProject(title, url, image, description, techStack));
+    await dispatch(addProject(title, githubUrl, liveUrl, image, description, techStack));
     dispatch(getUser());
   };
 
@@ -82,9 +83,16 @@ const Project = () => {
           />
           <input
             type="text"
-            placeholder="Link"
-            value={url}
-            onChange={(e) => setUrl(e.target.value)}
+            placeholder="Github Link"
+            value={githubUrl}
+            onChange={(e) => setGithubUrl(e.target.value)}
+            className="adminPanelInputs"
+          />
+          <input
+            type="text"
+            placeholder="Live Link"
+            value={liveUrl}
+            onChange={(e) => setLiveUrl(e.target.value)}
             className="adminPanelInputs"
           />
 
@@ -126,7 +134,8 @@ const Project = () => {
               <ProjectCard
                 id={item._id}
                 key={item._id}
-                url={item.url}
+                githubUrl={item.githubUrl}
+                liveUrl={item.liveUrl}
                 projectImage={item.image.url}
                 projectTitle={item.title}
                 description={item.description}

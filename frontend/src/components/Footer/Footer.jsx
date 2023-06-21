@@ -10,14 +10,14 @@ const Footer = () => {
       <div>
         <Typography variant="h5">About Me</Typography>
         <Typography>
-          Hey, my name is Bibek Ghosh. I am a Full-Stack Developer
+          Hey, My name is Bibek Ghosh. I am learning MERN stack and looking for oppertunity to enhance my skills to solve real world problems
         </Typography>
 
-         <Link to="/contact" className="footerContactBtn">
+        <Link to="/contact" className="footerContactBtn">
           <Typography>Contact Us</Typography>
         </Link>
       </div>
-      <div >
+      <div>
         <Typography variant="h6">Let's Connect</Typography>
         <a href="https://github.com/meabhisingh/" target="black">
           <BsGithub />
@@ -31,7 +31,7 @@ const Footer = () => {
         <a href="https://www.linkedin.com/in/meabhisingh/" target="black">
           <BsLinkedin />
         </a>
-      </div> 
+      </div>
     </div>
   );
 };

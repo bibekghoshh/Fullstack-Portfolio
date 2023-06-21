@@ -125,48 +125,7 @@ export const updateUser = async (req, res) => {
       user.password = password;
     }
 
-    // if (skills) {
-    //   if (skills.image1) {
-    //     if(user.skills.image1.public_id)
-    //     await cloudinary.v2.uploader.destroy(user.skills.image1.public_id);
-
-    //     const myCloud = await cloudinary.v2.uploader.upload(skills.image1, {
-    //       folder: "portfolio",
-    //     });
-
-    //     user.skills.image1 = {
-    //       public_id: myCloud.public_id,
-    //       url: myCloud.secure_url,
-    //     };
-    //   }
-
-    //   if (skills.image2) {
-    //     if(user.skills.image2.public_id)
-    //     await cloudinary.v2.uploader.destroy(user.skills.image2.public_id);
-
-    //     const myCloud = await cloudinary.v2.uploader.upload(skills.image2, {
-    //       folder: "portfolio",
-    //     });
-
-    //     user.skills.image2 = {
-    //       public_id: myCloud.public_id,
-    //       url: myCloud.secure_url,
-    //     };
-    //   }
-
-    //   if (skills.image3) {
-    //     if(user.skills.image3.public_id)
-    //     await cloudinary.v2.uploader.destroy(user.skills.image3.public_id);
-
-    //     const myCloud = await cloudinary.v2.uploader.upload(skills.image3, {
-    //       folder: "portfolio",
-    //     });
-
-    //     user.skills.image3 = {
-    //       public_id: myCloud.public_id,
-    //       url: myCloud.secure_url,
-    //     };
-    //   }
+    
 
     //   if (skills.image4) {
     //     if(user.skills.image4.public_id)
@@ -196,20 +155,6 @@ export const updateUser = async (req, res) => {
     //     };
     //   }
 
-    //   if (skills.image6) {
-    //     if(user.skills.image6.public_id)
-    //     await cloudinary.v2.uploader.destroy(user.skills.image6.public_id);
-
-    //     const myCloud = await cloudinary.v2.uploader.upload(skills.image6, {
-    //       folder: "portfolio",
-    //     });
-
-    //     user.skills.image6 = {
-    //       public_id: myCloud.public_id,
-    //       url: myCloud.secure_url,
-    //     };
-    //   }
-    // }
 
     if (about) {
       if (about.name) {
@@ -350,7 +295,7 @@ export const addYoutube = async (req, res) => {
 
 export const addProject = async (req, res) => {
   try {
-    const { url, title, image, description, techStack } = req.body;
+    const { githubUrl, liveUrl, title, image, description, techStack } = req.body;
 
     const user = await User.findById(req.user._id);
 
@@ -358,7 +303,8 @@ export const addProject = async (req, res) => {
       folder: "portfolio",
     });
     user.projects.unshift({
-      url,
+      githubUrl,
+      liveUrl,
       title,
       description,
       techStack,

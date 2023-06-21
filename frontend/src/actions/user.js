@@ -273,7 +273,7 @@ export const deleteYoutube = (id) => async (dispatch) => {
   }
 };
 
-export const addProject = (title, url, image, description, techStack) => async (dispatch) => {
+export const addProject = (title, githubUrl, liveUrl, image, description, techStack) => async (dispatch) => {
     try {
       dispatch({
         type: "ADD_PROJECT_REQUEST",
@@ -281,7 +281,7 @@ export const addProject = (title, url, image, description, techStack) => async (
 
       const { data } = await axios.post(
         "/api/v1/admin/project/add",
-        { title, url, image, description, techStack },
+        { title, githubUrl, liveUrl, image, description, techStack },
         {
           headers: {
             "Content-Type": "application/json",

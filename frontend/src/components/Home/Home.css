@@ -1,142 +1,138 @@
+.homeContainer {
+  background-color: rgb(255, 255, 255);
+  padding-top: 4vmax;
+  border-bottom: 100px solid rgb(255, 255, 255);
+  position: relative;
+  z-index: 1;
+}
+.homeContainer > h3 {
+  text-align: center;
+  color: rgba(22, 20, 20, 0.904);
+  padding: 4vmax;
+  font-family: Sono, sans-serif;
+}
 
-  .homeContainer {
-    background-color: rgb(255, 255, 255);
-    padding-top: 4vmax;
-    border-bottom: 100px solid rgb(255, 255, 255);
-    position: relative;
-    z-index: 1;
-  }
-  .homeContainer > h3 {
-    text-align: center;
-    color: rgba(22, 20, 20, 0.904);
-    padding: 4vmax;
-    font-family: Sono , sans-serif;
-  }
+.homeSkills {
+  background-color: #edbf69;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+  transition: 0.7s;
+  clip-path: polygon(0 14%, 100% 0, 100% 85%, 0 100%);
+}
 
-  
-  .homeSkills {
-    background-color:  #EDBF69;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    /* align-items: center; */
-    /* margin: auto; */
-    /* overflow-x: hidden; */
-    width: 100%;
-    transition: 0.7s;
-    clip-path: polygon(0 14%, 100% 0, 100% 85%, 0 100%);
-    
+.homeSkills > h3 {
+  margin-top: 150px;
+  text-align: center;
+  color: white;
+  margin-bottom: 4vmax;
+  font-size: 4vmax;
+  font-family: Sono, sans-serif;
+}
+
+.homeYoutube {
+  background-color: rgb(255, 255, 255);
+  padding-top: 1vmax;
+  box-sizing: border-box;
+  /* min-height: 750px; */
+  display: block;
+  /* margin-top: -5px; */
+}
+
+.homeYoutube > h3 {
+  text-align: center;
+  color: rgba(22, 20, 20, 0.904);
+  padding: 4vmax;
+  font-family: Sono, sans-serif;
+}
+
+.homeYoutubeWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2vmax;
+  width: 80%;
+  margin: auto;
+}
+
+@keyframes scrollPop {
+  to {
+    transform: translateY(-200%);
   }
-  
+}
+
+@media screen and (max-width: 655px) {
   .homeSkills > h3 {
-    margin-top: 8vmax;
+    margin-top: 180px;
     text-align: center;
     color: white;
-    margin-bottom: 4vmax;
-    font-size: 4vmax;
-    font-family: Sono , sans-serif;
+    margin-bottom: 2vmax;
+    width: 100%;
   }
-  
-  
-  .homeYoutube {
-    background-color: rgb(255, 255, 255);
-    padding-top: 1vmax;
-    box-sizing: border-box;
-    /* min-height: 750px; */
-    display: block;
-    /* margin-top: -5px; */
+  .homeSkills {
+    clip-path: polygon(0 8%, 100% 0, 100% 92%, 0 100%);
   }
-  
-  .homeYoutube > h3 {
-    text-align: center;
-    color: rgba(22, 20, 20, 0.904);
-    padding: 4vmax;
-    font-family: Sono , sans-serif;
-  }
-  
-  .homeYoutubeWrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 2vmax;
-    width: 80%;
-    margin: auto;
-  }
-  
-  
-  
-  @keyframes scrollPop {
-    to {
-      transform: translateY(-200%);
-    }
-  }
-  
-  @media screen and (max-width: 600px) {
-    
-  
-  }
-
-
-
-
-  /* my new css start from here */
-  .myphoto{
-    width: 500px;
-    margin-top: 15%;
-    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
-    transition: transform .6s;
 }
-.myphoto:hover{
+
+/* my new css start from here */
+.myphoto {
+  width: 500px;
+  margin-top: 15%;
+  clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+  transition: transform 0.6s;
+}
+.myphoto:hover {
   transform: scale(1.05);
 }
-.myphoto2{
+.myphoto2 {
   display: none;
 }
-.intro{
+.intro {
   font-weight: 600;
-  font-family: Montserrat , Sono;
+  font-family: Montserrat, Sono;
   line-height: 2.2;
   font-size: 70%;
 }
-.intro1{
+.intro1 {
   padding-top: 10px;
   padding-bottom: 10px;
   font-size: 175%;
   color: #171c8b;
   text-align: center;
 }
-.intro2{
+.intro2 {
   margin-top: 20px;
   margin-bottom: 20px;
   font-size: 90%;
   text-align: center;
 }
-.intro3{
+.intro3 {
   display: none;
 }
-.viewcvbtn{
+.viewcvbtn {
   background-color: #2ba23d;
   border: none;
   border-radius: 5px;
   font-size: 18px;
-  padding: 8px 15px;
+  padding: 12px 15px;
   font-weight: 600;
   margin-top: 20px;
-  transition: transform .4s;
+  transition: transform 0.4s;
 }
-.viewcvbtn:hover{
+.viewcvbtn:hover {
   transform: scale(1.05);
 }
-.viewcvbtn>a{
+.viewcvbtn > a {
   color: #ffffff;
 }
 
-.container{
+.container {
   display: flex;
   height: 100%;
   flex-direction: row;
 }
-.col1{
+.col1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -148,13 +144,78 @@
   padding-top: 20px;
   padding-bottom: 20px;
 }
-.col2{
+.col2 {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   margin: 50px 70px 50px 0px;
   padding: 10px;
-  justify-content:center ;
+  justify-content: center;
   filter: drop-shadow(5px 10px 5px rgba(50, 50, 0, 0.5));
 }
+@media screen and (max-width: 1000px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    transition: 0.7s;
+  }
+  .intro1 {
+    font-size: 190%;
+    margin: 10px;
+    transition: 0.7s;
+  }
+  .intro2 {
+    margin: 10px;
+  }
+  .intro {
+    display: none;
+  }
+  .intro3 {
+    display: block;
+    font-size: 190%;
+    font-weight: 600;
+    color: #480c79;
+    margin: 10px;
+  }
+  .col1 {
+    margin-top: 120px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    align-items: center;
+    margin-right: 50px;
+  }
+  .col2 {
+    margin: 1px 1px 60px 0px;
+    padding-top: 1px;
+    display: flex;
+    align-items: center;
+  }
+  .myphoto {
+    margin-top: 40px;
+  }
+}
 
+@media screen and (max-width: 550px) {
+  .myphoto {
+    width: 92%;
+    transition: 0.7s;
+  }
+  .intro1 {
+    font-size: 135%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .intro1 {
+    font-size: 110%;
+  }
+  .intro2 {
+    font-size: 60%;
+  }
+  .intro3 {
+    font-size: 140%;
+  }
+  .col1 {
+    margin-top: 70px;
+  }
+}

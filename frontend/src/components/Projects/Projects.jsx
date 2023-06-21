@@ -3,12 +3,12 @@ import React from "react";
 import "./Projects.css";
 import { AiOutlineProject } from "react-icons/ai";
 import { Delete } from "@mui/icons-material";
-import { FaRegSmileWink } from "react-icons/fa";
 import { deleteProject, getUser } from "../../actions/user";
 import { useDispatch } from "react-redux";
 
 export const ProjectCard = ({
-  url,
+  githubUrl,
+  liveUrl,
   projectImage,
   projectTitle,
   description,
@@ -25,19 +25,32 @@ export const ProjectCard = ({
 
   return (
     <>
-       <a href={url} className="projectCard" target="black">
-            <div>
-                <img src={projectImage} alt="Project" />
-                <Typography variant="h5">{projectTitle}</Typography>
-            </div>
-               <div>
-                   <Typography variant="h4"> About Project</Typography>
-                   <Typography>{description}</Typography>
-                   <Typography variant="h6">Tech Stack: {technologies}</Typography>
-               </div>
-        </a>
+      <div className="projectCard">
+        <div>
+          <div>
+            <img className="project-img" src={projectImage} alt="Project" />
+          </div>
+          <Typography variant="h5">{projectTitle}</Typography>
+          <div className="project-view">
+            <button>
+              <a href={githubUrl} target="_blank" rel="noreferrer">
+                Live View
+              </a>
+            </button>
+            <button>
+              <a href={liveUrl} target="_blank" rel="noreferrer">
+                Github
+              </a>
+            </button>
+          </div>
+        </div>
+        <div>
+          <Typography>{description}</Typography>
+          <Typography variant="h6">Tech Stack: {technologies}</Typography>
+        </div>
+      </div>
 
-       {isAdmin && (
+      {isAdmin && (
         <Button
           style={{ color: "rgba(40,40,40,0.7)" }}
           onClick={() => deleteHandler(id)}
@@ -49,30 +62,27 @@ export const ProjectCard = ({
   );
 };
 
-const Projects = ({projects}) => {
+const Projects = ({ projects }) => {
   return (
-        <div className="projects">
-        <Typography variant="h3">
-            Projects <AiOutlineProject />
-        </Typography>
-
-     <div className="projectsWrapper">
-         {projects.map((item) => (
-             <ProjectCard
-             id={item._id}
-              key={item._id}
-               url={item.url}
-               projectImage={item.image.url}
-              projectTitle={item.title}
-             description={item.description}
-             technologies={item.techStack}
-           />
-         ))}
-       </div> 
-
-      <Typography variant="h3" style={{ font: "100 1.2rem 'Ubuntu Mono'" }}>
-        All The Projects Shown Above Are Made By Me <FaRegSmileWink />
+    <div className="projects">
+      <Typography variant="h3">
+        Projects <AiOutlineProject />
       </Typography>
+
+      <div className="projectsWrapper">
+        {projects.map((item) => (
+          <ProjectCard
+            id={item._id}
+            key={item._id}
+            githubUrl={item.githubUrl}
+            liveUrl={item.liveUrl}
+            projectImage={item.image.url}
+            projectTitle={item.title}
+            description={item.description}
+            technologies={item.techStack}
+          />
+        ))}
+      </div>
     </div>
   );
 };

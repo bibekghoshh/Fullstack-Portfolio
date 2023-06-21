@@ -12,9 +12,7 @@ root.render(
   // <React.StrictMode>
     <Provider store={store}>
     <ToastContainer position="bottom-center" autoClose={5000} hideProgressBar newestOnTop closeOnClick pauseOnFocusLoss draggable pauseOnHover />
-      {/* <AlertProvider template={AlertTemplate} {...options}> */}
         <App />
-      {/* </AlertProvider> */}
     </Provider>
   // </React.StrictMode>
 );
