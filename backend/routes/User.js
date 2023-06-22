@@ -12,6 +12,7 @@ import {
   deleteTimeline,
   deleteYoutube,
   deleteProject,
+  deleteSkill,
   addSkills,
 } from "../controller/User.js";
 import { isAuthenticated } from "../middlewares/auth.js";
@@ -35,5 +36,6 @@ userRouter.route("/admin/skill/add").post(isAuthenticated, addSkills);
 userRouter.route("/admin/timeline/:id").delete(isAuthenticated, deleteTimeline);
 userRouter.route("/admin/youtube/:id").delete(isAuthenticated, deleteYoutube);
 userRouter.route("/admin/project/:id").delete(isAuthenticated, deleteProject);
+userRouter.route("/admin/skill/:id").delete(isAuthenticated, deleteSkill);
 
 userRouter.route("/contact").post(contact);

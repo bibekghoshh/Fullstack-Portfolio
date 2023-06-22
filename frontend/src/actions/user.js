@@ -233,7 +233,7 @@ export const addSkills = (title, image) => async (dispatch) => {
   }
 };
 
-export const deleteSkills = (id) => async (dispatch) => {
+export const deleteSkill = (id) => async (dispatch) => {
   try {
     dispatch({
       type: "DELETE_SKILL_REQUEST",

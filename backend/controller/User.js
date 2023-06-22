@@ -373,3 +373,30 @@ export const deleteProject = async (req, res) => {
     });
   }
 };
+
+export const deleteSkill = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const user = await User.findById(req.user._id);
+
+    const skill = user.skills.find((item) => item._id == id);
+
+    if(skill.image.public_id)
+    await cloudinary.v2.uploader.destroy(skill.image.public_id);
+
+    user.skills = user.skills.filter((item) => item._id != id);
+
+    await user.save();
+
+    res.status(200).json({
+      success: true,
+      message: "Deleted from Skills",
+    });
+  } catch (error) {
+    return res.status(400).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
