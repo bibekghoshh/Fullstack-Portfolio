@@ -34,12 +34,12 @@ export const ProjectCard = ({
           <div className="project-view">
             <button>
               <a href={githubUrl} target="_blank" rel="noreferrer">
-                Live View
+                Github
               </a>
             </button>
             <button>
               <a href={liveUrl} target="_blank" rel="noreferrer">
-                Github
+                Live View
               </a>
             </button>
           </div>
