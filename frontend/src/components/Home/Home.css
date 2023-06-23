@@ -11,7 +11,6 @@
   padding: 4vmax;
   font-family: Sono, sans-serif;
 }
-
 .homeSkills {
   background-color: #edbf69;
   display: flex;
@@ -21,7 +20,6 @@
   transition: 0.7s;
   clip-path: polygon(0 14%, 100% 0, 100% 85%, 0 100%);
 }
-
 .homeSkills > h3 {
   margin-top: 150px;
   text-align: center;
@@ -30,23 +28,18 @@
   font-size: 4vmax;
   font-family: Sono, sans-serif;
 }
-
 .homeYoutube {
   background-color: rgb(255, 255, 255);
   padding-top: 1vmax;
   box-sizing: border-box;
-  /* min-height: 750px; */
   display: block;
-  /* margin-top: -5px; */
 }
-
 .homeYoutube > h3 {
   text-align: center;
   color: rgba(22, 20, 20, 0.904);
   padding: 4vmax;
   font-family: Sono, sans-serif;
 }
-
 .homeYoutubeWrapper {
   display: flex;
   flex-wrap: wrap;
@@ -55,25 +48,12 @@
   width: 80%;
   margin: auto;
 }
-
 @keyframes scrollPop {
   to {
     transform: translateY(-200%);
   }
 }
 
-@media screen and (max-width: 655px) {
-  .homeSkills > h3 {
-    margin-top: 180px;
-    text-align: center;
-    color: white;
-    margin-bottom: 2vmax;
-    width: 100%;
-  }
-  .homeSkills {
-    clip-path: polygon(0 8%, 100% 0, 100% 92%, 0 100%);
-  }
-}
 
 /* my new css start from here */
 .myphoto {
@@ -92,12 +72,14 @@
   font-weight: 600;
   font-family: Montserrat, Sono;
   line-height: 2.2;
-  font-size: 70%;
+  font-size: .7rem;
+
 }
 .intro1 {
   padding-top: 10px;
   padding-bottom: 10px;
-  font-size: 175%;
+  /* font-size: 175%; */
+  font-size: 2vw;
   color: #171c8b;
   text-align: center;
 }
@@ -160,8 +142,9 @@
     transition: 0.7s;
   }
   .intro1 {
-    font-size: 190%;
-    margin: 10px;
+    /* font-size: 180%; */
+    font-size: 3vw;
+    margin-top: 70px;
     transition: 0.7s;
   }
   .intro2 {
@@ -178,11 +161,9 @@
     margin: 10px;
   }
   .col1 {
-    margin-top: 120px;
-    margin-bottom: 0px;
+    margin: 12vh 0px 0px 0px;
     padding-bottom: 0px;
     align-items: center;
-    margin-right: 50px;
   }
   .col2 {
     margin: 1px 1px 60px 0px;
@@ -194,14 +175,25 @@
     margin-top: 40px;
   }
 }
-
+@media screen and (max-width: 655px) {
+  .homeSkills > h3 {
+    margin-top: 180px;
+    text-align: center;
+    color: white;
+    margin-bottom: 2vmax;
+    width: 100%;
+  }
+  .homeSkills {
+    clip-path: polygon(0 8%, 100% 0, 100% 92%, 0 100%);
+  }
+}
 @media screen and (max-width: 550px) {
   .myphoto {
     width: 92%;
     transition: 0.7s;
   }
-  .intro1 {
-    font-size: 135%;
+  .col1{
+    margin-top: 0px;
   }
 }
 
@@ -215,7 +207,7 @@
   .intro3 {
     font-size: 140%;
   }
-  .col1 {
-    margin-top: 70px;
+  .col1{
+    margin-top: 0px;
   }
 }
