@@ -3,36 +3,71 @@ import "./Header.css";
 import logo from "../../Images/logo.jpg";
 import menuIcon from "../../Images/menu.png";
 import crossIcon from "../../Images/cross.png";
+import { Link } from "react-router-dom";
 // import {BiMenu} from 'react-icons/bi';
 
 const Header = () => {
   const [navBarOpen, setNavBarOpen] = useState(false);
+  const [activeItem, setActiveItem] = useState("home");
+
+  const handleItemClick = (itemName) => {
+    setActiveItem(itemName);
+    setNavBarOpen(false);
+  };
+
   return (
     <>
-      <header class="nav">
-        <div class="nav-logo">
-          <img src={logo} alt="logo" class="logo" />
+      <header className="nav">
+        <div className="nav-logo">
+          <img src={logo} alt="logo" className="logo" />
         </div>
 
-        <div class={`nav-item ${navBarOpen ? 'show-menu' : ''}`} >
-          <ul class="nav-items">
-            <a href="/">Home</a>
+        <div className={`nav-item ${navBarOpen ? "show-menu" : ""}`}>
+          <ul className="nav-items">
+            <li>
+              <Link
+                to="/"
+                className={activeItem === "home" ? "active" : ""}
+                onClick={() => handleItemClick("home")}
+              >
+                Home
+              </Link>
+            </li>
           </ul>
-          <ul class="nav-items">
-            <a href="/projects">Projects</a>
+          <ul className="nav-items">
+            <li>
+              <Link
+                to="/projects"
+                className={activeItem === "projects" ? "active" : ""}
+                onClick={() => handleItemClick("projects")}
+              >
+                Projects
+              </Link>
+            </li>
           </ul>
-          <ul class="nav-items">
-            <a href="/contact">Contact us</a>
+          <ul className="nav-items">
+            <li>
+              <Link
+                to="/contact"
+                className={activeItem === "contact" ? "active" : ""}
+                onClick={() => handleItemClick("contact")}
+              >
+                Contact us
+              </Link>
+            </li>
           </ul>
-          <button class="loginbtn">
-            <a href="/account">Login</a>
-          </button>
+          <Link to="/account">
+            <button className="loginbtn">Login</button>
+          </Link>
         </div>
-        <button class="menu-item" onClick={()=> setNavBarOpen((prev)=> !prev)}>
-          {navBarOpen? (
-            <img src={crossIcon} alt="menu-icon" class="menu-icon" />
-            ):(
-              <img src={menuIcon} alt="menu-icon" class="menu-icon" />
+        <button
+          className="menu-item"
+          onClick={() => setNavBarOpen((prev) => !prev)}
+        >
+          {navBarOpen ? (
+            <img src={crossIcon} alt="menu-icon" className="menu-icon" />
+          ) : (
+            <img src={menuIcon} alt="menu-icon" className="menu-icon" />
           )}
         </button>
       </header>

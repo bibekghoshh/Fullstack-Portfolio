@@ -1,9 +1,9 @@
 import { Typography } from "@mui/material";
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { BsGithub, BsInstagram, BsLinkedin, BsTwitter } from "react-icons/bs";
-import { SiLeetcode, SiGmail} from "react-icons/si";
-import {SlCallOut} from "react-icons/sl";
+import { SiLeetcode, SiGmail } from "react-icons/si";
+import { SlCallOut } from "react-icons/sl";
 import "./Footer.css";
 
 const Footer = () => {
@@ -16,16 +16,19 @@ const Footer = () => {
           oppertunity to enhance my skills to solve real world problems
         </Typography>
 
-        <Link to="/contact" className="footerContactBtn">
+        {/* <Link to="/contact" className="footerContactBtn">
           <Typography>Contact Us</Typography>
-        </Link>
-        <div>
-          <a className="mail-icon" href="mailto:bibek7478@gmail.com"><SiGmail /></a>
-          <a className="call-icon" href="tel:+917478828907"><SlCallOut /></a>
+        </Link> */}
+        <div className="footer-icons">
+          <a className="mail-icon" href="mailto:bibek7478@gmail.com">
+            <SiGmail />
+          </a>
+          <a className="call-icon" href="tel:+917478828907">
+            <SlCallOut />
+          </a>
         </div>
       </div>
       <div>
-        <Typography variant="h6">Let's Connect</Typography>
         <a href="https://github.com/bibekghoshh" target="black">
           <BsGithub />
         </a>

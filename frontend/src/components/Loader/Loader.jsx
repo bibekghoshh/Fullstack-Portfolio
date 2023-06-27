@@ -3,8 +3,8 @@ import "./Loader.css";
 
 const Loader = () => {
   return (
-    <div class="container">
-<div class="sound-wave">
+    <div className="loader">
+<div className="sound-wave">
   <span></span>
   <span></span>
   <span></span>

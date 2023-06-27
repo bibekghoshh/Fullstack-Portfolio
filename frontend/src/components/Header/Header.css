@@ -7,19 +7,22 @@ header {
   height: 90px;
   overflow: visible;
   z-index: 999;
-  background-color: #ffffff;
+  background-color: #CAD5E2;
 }
-a {
+li {
+  list-style: none;
+}
+a{
   text-decoration: none;
 }
-ul > a {
-  color: #272727;
+ul > li >a {
+  color: #464979;
   font-weight: 600;
   font-size: 18px;
 }
 a:active,
 a:hover {
-  color: #171c8b;
+  color: #241e5c;
 }
 .nav-item {
   display: flex;
@@ -51,6 +54,8 @@ a:hover {
   top: 25px;
   outline: none;
   border: none;
+  background: none;
+  transition: all .3s;
 }
 .menu-icon {
   width: 25px;
@@ -62,6 +67,8 @@ a:hover {
   padding: 10px 25px;
   background-color: #171c8b;
   border-radius: 10px;
+  color: #fff;
+  font-weight: 600;
 }
 .loginbtn:hover {
   background-color: #11176e;
@@ -71,13 +78,15 @@ a:hover {
   font-weight: 500;
   font-size: 18px;
 }
-
+.active{
+  color: #0e135a;
+}
 @media screen and (max-width: 900px) {
   .nav-item {
-    display: block;
+    display: none;
     position: absolute;
     gap: 30px;
-    background: #fff;
+    background: #CAD5E2;
     right: -50px;
     top: 70px;
     display: flex;
@@ -86,31 +95,17 @@ a:hover {
     flex-direction: column;
     width: 100%;
     overflow: hidden;
-    z-index: 9;
+    z-index: -9;
     box-shadow: 0 10px 15px -3px rgb(46 41 51 / 8%),
       0 4px 6px -2px rgb(71 63 79 / 16%);
     transform: translateY(-300px);
     transition: transform ease-in-out 0.2s;
   }
   .nav-item.show-menu{
-    width: 100%;
+    /* width: 100%; */
+    /* display: flex; */
     transform: translateY(0px);
   }
-  /* .nav-item{
-    flex-direction: column;
-    gap: 30px;
-    margin-top: 300px;
-    width: 100%;
-    background-color: #120E43;
-    position: absolute;
-    padding-bottom: 50px;
-  }
-  header{
-    background-color: #120E43;
-  }
-  ul > a{
-    color: #fff;
-  } */
   .menu-icon {
     display: block;
     transition: 0.7s;
@@ -124,5 +119,8 @@ a:hover {
 @media screen and (max-width: 560px) {
   header {
     height: 70px;
+  }
+  .menu-item {
+    right: 20px;
   }
 }

@@ -15,12 +15,12 @@ export const SkillCard = ({ SkillTitle, SkillImage, isAdmin = false, id }) => {
 
   return (
     <>
-      <div class="skill-portfolio-items">
-        <div class="skill-item-flex">
-          <div class="skill-image">
+      <div className="skill-portfolio-items">
+        <div className="skill-item-flex">
+          <div className="skill-image">
             <img src={SkillImage} alt="C Programming" />
           </div>
-          <div class="skill-name">
+          <div className="skill-name">
             <h4>{SkillTitle}</h4>
           </div>
 

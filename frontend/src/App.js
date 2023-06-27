@@ -13,7 +13,7 @@ import AdminPanel from "./components/Admin/AdminPanel";
 import Timeline from "./components/Admin/Timeline";
 import Youtube from "./components/Admin/Youtube";
 import Project from "./components/Admin/Project";
-import Skill from "./components/Admin/Skill"
+import Skill from "./components/Admin/Skill";
 import Loader from "./components/Loader/Loader";
 
 function App() {
@@ -55,7 +55,11 @@ function App() {
             <Route
               path="/projects"
               // element={<Projects projects={user.projects} />}
-              element={user && user.projects ? <Projects projects={user.projects} /> : null}
+              element={
+                user && user.projects ? (
+                  <Projects projects={user.projects} />
+                ) : null
+              }
             />
 
             <Route path="/contact" element={<Contact />} />
@@ -77,7 +81,7 @@ function App() {
             />
             <Route
               path="/admin/skill"
-              element={isAuthenticated ? <Skill/> : <Login />}
+              element={isAuthenticated ? <Skill /> : <Login />}
             />
           </Routes>
 

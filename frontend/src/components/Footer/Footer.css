@@ -1,99 +1,104 @@
 .footer {
-    background-color: rgb(26, 26, 26);
-    padding: 2vmax;
-   display: flex;
-   justify-content: space-around;
-  }
-  .footer > div > h5 {
-    color: white;
-    border-bottom: 1px solid white;
-    width: 120px;
-    margin-bottom: 20px;
-    padding: 10px 0;
-  }
-  .footer > div > p {
-    color: white;
-    width: 80%;
-  }
-  .mail-icon{
-    font-size: 35px;
-    margin-right: 35px;
-    color: white;
-  }
-  .mail-icon:hover{
-    color: rgb(187, 106, 30);
-  }
-  .call-icon{
-    font-size: 35px;
-    color: white;
-  }
-  .call-icon:hover{
-    color: rgb(36, 190, 22);
-  }
-  .footer > div > h6 {
-    color: white;
-    padding: 10px 0;
-  }
-  
-  .footer > div:last-child {
+  background-color: rgb(56, 27, 71);
+  padding: 50px;
+  display: flex;
+  justify-content: space-around;
+  gap: 50px;
+}
+.footer > div > h5 {
+  color: white;
+  border-bottom: 1px solid white;
+  width: 110px;
+  margin-bottom: 20px;
+  padding: 10px 0;
+}
+.footer > div > p {
+  color: white;
+  /* width: 80%; */
+}
+.footer-icons{
+  margin: 40px 0px 0px 0px;
+}
+.mail-icon {
+  font-size: 35px;
+  margin-right: 35px;
+  color: white;
+}
+.mail-icon:hover {
+  color: rgb(187, 106, 30);
+}
+.call-icon {
+  font-size: 35px;
+  color: white;
+}
+.call-icon:hover {
+  color: rgb(36, 190, 22);
+}
+
+.footer > div:last-child {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+}
+
+.footer > div > a {
+  font-size: 35px;
+  color: white;
+  transition: all 0.3s;
+}
+.footer > div > a:nth-child(2):hover {
+  color: rgb(64, 88, 226);
+}
+.footer > div > a:nth-child(3):hover {
+  color: rgb(71, 59, 241);
+}
+.footer > div > a:nth-child(4):hover {
+  color: rgb(40, 107, 231);
+}
+.footer > div > a:nth-child(5):hover {
+  color: rgb(64, 88, 226);
+}
+.footer > div > a:nth-child(6):hover {
+  color: rgb(206, 43, 138);
+}
+
+.footerContactBtn {
+  background-color: white;
+  color: black;
+  padding: 6px 5px;
+  width: 120px;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  border-radius: 5px;
+  margin: 2vmax 0;
+  /* border: 1px solid white; */
+  transition: all 0.5s;
+}
+
+.footerContactBtn > p {
+  color: black;
+}
+
+.footerContactBtn:hover {
+  background-color: unset;
+  transform: scale(1.05);
+}
+.footerContactBtn:hover p {
+  color: rgb(255, 255, 255);
+}
+
+@media screen and (max-width: 720px) {
+  .footer {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
   }
-  
-  .footer > div > a {
-    font-size: 3vmax;
-    color: white;
-    transition: all 0.3s;
+  .footer-icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-  .footer > div > a:nth-child(2):hover {
-    color: rgb(64, 88, 226);
-  }
-  .footer > div > a:nth-child(3):hover {
-    color: rgb(71, 59, 241);
-  }
-  .footer > div > a:nth-child(4):hover {
-    color: rgb(40, 107, 231);
-  }
-  .footer > div > a:nth-child(5):hover {
-    color: rgb(64, 88, 226);
-  }
-  .footer > div > a:nth-child(6):hover {
-    color: rgb(206, 43, 138);
-  }
-  
-  .footerContactBtn {
-    background-color: white;
-    color: black;
-    padding: 6px 5px;
-    width: 120px;
-    text-decoration: none;
-    text-align: center;
-    display: block;
-    border-radius: 5px;
-    margin: 2vmax 0;
-    /* border: 1px solid white; */
-    transition: all 0.5s;
-  }
-  
-  .footerContactBtn > p {
-    color: black;
-  }
-  
-  .footerContactBtn:hover {
-    background-color: unset;
-    transform: scale(1.05);
-  }
-  .footerContactBtn:hover p {
-    color: rgb(255, 255, 255);
-  }
-
-  @media screen and (max-width:420px){
-    .footer{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-  }
-  
+}
