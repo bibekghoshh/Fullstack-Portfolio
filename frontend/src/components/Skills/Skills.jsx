@@ -1,10 +1,8 @@
 import { Button } from "@mui/material";
 import React from "react";
-// import "./Skills.css";
 import { Delete } from "@mui/icons-material";
 import { deleteSkill, getUser } from "../../actions/user";
 import { useDispatch } from "react-redux";
-import { Typography } from "@mui/material";
 
 export const SkillCard = ({ SkillTitle, SkillImage, isAdmin = false, id }) => {
   const dispatch = useDispatch();
@@ -41,9 +39,13 @@ export const SkillCard = ({ SkillTitle, SkillImage, isAdmin = false, id }) => {
 
 const Skills = ({ skills }) => {
   return (
-    <div className="flex flex-col items-center mt-32">
-      <Typography variant="h3">SKILLS</Typography>
-      <div className="flex flex-row gap-20 flex-wrap w-9/12 items-center justify-center border-4">
+    <>
+    <div className="flex flex-col items-center mt-24  gap-8 bg-blue-100 py-16">
+      <div className="flex w-9/12 items-center">
+      <p className=" text-newblue font-semibold w-96 text-4xl font-roboto">Skills Acquired</p>
+        <div className="h-[3px] w-full bg-newblue"></div>
+      </div>
+      <div className="flex flex-row gap-20 flex-wrap w-9/12 items-center justify-center ">
         {skills.map((item) => (
           <SkillCard
             id={item._id}
@@ -54,6 +56,7 @@ const Skills = ({ skills }) => {
         ))}
       </div>
     </div>
+    </>
   );
 };
 

@@ -3,7 +3,6 @@ import Home from "./components/Home";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Projects from "./components/Projects/Projects";
-import Contact from "./components/Contact/Contact";
 import Login from "./components/Login/Login";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -56,7 +55,6 @@ function App() {
               }
             />
 
-            <Route path="/contact" element={<Contact />} />
             <Route
               path="/account"
               element={isAuthenticated ? <AdminPanel /> : <Login />}

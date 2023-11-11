@@ -9,7 +9,7 @@ import Skills from "./Skills/Skills";
 
 const Home = ({ timelines, youtubes, skills }) => {
   return (
-    <section className="mt-40 border-4 border-green-500 flex flex-col items-center">
+    <section className="mt-40  flex flex-col items-center">
       <section className="flex w-[95%]  justify-center mb-20 gap-20" id="home">
         <div className="w-1/2 flex flex-col gap-5">
           <div className="text-xl">
@@ -25,8 +25,8 @@ const Home = ({ timelines, youtubes, skills }) => {
             my projects below. :)
           </p>
           <div>
-          <p>+917478828907</p>
-          {/* <p>bibek7478@gmail.com</p> */}
+            <p>+917478828907</p>
+            {/* <p>bibek7478@gmail.com</p> */}
           </div>
           <div className="bg-bgcolor flex rounded-3xl text-white gap-5 w-[500px] h-24 items-center justify-center px-5">
             <div className="text-center">
@@ -56,50 +56,11 @@ const Home = ({ timelines, youtubes, skills }) => {
       </section>
 
       <div className="flex flex-col justify-center items-center gap-8 mb-12">
-        {/* <div className="flex gap-6 text-4xl">
-          <a
-            className="hover:scale-110 transition duration-300 "
-            href="https://github.com/bibekghoshh"
-            target="black"
-          >
-            <BsGithub />
-          </a>
-          <a
-            className="hover:text-blue-600 hover:scale-110 transition duration-300"
-            href="https://www.linkedin.com/in/bibekghoshh/"
-            target="black"
-          >
-            <BsLinkedin />
-          </a>
-          <a
-            className="hover:text-sky-500 hover:scale-110 transition duration-300"
-            href="https://twitter.com/bibekghoshh"
-            target="black"
-          >
-            <BsTwitter />
-          </a>
-          <a
-            className="hover:text-gray-500 hover:scale-110 transition duration-300"
-            href="https://leetcode.com/bibekghosh/"
-            target="black"
-          >
-            <SiLeetcode />
-          </a>
-          <a
-            className="hover:text-red-500 hover:scale-110 transition duration-300"
-            href="https://www.instagram.com/bibekghoshh/"
-            target="black"
-          >
-            <BsInstagram />
-          </a>
-        </div> */}
-        <div>
           <button className="bg-newblue text-white px-4 py-2 rounded-md font-medium hover:scale-105 transition duration-300">
             <a href="https://drive.google.com/file/d/1il1CfXN7Tosvghi5pytvmjj3LGEy7Ayn/view?usp=share_link">
               View Resume
             </a>
           </button>
-        </div>
       </div>
 
       <div className="home">

@@ -16,7 +16,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="fixed flex justify-around h-20 items-center w-full bg-bgcolor top-0 drop-shadow-lg">
+      <header className="fixed flex justify-around h-20 items-center w-full bg-bgcolor top-0 drop-shadow-lg z-50">
         <div className="nav-logo">
           <img
             src={logo}
