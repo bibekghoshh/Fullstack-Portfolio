@@ -8,6 +8,10 @@ module.exports = {
       colors:{
         newblue:"#0D43A0",
         bgcolor:"#4883E9"
+      },
+      fontFamily:{
+        roboto:"'Roboto', sans-serif",
+        montserrat:"Montserrat', sans-serif"
       }
     },
   },

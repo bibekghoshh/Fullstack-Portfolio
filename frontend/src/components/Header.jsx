@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 // import "./Header.css";
-import logo from "../../Images/logo.jpg";
-import menuIcon from "../../Images/menu.png";
-import crossIcon from "../../Images/cross.png";
+import logo from "../Images/logo.jpg";
+// import menuIcon from "../../Images/menu.png";
+// import crossIcon from "../../Images/cross.png";
 import { Link } from "react-router-dom";
 
 const Header = () => {
@@ -16,7 +16,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="fixed flex justify-around h-20 items-center w-full bg-bgcolor top-0">
+      <header className="fixed flex justify-around h-20 items-center w-full bg-bgcolor top-0 drop-shadow-lg">
         <div className="nav-logo">
           <img
             src={logo}
