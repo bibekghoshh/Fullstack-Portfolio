@@ -1,4 +1,3 @@
-import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./components/Home/Home";
 import Header from "./components/Header/Header";
@@ -39,11 +38,6 @@ function App() {
               path="/"
               element={
                 <Home
-                  // youtubes={user.youtube}
-                  // timelines={user.timeline}
-                  // skills={user.skills}
-                  // about={user.about}
-
                   youtubes={user && user.youtube ? user.youtube : []}
                   timelines={user && user.timeline ? user.timeline : []}
                   skills={user && user.skills ? user.skills : []}

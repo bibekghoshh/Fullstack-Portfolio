@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import "./Header.css";
+// import "./Header.css";
 import logo from "../../Images/logo.jpg";
 import menuIcon from "../../Images/menu.png";
 import crossIcon from "../../Images/cross.png";
 import { Link } from "react-router-dom";
-// import {BiMenu} from 'react-icons/bi';
 
 const Header = () => {
   const [navBarOpen, setNavBarOpen] = useState(false);
@@ -17,50 +16,46 @@ const Header = () => {
 
   return (
     <>
-      <header className="nav">
+      <header className="fixed flex justify-around h-20 items-center w-full bg-bgcolor top-0">
         <div className="nav-logo">
-          <img src={logo} alt="logo" className="logo" />
+          <img
+            src={logo}
+            alt="logo"
+            className="w-12 rounded-full border-[1px] border-slate-700"
+          />
         </div>
 
-        <div className={`nav-item ${navBarOpen ? "show-menu" : ""}`}>
-          <ul className="nav-items">
+        <div>
+          <ul className="nav-items flex gap-12 font-bold text-newblue">
             <li>
-              <Link
-                to="/"
-                className={activeItem === "home" ? "active" : ""}
-                onClick={() => handleItemClick("home")}
-              >
+              <Link to="/" className="" onClick={() => handleItemClick("home")}>
                 Home
               </Link>
             </li>
-          </ul>
-          <ul className="nav-items">
             <li>
               <Link
                 to="/projects"
-                className={activeItem === "projects" ? "active" : ""}
+                className=""
                 onClick={() => handleItemClick("projects")}
               >
                 Projects
               </Link>
             </li>
-          </ul>
-          <ul className="nav-items">
             <li>
               <Link
                 to="/contact"
-                className={activeItem === "contact" ? "active" : ""}
+                className=""
                 onClick={() => handleItemClick("contact")}
               >
                 Contact us
               </Link>
             </li>
           </ul>
-          <Link to="/account">
+          {/* <Link to="/account">
             <button className="loginbtn">Login</button>
-          </Link>
+          </Link> */}
         </div>
-        <button
+        {/* <button
           className="menu-item"
           onClick={() => setNavBarOpen((prev) => !prev)}
         >
@@ -69,7 +64,7 @@ const Header = () => {
           ) : (
             <img src={menuIcon} alt="menu-icon" className="menu-icon" />
           )}
-        </button>
+        </button> */}
       </header>
     </>
   );

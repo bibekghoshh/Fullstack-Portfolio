@@ -1,5 +1,4 @@
 import React from "react";
-import "./Home.css";
 import { Typography } from "@mui/material";
 import TimeLine from "../TimeLine/TimeLine";
 import myPhoto from "../../Images/mypic.jpg";
@@ -8,19 +7,17 @@ import Skills from "../Skills/Skills";
 import { BsGithub, BsInstagram, BsLinkedin, BsTwitter } from "react-icons/bs";
 import { SiLeetcode } from "react-icons/si";
 
-// import { Link } from "react-router-dom";
 
 const Home = ({ timelines, youtubes, skills }) => {
   
   
   return (
-    <section className="home-page">
-      <section className="container" id="home">
-        <div className="col col1">
-          <div className="intro1">
-            <h1>👋Hey,I am Bibek Ghosh</h1>
-          </div>
-          <div className="intro2">
+    <section className="mt-40 border-4 border-green-500 flex flex-col items-center">
+      <section className="flex w-[95%]  justify-center border-2 border-red-400 gap-10" id="home">
+        <div className="w-1/2">
+          <div className="intro1 text-xl">
+            <p>Hi, my name is</p>
+            <h1 className="text-7xl">Bibek Ghosh</h1>
             <h2>An aspiring <span className="role">Software developer</span> </h2>
           </div>
           <p className="intro">
@@ -32,7 +29,6 @@ const Home = ({ timelines, youtubes, skills }) => {
             the field of computers so that I can improve and broaden my
             knowledge and skills.
           </p>
-          <p className="intro3">I WRITE CODE</p>
           <div className="viewcv">
             <button className="viewcvbtn">
               <a href="https://drive.google.com/file/d/1il1CfXN7Tosvghi5pytvmjj3LGEy7Ayn/view?usp=share_link">
@@ -40,7 +36,7 @@ const Home = ({ timelines, youtubes, skills }) => {
               </a>
             </button>
           </div>
-          <div className="social-media">
+          <div className="flex gap-5">
             <a href="https://github.com/bibekghoshh" target="black">
               <BsGithub />
             </a>
@@ -59,11 +55,11 @@ const Home = ({ timelines, youtubes, skills }) => {
           </div>
           {/* <Link to="/projects">VIEW WORK</Link> */}
         </div>
-        <div className="col col2">
+        <div className="col col2 ">
           <img
             src={myPhoto}
             alt="bibek's phot"
-            className="myphoto"
+            className="myphoto w-[500px] rounded-full"
           />
         </div>
       </section>
