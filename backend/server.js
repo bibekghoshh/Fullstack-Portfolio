@@ -4,7 +4,7 @@ import { connectDatabase } from "./config/database.js";
 import cloudinary from "cloudinary";
 // import { User } from "./model/User.js";
 
-dotenv.config({ path: "./backend/config/config.env" });
+dotenv.config({ path: "./config/config.env" });
 
 connectDatabase();
 

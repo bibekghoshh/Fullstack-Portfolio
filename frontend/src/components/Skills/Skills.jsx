@@ -1,9 +1,10 @@
 import { Button } from "@mui/material";
 import React from "react";
-import "./Skills.css";
+// import "./Skills.css";
 import { Delete } from "@mui/icons-material";
 import { deleteSkill, getUser } from "../../actions/user";
 import { useDispatch } from "react-redux";
+import { Typography } from "@mui/material";
 
 export const SkillCard = ({ SkillTitle, SkillImage, isAdmin = false, id }) => {
   const dispatch = useDispatch();
@@ -15,12 +16,12 @@ export const SkillCard = ({ SkillTitle, SkillImage, isAdmin = false, id }) => {
 
   return (
     <>
-      <div className="skill-portfolio-items">
-        <div className="skill-item-flex">
+      <div className="">
+        <div className="flex flex-col items-center gap-2  w-28 bg-gradient-to-r from-cyan-400 to-blue-500 py-4 rounded-md">
           <div className="skill-image">
-            <img src={SkillImage} alt="C Programming" />
+            <img className="w-12" src={SkillImage} alt="C Programming" />
           </div>
-          <div className="skill-name">
+          <div className="text-white">
             <h4>{SkillTitle}</h4>
           </div>
 
@@ -40,15 +41,18 @@ export const SkillCard = ({ SkillTitle, SkillImage, isAdmin = false, id }) => {
 
 const Skills = ({ skills }) => {
   return (
-    <div className="skillSection">
-      {skills.map((item) => (
-        <SkillCard
-          id={item._id}
-          key={item._id}
-          SkillTitle={item.title}
-          SkillImage={item.image.url}
-        />
-      ))}
+    <div className="flex flex-col items-center mt-32">
+      <Typography variant="h3">SKILLS</Typography>
+      <div className="flex flex-row gap-20 flex-wrap w-9/12 items-center justify-center border-4">
+        {skills.map((item) => (
+          <SkillCard
+            id={item._id}
+            key={item._id}
+            SkillTitle={item.title}
+            SkillImage={item.image.url}
+          />
+        ))}
+      </div>
     </div>
   );
 };

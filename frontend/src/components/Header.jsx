@@ -29,7 +29,7 @@ const Header = () => {
           <ul className="nav-items flex gap-12 font-bold text-newblue">
             <li>
               <Link to="/" className="" onClick={() => handleItemClick("home")}>
-                Home
+                Skills Acquired
               </Link>
             </li>
             <li>
@@ -38,7 +38,7 @@ const Header = () => {
                 className=""
                 onClick={() => handleItemClick("projects")}
               >
-                Projects
+                My Projects
               </Link>
             </li>
             <li>
@@ -47,7 +47,7 @@ const Header = () => {
                 className=""
                 onClick={() => handleItemClick("contact")}
               >
-                Contact us
+                Github
               </Link>
             </li>
           </ul>

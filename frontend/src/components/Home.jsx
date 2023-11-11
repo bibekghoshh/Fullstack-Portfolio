@@ -1,23 +1,20 @@
 import React from "react";
 import { Typography } from "@mui/material";
-import TimeLine from "../TimeLine/TimeLine";
-import myPhoto from "../../Images/mypic.jpg";
-import YoutubeCard from "../YoutubeCard/YoutubeCard";
-import Skills from "../Skills/Skills";
-import { BsGithub, BsInstagram, BsLinkedin, BsTwitter } from "react-icons/bs";
-import { SiLeetcode } from "react-icons/si";
+import TimeLine from "./TimeLine";
+import myPhoto from "../Images/mypic.jpg";
+import YoutubeCard from "./YoutubeCard/YoutubeCard";
+import Skills from "./Skills/Skills";
+// import { BsGithub, BsInstagram, BsLinkedin, BsTwitter } from "react-icons/bs";
+// import { SiLeetcode } from "react-icons/si";
 
 const Home = ({ timelines, youtubes, skills }) => {
   return (
     <section className="mt-40 border-4 border-green-500 flex flex-col items-center">
-      <section
-        className="flex w-[95%]  justify-center mb-10 gap-20"
-        id="home"
-      >
+      <section className="flex w-[95%]  justify-center mb-20 gap-20" id="home">
         <div className="w-1/2 flex flex-col gap-5">
           <div className="text-xl">
             <p>Hi, my name is</p>
-            <h1 className="text-7xl font-roboto">Bibek Ghosh</h1>
+            <h1 className="text-7xl font-roboto text-newblue">Bibek Ghosh</h1>
             <h2>
               An aspiring <span className="role">Software developer</span>{" "}
             </h2>
@@ -27,7 +24,10 @@ const Home = ({ timelines, youtubes, skills }) => {
             with many technological skills useful for tech projects. Check out
             my projects below. :)
           </p>
-
+          <div>
+          <p>+917478828907</p>
+          {/* <p>bibek7478@gmail.com</p> */}
+          </div>
           <div className="bg-bgcolor flex rounded-3xl text-white gap-5 w-[500px] h-24 items-center justify-center px-5">
             <div className="text-center">
               <p className="text-5xl font-bold font-roboto">12</p>
@@ -48,6 +48,7 @@ const Home = ({ timelines, youtubes, skills }) => {
         <div className="col col2 ">
           <img
             src={myPhoto}
+            // src="https://images.pexels.com/photos/19088938/pexels-photo-19088938.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             alt="bibek's phot"
             className="myphoto w-[400px] rounded-full"
           />
@@ -55,23 +56,43 @@ const Home = ({ timelines, youtubes, skills }) => {
       </section>
 
       <div className="flex flex-col justify-center items-center gap-8 mb-12">
-        <div className="flex gap-6 text-4xl">
-          <a className="hover:scale-110 transition duration-300 " href="https://github.com/bibekghoshh" target="black">
+        {/* <div className="flex gap-6 text-4xl">
+          <a
+            className="hover:scale-110 transition duration-300 "
+            href="https://github.com/bibekghoshh"
+            target="black"
+          >
             <BsGithub />
           </a>
-          <a className="hover:text-blue-600 hover:scale-110 transition duration-300" href="https://www.linkedin.com/in/bibekghoshh/" target="black">
+          <a
+            className="hover:text-blue-600 hover:scale-110 transition duration-300"
+            href="https://www.linkedin.com/in/bibekghoshh/"
+            target="black"
+          >
             <BsLinkedin />
           </a>
-          <a className="hover:text-sky-500 hover:scale-110 transition duration-300" href="https://twitter.com/bibekghoshh" target="black">
+          <a
+            className="hover:text-sky-500 hover:scale-110 transition duration-300"
+            href="https://twitter.com/bibekghoshh"
+            target="black"
+          >
             <BsTwitter />
           </a>
-          <a className="hover:text-gray-500 hover:scale-110 transition duration-300" href="https://leetcode.com/bibekghosh/" target="black">
+          <a
+            className="hover:text-gray-500 hover:scale-110 transition duration-300"
+            href="https://leetcode.com/bibekghosh/"
+            target="black"
+          >
             <SiLeetcode />
           </a>
-          <a className="hover:text-red-500 hover:scale-110 transition duration-300" href="https://www.instagram.com/bibekghoshh/" target="black">
+          <a
+            className="hover:text-red-500 hover:scale-110 transition duration-300"
+            href="https://www.instagram.com/bibekghoshh/"
+            target="black"
+          >
             <BsInstagram />
           </a>
-        </div>
+        </div> */}
         <div>
           <button className="bg-newblue text-white px-4 py-2 rounded-md font-medium hover:scale-105 transition duration-300">
             <a href="https://drive.google.com/file/d/1il1CfXN7Tosvghi5pytvmjj3LGEy7Ayn/view?usp=share_link">
@@ -82,16 +103,9 @@ const Home = ({ timelines, youtubes, skills }) => {
       </div>
 
       <div className="home">
-        <div className="homeContainer">
-          <Typography variant="h3">TIMELINE</Typography>
-          <TimeLine timelines={timelines} />
-        </div>
+        <TimeLine timelines={timelines} />
 
-        <div className="homeSkills">
-          <Typography variant="h3">SKILLS</Typography>
-
-          <Skills skills={skills} />
-        </div>
+        <Skills skills={skills} />
 
         <div className="homeYoutube">
           <Typography variant="h3">VIDEOS</Typography>
