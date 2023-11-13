@@ -4,7 +4,6 @@ import {
   logout,
   getUser,
   myProfile,
-  contact,
   updateUser,
   addTimeline,
   addYoutube,
@@ -37,5 +36,3 @@ userRouter.route("/admin/timeline/:id").delete(isAuthenticated, deleteTimeline);
 userRouter.route("/admin/youtube/:id").delete(isAuthenticated, deleteYoutube);
 userRouter.route("/admin/project/:id").delete(isAuthenticated, deleteProject);
 userRouter.route("/admin/skill/:id").delete(isAuthenticated, deleteSkill);
-
-userRouter.route("/contact").post(contact);

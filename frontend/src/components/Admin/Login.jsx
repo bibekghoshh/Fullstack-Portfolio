@@ -1,8 +1,6 @@
-import { Button, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";   
 import { useDispatch, useSelector } from "react-redux";    
 import { login } from "../../actions/user";
-import "./Login.css";
 import { toast } from "react-toastify";
 
 const Login = () => {
@@ -29,25 +27,13 @@ const Login = () => {
   }, [error, message, dispatch]);
 
   return (
-        <div className="login">
-        <div className="loginContainer">
-            <form className="loginForm" onSubmit={submitHandler}>
-            <Typography variant="h4">
-                <p>A</p>
-                <p>D</p>
-                <p>M</p>
-                <p>I</p>
-                <p style={{ marginRight: "1vmax" }}>N</p>
-
-                <p>P</p>
-                <p>A</p>
-                <p>N</p>
-                <p>E</p>
-                <p>L</p>
-            </Typography>
-
-            <div>
+        <div className="py-12 mb-16 mt-44">
+          <div className="mb-12 text-center">
+            <p className="text-3xl font-medium font-roboto text-newblue">PORTFOLIO LOGIN</p>
+          </div>
+            <form className="flex flex-col items-center justify-center gap-5 " onSubmit={submitHandler}>
                 <input
+                className="border-2 border-bgcolor px-5 py-2  min-w-[320px] rounded-lg"
                 type="email"
                 placeholder="Admin Email"
                 value={email}
@@ -55,18 +41,18 @@ const Login = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 />
                 <input
+                className="border-2 border-bgcolor px-5 py-2  min-w-[320px] rounded-lg"
                 type="password"
                 placeholder="Admin Password"
                 value={password}
                 required
                 onChange={(e) => setPassword(e.target.value)}
                 />
-                <Button type="submit" variant="contained" disabled={loading}>   
+                <button className="px-10 py-2 font-medium text-white rounded-full bg-bgcolor" type="submit" variant="contained" disabled={loading}>   
                 Login
-                </Button>
-            </div>
+                </button>
+            
             </form>
-        </div>
         </div>
     );
     };

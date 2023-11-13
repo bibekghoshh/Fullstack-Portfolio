@@ -3,7 +3,7 @@ import Home from "./components/Home";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Projects from "./components/Projects/Projects";
-import Login from "./components/Login/Login";
+import Login from "./components/Admin/Login";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getUser, loadUser } from "./actions/user";

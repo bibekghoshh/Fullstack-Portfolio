@@ -3,7 +3,7 @@ import { toast } from 'react-toastify';
 import { useDispatch, useSelector } from "react-redux";
 import { addYoutube, getUser } from "../../actions/user";
 import { MdKeyboardBackspace } from "react-icons/md";
-import { Button, Typography } from "@mui/material";
+import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import YoutubeCard from "../YoutubeCard/YoutubeCard";
 
@@ -53,37 +53,26 @@ const Youtube = () => {
     }
   }, [error, message, dispatch, loginMessage]);
 
+  const inputStyle =
+  "px-4 py-2 border-2 border-blue-500 rounded w-72 drop-shadow-md";
+  
   return (
-    <div className="adminPanel">
-      <div className="adminPanelContainer">
-        <Typography variant="h4">
-          <p>A</p>
-          <p>D</p>
-          <p>M</p>
-          <p>I</p>
-          <p style={{ marginRight: "1vmax" }}>N</p>
-
-          <p>P</p>
-          <p>A</p>
-          <p>N</p>
-          <p>E</p>
-          <p>L</p>
-        </Typography>
-
-        <form onSubmit={submitHandler}>
+    <div className="mb-12 mt-28">
+      <div className="flex items-center justify-center">
+        <form onSubmit={submitHandler} className="flex flex-col gap-4">
           <input
             type="text"
             placeholder="Title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            className="adminPanelInputs"
+            className={inputStyle}
           />
           <input
             type="text"
             placeholder="Link"
             value={url}
             onChange={(e) => setUrl(e.target.value)}
-            className="adminPanelInputs"
+            className={inputStyle}
           />
           <input
             type="file"
@@ -92,13 +81,13 @@ const Youtube = () => {
             accept="image/*"
           />
 
-          <Link to="/account">
-            BACK <MdKeyboardBackspace />
-          </Link>
-
           <Button type="submit" variant="contained" disabled={loading}>
             Add
           </Button>
+          <Link to="/account" className="flex items-center justify-center gap-2 py-1 font-medium border-2 bg-slate-100" >
+            <MdKeyboardBackspace /> BACK 
+          </Link>
+
         </form>
 
         <div className="adminPanelYoutubeVideos">

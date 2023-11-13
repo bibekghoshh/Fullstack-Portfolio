@@ -6,7 +6,9 @@ import logo from "../Images/logo.jpg";
 import { Link } from "react-router-dom";
 
 const Header = () => {
+  // eslint-disable-next-line
   const [navBarOpen, setNavBarOpen] = useState(false);
+  // eslint-disable-next-line
   const [activeItem, setActiveItem] = useState("home");
 
   const handleItemClick = (itemName) => {
@@ -16,7 +18,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="fixed flex justify-around h-20 items-center w-full bg-bgcolor top-0 drop-shadow-lg z-50">
+      <header className="fixed top-0 z-50 flex items-center justify-around w-full h-20 bg-bgcolor drop-shadow-lg">
         <div className="nav-logo">
           <img
             src={logo}
@@ -26,7 +28,7 @@ const Header = () => {
         </div>
 
         <div>
-          <ul className="nav-items flex gap-12 font-bold text-newblue">
+          <ul className="flex gap-12 font-bold nav-items text-newblue">
             <li>
               <Link to="/" className="" onClick={() => handleItemClick("home")}>
                 Skills Acquired

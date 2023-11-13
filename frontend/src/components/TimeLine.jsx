@@ -24,15 +24,15 @@ const TimeLine = ({ timelines = [] }) => {
           <TimelineItem key={index}>
             <TimelineOppositeContent
               sx={{ m: "auto 0" }}
-              align="right"
               variant="body2"
-              color="text.secondary"
+              className="text-slate-500  text-right "
             >
+               <div className="font-medium">
                {new Date(item.startdate).toLocaleDateString('en-US',{ month: 'long', year: 'numeric' })}
-               - 
+               {" "}-{" "}
               {new Date(item.enddate).toLocaleDateString('en-US',{ month: 'long', year: 'numeric' })}
+               </div>
             </TimelineOppositeContent>
-
             <TimelineSeparator>
               <TimelineConnector />
               <TimelineDot>

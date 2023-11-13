@@ -1,6 +1,5 @@
 import { User } from "../model/User.js";
 import jwt from "jsonwebtoken";
-import { sendMail } from "../middlewares/sendMail.js";
 import cloudinary from "cloudinary";
 
 export const login = async (req, res) => {
@@ -88,25 +87,6 @@ export const myProfile = async (req, res) => {
   }
 };
 
-// export const contact = async (req, res) => {
-//   try {
-//     const { name, email, message } = req.body;
-
-//     const userMessage = `Hey, I am ${name}. My email is ${email}. My message is ${message}.`;
-
-//     await sendMail(userMessage);
-
-//     return res.status(200).json({
-//       success: true,
-//       message: "Message Sent Successfully",
-//     });
-//   } catch (error) {
-//     return res.status(400).json({
-//       success: false,
-//       message: error.message,
-//     });
-//   }
-// };
 
 export const updateUser = async (req, res) => {
   try {
@@ -273,11 +253,14 @@ export const addProject = async (req, res) => {
       folder: "portfolio",
     });
     user.projects.unshift({
-      githubUrl,
-      liveUrl,
       title,
+      startdate,
+      enddate,
       description,
+      detailsDescribtion,
       techStack,
+      liveUrl,
+      githubUrl,
       image: {
         public_id: myCloud.public_id,
         url: myCloud.secure_url,

@@ -3,7 +3,7 @@ import { Typography } from "@mui/material";
 import TimeLine from "./TimeLine";
 import myPhoto from "../Images/mypic.jpg";
 import YoutubeCard from "./YoutubeCard/YoutubeCard";
-import Skills from "./Skills/Skills";
+import Skills from "./Skills";
 // import { BsGithub, BsInstagram, BsLinkedin, BsTwitter } from "react-icons/bs";
 // import { SiLeetcode } from "react-icons/si";
 

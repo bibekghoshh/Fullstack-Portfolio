@@ -1,7 +1,7 @@
 import { Button } from "@mui/material";
 import React from "react";
 import { Delete } from "@mui/icons-material";
-import { deleteSkill, getUser } from "../../actions/user";
+import { deleteSkill, getUser } from "../actions/user";
 import { useDispatch } from "react-redux";
 
 export const SkillCard = ({ SkillTitle, SkillImage, isAdmin = false, id }) => {

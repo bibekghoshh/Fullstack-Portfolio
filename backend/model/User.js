@@ -32,16 +32,6 @@ const userSchema = new mongoose.Schema({
     },
   ],
 
-  // skills: {
-  //   image5: {
-  //     public_id: String,
-  //     url: String,
-  //   },
-  //   image6: {
-  //     public_id: String,
-  //     url: String,
-  //   },
-  // },
 
   youtube: [
     {
@@ -56,15 +46,18 @@ const userSchema = new mongoose.Schema({
 
   projects: [
     {
-      githubUrl: String,
-      liveUrl: String,
       title: String,
+      startdate: Date,
+      enddate: Date,
+      description: String,
+      detailsDescribtion:String,
+      techStack: String,
+      liveUrl: String,
+      githubUrl: String,
       image: {
         public_id: String,
         url: String,
       },
-      description: String,
-      techStack: String,
     },
   ],
 
