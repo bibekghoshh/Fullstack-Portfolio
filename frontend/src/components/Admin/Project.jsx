@@ -4,7 +4,7 @@ import { addProject, getUser } from "../../actions/user";
 import { MdKeyboardBackspace } from "react-icons/md";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
-import { ProjectCard } from "../Projects/Projects";
+import { ProjectCard } from "../Projects/ProjectCard";
 import { toast } from "react-toastify";
 
 const Project = () => {
@@ -75,8 +75,7 @@ const Project = () => {
     "px-4 py-2 border-2 border-blue-500 rounded w-72 drop-shadow-md";
 
   return (
-    <div className="mt-28">
-      <div className="flex flex-col items-center justify-center gap-10">
+      <div className="flex flex-col items-center justify-center gap-10 py-5 mt-28">
         <form onSubmit={submitHandler} className="flex flex-col gap-4">
           <input
             type="text"
@@ -156,7 +155,7 @@ const Project = () => {
           </Link>
         </form>
 
-        <div className="adminPanelYoutubeVideos">
+        <div className="flex flex-col items-center justify-center w-full gap-12 border-4 border-green-800">
           {user &&
             user.projects &&
             user.projects.map((item) => (
@@ -174,7 +173,6 @@ const Project = () => {
             ))}
         </div>
       </div>
-    </div>
   );
 };
 

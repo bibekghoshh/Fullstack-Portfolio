@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Projects from "./components/Projects/Projects";
+import Projects from "./components/Projects/ProjectCard";
 import Login from "./components/Admin/Login";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -40,6 +40,7 @@ function App() {
                   youtubes={user && user.youtube ? user.youtube : []}
                   timelines={user && user.timeline ? user.timeline : []}
                   skills={user && user.skills ? user.skills : []}
+                  projects={user && user.projects? user.projects:[]}
                   about={user && user.about ? user.about : ""}
                 />
               }

@@ -15,7 +15,7 @@ export const SkillCard = ({ SkillTitle, SkillImage, isAdmin = false, id }) => {
   return (
     <>
       <div className="">
-        <div className="flex flex-col items-center gap-2  w-28 bg-gradient-to-r from-cyan-400 to-blue-500 py-4 rounded-md">
+        <div className="flex flex-col items-center gap-2 py-4 rounded-md w-28 bg-gradient-to-r from-cyan-400 to-blue-500">
           <div className="skill-image">
             <img className="w-12" src={SkillImage} alt="C Programming" />
           </div>
@@ -40,12 +40,12 @@ export const SkillCard = ({ SkillTitle, SkillImage, isAdmin = false, id }) => {
 const Skills = ({ skills }) => {
   return (
     <>
-    <div className="flex flex-col items-center mt-24  gap-8 bg-blue-100 py-16">
-      <div className="flex w-9/12 items-center">
-      <p className=" text-newblue font-semibold w-96 text-4xl font-roboto">Skills Acquired</p>
+    <div className="flex flex-col items-center gap-8 py-16 mt-24 bg-blue-100">
+      <div className="flex items-center w-9/12 gap-8">
+      <p className="text-4xl font-semibold text-newblue min-w-fit font-roboto">Skills Acquired</p>
         <div className="h-[3px] w-full bg-newblue"></div>
       </div>
-      <div className="flex flex-row gap-20 flex-wrap w-9/12 items-center justify-center ">
+      <div className="flex flex-row flex-wrap items-center justify-center w-9/12 gap-20 ">
         {skills.map((item) => (
           <SkillCard
             id={item._id}

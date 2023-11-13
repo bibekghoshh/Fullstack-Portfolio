@@ -4,14 +4,15 @@ import TimeLine from "./TimeLine";
 import myPhoto from "../Images/mypic.jpg";
 import YoutubeCard from "./YoutubeCard/YoutubeCard";
 import Skills from "./Skills";
+import Projects from "./Projects/ProjectCard";
 // import { BsGithub, BsInstagram, BsLinkedin, BsTwitter } from "react-icons/bs";
 // import { SiLeetcode } from "react-icons/si";
 
-const Home = ({ timelines, youtubes, skills }) => {
+const Home = ({ timelines, youtubes, skills, projects}) => {
   return (
-    <section className="mt-40  flex flex-col items-center">
+    <section className="flex flex-col items-center mt-40">
       <section className="flex w-[95%]  justify-center mb-20 gap-20" id="home">
-        <div className="w-1/2 flex flex-col gap-5">
+        <div className="flex flex-col w-1/2 gap-5">
           <div className="text-xl">
             <p>Hi, my name is</p>
             <h1 className="text-7xl font-roboto text-newblue">Bibek Ghosh</h1>
@@ -19,7 +20,7 @@ const Home = ({ timelines, youtubes, skills }) => {
               An aspiring <span className="role">Software developer</span>{" "}
             </h2>
           </div>
-          <p className="w-4/5 text-slate-400 my-2">
+          <p className="w-4/5 my-2 text-slate-400">
             I have built many industry grade projects from scratch and am armed
             with many technological skills useful for tech projects. Check out
             my projects below. :)
@@ -55,8 +56,8 @@ const Home = ({ timelines, youtubes, skills }) => {
         </div>
       </section>
 
-      <div className="flex flex-col justify-center items-center gap-8 mb-12">
-          <button className="bg-newblue text-white px-4 py-2 rounded-md font-medium hover:scale-105 transition duration-300">
+      <div className="flex flex-col items-center justify-center gap-8 mb-12">
+          <button className="px-4 py-2 font-medium text-white transition duration-300 rounded-md bg-newblue hover:scale-105">
             <a href="https://drive.google.com/file/d/1il1CfXN7Tosvghi5pytvmjj3LGEy7Ayn/view?usp=share_link">
               View Resume
             </a>
@@ -67,6 +68,8 @@ const Home = ({ timelines, youtubes, skills }) => {
         <TimeLine timelines={timelines} />
 
         <Skills skills={skills} />
+
+        <Projects projects={projects}/>
 
         <div className="homeYoutube">
           <Typography variant="h3">VIDEOS</Typography>

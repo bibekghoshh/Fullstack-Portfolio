@@ -13,8 +13,8 @@ const TimeLine = ({ timelines = [] }) => {
   console.log(timelines);
   return (
     <div className="flex flex-col items-center gap-10 ">
-      <div className="flex  w-9/12 items-center">
-      <p className=" text-newblue font-semibold w-80 text-4xl font-roboto">My Timeline</p>
+      <div className="flex items-center w-9/12 gap-8">
+      <p className="text-4xl font-semibold text-newblue min-w-fit font-roboto">My Timeline</p>
         <div className="h-[3px] w-full bg-newblue"></div>
       </div>
 
@@ -25,7 +25,7 @@ const TimeLine = ({ timelines = [] }) => {
             <TimelineOppositeContent
               sx={{ m: "auto 0" }}
               variant="body2"
-              className="text-slate-500  text-right "
+              className="text-right text-slate-500 "
             >
                <div className="font-medium">
                {new Date(item.startdate).toLocaleDateString('en-US',{ month: 'long', year: 'numeric' })}
