@@ -245,7 +245,7 @@ export const addYoutube = async (req, res) => {
 
 export const addProject = async (req, res) => {
   try {
-    const { githubUrl, liveUrl, title, image, description, techStack } = req.body;
+    const { githubUrl, liveUrl, title, image, description,detailsDescription, techStack,startdate,enddate } = req.body;
 
     const user = await User.findById(req.user._id);
 
@@ -257,7 +257,7 @@ export const addProject = async (req, res) => {
       startdate,
       enddate,
       description,
-      detailsDescribtion,
+      detailsDescription,
       techStack,
       liveUrl,
       githubUrl,

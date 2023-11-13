@@ -273,7 +273,7 @@ export const deleteYoutube = (id) => async (dispatch) => {
   }
 };
 
-export const addProject = (title, githubUrl, liveUrl, image, description, techStack) => async (dispatch) => {
+export const addProject = (title, githubUrl, liveUrl, image, description,detailsDescription, techStack,startdate,enddate) => async (dispatch) => {
     try {
       dispatch({
         type: "ADD_PROJECT_REQUEST",
@@ -281,7 +281,7 @@ export const addProject = (title, githubUrl, liveUrl, image, description, techSt
 
       const { data } = await axios.post(
         "/api/v1/admin/project/add",
-        { title, githubUrl, liveUrl, image, description, techStack },
+        { title, githubUrl, liveUrl, image, description,detailsDescription, techStack,startdate,enddate },
         {
           headers: {
             "Content-Type": "application/json",
@@ -316,34 +316,6 @@ export const deleteProject = (id) => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: "DELETE_PROJECT_FAILURE",
-      payload: error.response.data.message,
-    });
-  }
-};
-
-export const contactUs = (name, email, message) => async (dispatch) => {
-  try {
-    dispatch({
-      type: "CONTACT_US_REQUEST",
-    });
-
-    const { data } = await axios.post(
-      "/api/v1/contact",
-      { name, email, message },
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
-
-    dispatch({
-      type: "CONTACT_US_SUCCESS",
-      payload: data.message,
-    });
-  } catch (error) {
-    dispatch({
-      type: "CONTACT_US_FAILURE",
       payload: error.response.data.message,
     });
   }
