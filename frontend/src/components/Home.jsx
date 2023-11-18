@@ -1,14 +1,21 @@
 import React from "react";
-import { Typography } from "@mui/material";
 import TimeLine from "./TimeLine";
 import myPhoto from "../Images/mypic.jpg";
-import YoutubeCard from "./YoutubeCard/YoutubeCard";
+// import YoutubeCard from "./YoutubeCard/YoutubeCard";
 import Skills from "./Skills";
 import Projects from "./Projects/ProjectCard";
-// import { BsGithub, BsInstagram, BsLinkedin, BsTwitter } from "react-icons/bs";
-// import { SiLeetcode } from "react-icons/si";
+import {FaArrowCircleUp,FaArrowCircleDown} from "react-icons/fa";
+import {animateScroll as scroll} from "react-scroll";
 
 const Home = ({ timelines, youtubes, skills, projects}) => {
+
+  const scrollToTop=()=>{
+    scroll.scrollToTop();
+  }
+  const scrollToBottom=()=>{
+    scroll.scrollToBottom();
+  }
+  
   return (
     <section className="flex flex-col items-center mt-40">
       <section className="flex w-[95%]  justify-center mb-20 gap-20" id="home">
@@ -27,7 +34,6 @@ const Home = ({ timelines, youtubes, skills, projects}) => {
           </p>
           <div>
             <p>+917478828907</p>
-            {/* <p>bibek7478@gmail.com</p> */}
           </div>
           <div className="bg-bgcolor flex rounded-3xl text-white gap-5 w-[500px] h-24 items-center justify-center px-5">
             <div className="text-center">
@@ -64,6 +70,11 @@ const Home = ({ timelines, youtubes, skills, projects}) => {
           </button>
       </div>
 
+      <div className="fixed flex flex-col gap-2 text-2xl bottom-4 right-5 text-bgcolor">
+        <div onClick={scrollToTop}><FaArrowCircleUp/></div>
+        <div onClick={scrollToBottom}><FaArrowCircleDown/></div>
+      </div>
+
       <div className="home">
         <TimeLine timelines={timelines} />
 
@@ -71,7 +82,7 @@ const Home = ({ timelines, youtubes, skills, projects}) => {
 
         <Projects projects={projects}/>
 
-        <div className="homeYoutube">
+        {/* <div className="homeYoutube">
           <Typography variant="h3">VIDEOS</Typography>
 
           <div className="homeYoutubeWrapper">
@@ -85,7 +96,7 @@ const Home = ({ timelines, youtubes, skills, projects}) => {
               />
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

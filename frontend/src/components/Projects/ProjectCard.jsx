@@ -64,7 +64,7 @@ export const ProjectCard = ({ isAdmin = false, projectDetails }) => {
 const Projects = ({ projects }) => {
 
   return (
-    <div className="flex flex-col items-center w-full gap-10 mt-28" id="projects">
+    <div className="flex flex-col items-center w-full gap-10 mb-20 mt-28" id="projects">
       <div className="flex items-center w-9/12 gap-8">
         <p className="text-4xl font-semibold text-newblue min-w-fit font-roboto">
           My Projects

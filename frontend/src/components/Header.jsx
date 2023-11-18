@@ -35,8 +35,6 @@ const Header = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   },[])
-  // console.log(scrolling);
-  // console.log(window.scrollY);
 
   return (
     <>
