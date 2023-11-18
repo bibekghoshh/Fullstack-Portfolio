@@ -10,7 +10,7 @@ import { Event } from "@mui/icons-material";
 import Typography from "@mui/material/Typography";
 
 const TimeLine = ({ timelines = [] }) => {
-  console.log(timelines);
+  // console.log(timelines);
   return (
     <div className="flex flex-col items-center gap-10 ">
       <div className="flex items-center w-9/12 gap-8">

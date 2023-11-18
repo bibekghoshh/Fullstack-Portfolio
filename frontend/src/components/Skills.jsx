@@ -40,7 +40,7 @@ export const SkillCard = ({ SkillTitle, SkillImage, isAdmin = false, id }) => {
 const Skills = ({ skills }) => {
   return (
     <>
-    <div className="flex flex-col items-center gap-8 py-16 mt-24 bg-blue-100">
+    <div className="flex flex-col items-center gap-8 py-16 mt-24 bg-blue-100" id="skills">
       <div className="flex items-center w-9/12 gap-8">
       <p className="text-4xl font-semibold text-newblue min-w-fit font-roboto">Skills Acquired</p>
         <div className="h-[3px] w-full bg-newblue"></div>
