@@ -1,4 +1,5 @@
 import axios from "axios";
+// import { server } from "../server";
 
 export const getUser = () => async (dispatch) => {
   try {
@@ -6,7 +7,8 @@ export const getUser = () => async (dispatch) => {
       type: "GET_USER_REQUEST",
     });
 
-    const { data } = await axios.get("/api/v1/user");
+    // const { data } = await axios.get(`${server}/api/v1/user`);
+    const { data } = await axios.get("api/v1/user");
 
     dispatch({
       type: "GET_USER_SUCCESS",

@@ -1,6 +1,5 @@
 import React from "react";
 import TimeLine from "./TimeLine";
-import myPhoto from "../Images/mypic.jpg";
 // import YoutubeCard from "./YoutubeCard/YoutubeCard";
 import Skills from "./Skills";
 import Projects from "./Projects/ProjectCard";
@@ -55,8 +54,7 @@ const Home = ({ timelines, youtubes, skills, projects}) => {
         </div>
         <div className="col col2 ">
           <img
-            src={myPhoto}
-            // src="https://images.pexels.com/photos/19088938/pexels-photo-19088938.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            src="https://images.pexels.com/photos/19088938/pexels-photo-19088938.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             alt="bibek's phot"
             className="myphoto w-[400px] rounded-full"
           />
