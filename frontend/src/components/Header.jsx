@@ -9,18 +9,17 @@ import { MdLightMode } from "react-icons/md";
 const Header = () => {
   // eslint-disable-next-line
   const [navBarOpen, setNavBarOpen] = useState(false);
-  // eslint-disable-next-line
-  const [activeItem, setActiveItem] = useState("home");
   
+  const [activeItem, setActiveItem] = useState("");
   const [scrolling, setScrolling]=useState(false);
   // const [darkMode,setDarkMode]=useState(false);
 
-  // eslint-disable-next-line
   const handleItemClick = (itemName) => {
     setActiveItem(itemName);
-    setNavBarOpen(false);
+    // setNavBarOpen(false);
   };
   
+
   const handleScroll=()=>{
     if(window.scrollY>100){
       setScrolling(true);
@@ -49,37 +48,24 @@ const Header = () => {
 
         <div className="flex items-center gap-5">
           <ul className="flex gap-12 font-bold nav-items ">
-            <li>
-              <a href="#skills">Skills Acquired</a>
-              {/* <Link to="/" className="" onClick={() => handleItemClick("home")}>
-                Skills Acquired
-              </Link> */}
+            <li className="flex flex-col">
+              <a onClick={() => handleItemClick("skills")} href="#skills">Skills Acquired</a>
+              {activeItem==="skills"?(<div className="absolute h-1 bg-orange-300 w-28 top-[76px]"></div>):null}
+
             </li>
             <li>
-              <a href="#projects" >My Projects</a>
-              {/* <Link
-                to="/projects"
-                className=""
-                onClick={() => handleItemClick("projects")}
-              >
-                My Projects
-              </Link> */}
+              <a onClick={()=>{handleItemClick("projects")}} href="#projects" >My Projects</a>
+              {activeItem==="projects"?(<div className="absolute h-1 bg-orange-300 w-[90px] top-[76px]"></div>):null}
             </li>
             <li>
-              <a href="#github">Github</a>
-              {/* <Link
-                to="/contact"
-                className=""
-                onClick={() => handleItemClick("contact")}
-              >
-                Github
-              </Link> */}
+            <a onClick={()=>{handleItemClick("github")}} href="#github" >GitHub</a>
+              {activeItem==="github"?(<div className="absolute h-1 bg-orange-300 w-[60px] top-[76px]"></div>):null}
             </li>
           </ul>
           {/* <Link to="/account">
             <button className="loginbtn">Login</button>
           </Link> */}
-          <div className="flex items-center gap-5">
+          <div className="flex items-center gap-6">
             <div className="w-[0.5px] h-7 bg-newblue"></div>
             <a
           className="text-lg hover:scale-110"

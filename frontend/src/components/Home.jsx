@@ -6,6 +6,7 @@ import Skills from "./Skills";
 import Projects from "./Projects/ProjectCard";
 import {FaArrowCircleUp,FaArrowCircleDown} from "react-icons/fa";
 import {animateScroll as scroll} from "react-scroll";
+import GitHub from "./GitHub";
 
 const Home = ({ timelines, youtubes, skills, projects}) => {
 
@@ -37,12 +38,12 @@ const Home = ({ timelines, youtubes, skills, projects}) => {
           </div>
           <div className="bg-bgcolor flex rounded-3xl text-white gap-5 w-[500px] h-24 items-center justify-center px-5">
             <div className="text-center">
-              <p className="text-5xl font-bold font-roboto">12</p>
+              <p className="text-5xl font-bold font-roboto">{skills.length}</p>
               <p className="text-xs font-medium">VERIFIED SKILLS</p>
             </div>
             <div className="bg-slate-200 w-[1px] h-24"></div>
             <div className="text-center">
-              <p className="text-5xl font-bold font-roboto">7</p>
+              <p className="text-5xl font-bold font-roboto">{projects.length}</p>
               <p className="text-xs font-medium">PROFESSIONAL PROJECTS</p>
             </div>
             <div className="bg-slate-200 w-[1px] h-24"></div>
@@ -75,12 +76,14 @@ const Home = ({ timelines, youtubes, skills, projects}) => {
         <div onClick={scrollToBottom}><FaArrowCircleDown/></div>
       </div>
 
-      <div className="home">
+      <div>
         <TimeLine timelines={timelines} />
 
         <Skills skills={skills} />
 
         <Projects projects={projects}/>
+
+        <GitHub/>
 
         {/* <div className="homeYoutube">
           <Typography variant="h3">VIDEOS</Typography>

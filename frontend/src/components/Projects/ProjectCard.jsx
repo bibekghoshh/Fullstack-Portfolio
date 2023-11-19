@@ -5,14 +5,13 @@ import { deleteProject, getUser } from "../../actions/user";
 import { useDispatch } from "react-redux";
 
 export const ProjectCard = ({ isAdmin = false, projectDetails }) => {
-  
   const { githubUrl, liveUrl, title, description, techStack, _id } =
     projectDetails;
   const projectImage = projectDetails.image.url;
-  const technologies=techStack.split(",");
+  const technologies = techStack.split(",");
 
   const dispatch = useDispatch();
-  
+
   const deleteHandler = async (id) => {
     await dispatch(deleteProject(id));
     dispatch(getUser());
@@ -30,7 +29,16 @@ export const ProjectCard = ({ isAdmin = false, projectDetails }) => {
             <p className="w-9/12 text-sm text-slate-600">{description}</p>
             <p className="w-9/12 ml-12 text-sm text-slate-600">{description}</p>
           </div>
-          <div className="flex flex-wrap w-9/12 gap-4 py-4">{technologies.map((item)=>(<p className="px-4 py-2 text-xs bg-white rounded-md drop-shadow-md">{item}</p>))}</div>
+          <div className="flex flex-wrap w-9/12 gap-4 py-4">
+            {technologies.map((item, index) => (
+              <p
+                key={index}
+                className="px-4 py-2 text-xs bg-white rounded-md drop-shadow-md"
+              >
+                {item}
+              </p>
+            ))}
+          </div>
           <div className="flex gap-5">
             <button className="px-10 py-3 text-sm font-medium bg-yellow-400 border-2 rounded-full text-newblue drop-shadow-lg hover:bg-blue-50 hover:border-yellow-400">
               <a href={liveUrl} target="_blank" rel="noreferrer">
@@ -62,9 +70,11 @@ export const ProjectCard = ({ isAdmin = false, projectDetails }) => {
 };
 
 const Projects = ({ projects }) => {
-
   return (
-    <div className="flex flex-col items-center w-full gap-10 mb-20 mt-28" id="projects">
+    <div
+      className="flex flex-col items-center w-full gap-10 mb-20 mt-28"
+      id="projects"
+    >
       <div className="flex items-center w-9/12 gap-8">
         <p className="text-4xl font-semibold text-newblue min-w-fit font-roboto">
           My Projects
@@ -82,4 +92,3 @@ const Projects = ({ projects }) => {
 };
 
 export default Projects;
-
