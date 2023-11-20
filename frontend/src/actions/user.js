@@ -1,5 +1,5 @@
 import axios from "axios";
-// import { server } from "../server";
+import { server } from "../server";
 
 export const getUser = () => async (dispatch) => {
   try {
@@ -7,9 +7,8 @@ export const getUser = () => async (dispatch) => {
       type: "GET_USER_REQUEST",
     });
 
-    // const { data } = await axios.get(`${server}/api/v1/user`);
-    const { data } = await axios.get("api/v1/user");
-
+    const { data } = await axios.get(`${server}/user`);
+    // const { data } = await axios.get("api/v1/user");
     dispatch({
       type: "GET_USER_SUCCESS",
       payload: data.user,
@@ -28,8 +27,7 @@ export const login = (email, password) => async (dispatch) => {
       type: "LOGIN_REQUEST",
     });
 
-    const { data } = await axios.post(
-      "/api/v1/login",
+    const { data } = await axios.post(`${server}/login`,
       {
         email,
         password,
@@ -59,7 +57,7 @@ export const logout = () => async (dispatch) => {
       type: "LOGOUT_REQUEST",
     });
 
-    const { data } = await axios.get("/api/v1/logout");
+    const { data } = await axios.get(`${server}/logout`);
 
     dispatch({
       type: "LOGOUT_SUCCESS",
@@ -79,7 +77,7 @@ export const loadUser = () => async (dispatch) => {
       type: "LOAD_USER_REQUEST",
     });
 
-    const { data } = await axios.get("/api/v1/me");
+    const { data } = await axios.get(`${server}/me`);
 
     dispatch({
       type: "LOAD_USER_SUCCESS",
@@ -100,7 +98,7 @@ export const updateUser = (name, email, password, about) => async (dispatch) => 
       });
 
       const { data } = await axios.put(
-        "/api/v1/admin/update",
+        `${server}/admin/update`,
         {
           name,
           email,
@@ -133,7 +131,7 @@ export const addTimeline = (title, description, startdate, enddate) => async (di
     });
 
     const { data } = await axios.post(
-      "/api/v1/admin/timeline/add",
+      `${server}admin/timeline/add`,
       {
         title,
         description,
@@ -165,7 +163,7 @@ export const deleteTimeline = (id) => async (dispatch) => {
       type: "DELETE_TIMELINE_REQUEST",
     });
 
-    const { data } = await axios.delete(`/api/v1/admin/timeline/${id}`);
+    const { data } = await axios.delete(`${server}/admin/timeline/${id}`);
 
     dispatch({
       type: "DELETE_TIMELINE_SUCCESS",
@@ -186,7 +184,7 @@ export const addYoutube = (title, url, image) => async (dispatch) => {
     });
 
     const { data } = await axios.post(
-      "/api/v1/admin/youtube/add",
+      `${server}/admin/youtube/add`,
       { title, url, image },
       {
         headers: {
@@ -214,7 +212,7 @@ export const addSkills = (title, image) => async (dispatch) => {
     });
 
     const { data } = await axios.post(
-      "/api/v1/admin/skill/add",
+      `${server}/admin/skill/add`,
       { title, image },
       {
         headers: {
@@ -241,7 +239,7 @@ export const deleteSkill = (id) => async (dispatch) => {
       type: "DELETE_SKILL_REQUEST",
     });
 
-    const { data } = await axios.delete(`/api/v1/admin/skill/${id}`);
+    const { data } = await axios.delete(`${server}/admin/skill/${id}`);
 
     dispatch({
       type: "DELETE_SKILL_SUCCESS",
@@ -261,7 +259,7 @@ export const deleteYoutube = (id) => async (dispatch) => {
       type: "DELETE_YOUTUBE_REQUEST",
     });
 
-    const { data } = await axios.delete(`/api/v1/admin/youtube/${id}`);
+    const { data } = await axios.delete(`${server}/admin/youtube/${id}`);
 
     dispatch({
       type: "DELETE_YOUTUBE_SUCCESS",
@@ -282,7 +280,7 @@ export const addProject = (title, githubUrl, liveUrl, image, description,details
       });
 
       const { data } = await axios.post(
-        "/api/v1/admin/project/add",
+        `${server}/admin/project/add`,
         { title, githubUrl, liveUrl, image, description,detailsDescription, techStack,startdate,enddate },
         {
           headers: {
@@ -309,7 +307,7 @@ export const deleteProject = (id) => async (dispatch) => {
       type: "DELETE_PROJECT_REQUEST",
     });
 
-    const { data } = await axios.delete(`/api/v1/admin/project/${id}`);
+    const { data } = await axios.delete(`${server}/admin/project/${id}`);
 
     dispatch({
       type: "DELETE_PROJECT_SUCCESS",

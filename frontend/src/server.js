@@ -1,3 +1,3 @@
-// export const server="https://fullstack-portfolio-backend.vercel.app/api/v1";
+// export const server="https://portfolio-backend-ryzk.onrender.com";
 
-export const server="https://localhost:4000/"
+export const server="http://localhost:4000/api/v1"

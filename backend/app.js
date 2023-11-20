@@ -4,7 +4,8 @@ export const app = express();
 import cors from 'cors';
 
 app.use(cors({
-  origin: "https://localhost:3000",
+  origin: 'http://localhost:3000',
+  // origin: '*',
   credentials: true,
 }));
 
