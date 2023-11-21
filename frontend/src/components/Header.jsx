@@ -2,17 +2,17 @@ import React, {  useEffect, useState } from "react";
 import logo from "../Images/logo.jpg";
 import { BsGithub,BsLinkedin } from "react-icons/bs";
 import { MdLightMode } from "react-icons/md";
-// import menuIcon from "../../Images/menu.png";
-// import crossIcon from "../../Images/cross.png";
 // import { Link } from "react-router-dom";
 
 const Header = () => {
   // eslint-disable-next-line
   const [navBarOpen, setNavBarOpen] = useState(false);
   
+  const[nameInNavbar,setNameInNavbar]=useState(false);
   const [activeItem, setActiveItem] = useState("");
   const [scrolling, setScrolling]=useState(false);
-  // const [darkMode,setDarkMode]=useState(false);
+  const [darkMode,setDarkMode]=useState(true);
+
 
   const handleItemClick = (itemName) => {
     setActiveItem(itemName);
@@ -23,7 +23,9 @@ const Header = () => {
   const handleScroll=()=>{
     if(window.scrollY>100){
       setScrolling(true);
+      setNameInNavbar(true);
     }else{
+      setNameInNavbar(false);
       setScrolling(false);
     }
   }
@@ -35,22 +37,33 @@ const Header = () => {
     };
   },[])
 
+  const themeTogglerHandleClick=()=>{
+      setDarkMode(!darkMode);
+      const rootHtmlElement=document.querySelector("html");
+      if(darkMode){
+        rootHtmlElement.classList.add('dark');
+      }else{
+        rootHtmlElement.classList.remove('dark')
+      }
+  }
+
   return (
     <>
-      <header className={`fixed top-0 z-50 flex items-center justify-around w-full h-20 drop-shadow-lg transition duration-300 ${scrolling?'bg-bgcolor text-white':'text-newblue'}`}>
-        <div className="nav-logo">
+      <header className={`fixed top-0 z-50 flex items-center justify-around w-full h-20 drop-shadow-lg transition duration-300 dark:text-white  ${scrolling?'bg-bgcolor text-white dark:bg-violet-500':'text-newblue'}`}>
+        <div className="flex items-center gap-4">
           <img
             src={logo}
             alt="logo"
-            className="w-12 rounded-full border-[1px] border-slate-700"
+            className="w-12 rounded-full border-[1px] border-slate-700 dark:border-white"
           />
+          <p className={`text-2xl font-medium ${nameInNavbar?'block':'hidden'}`}>Bibek Ghosh</p>
         </div>
 
         <div className="flex items-center gap-5">
           <ul className="flex gap-12 font-bold nav-items ">
             <li className="flex flex-col">
               <a onClick={() => handleItemClick("skills")} href="#skills">Skills Acquired</a>
-              {activeItem==="skills"?(<div className="absolute h-1 bg-orange-300 w-28 top-[76px]"></div>):null}
+              {activeItem==="skills"?(<div className="absolute h-1 bg-orange-300 w-28 top-[76px] dark:bg-white"></div>):null}
 
             </li>
             <li>
@@ -66,7 +79,7 @@ const Header = () => {
             <button className="loginbtn">Login</button>
           </Link> */}
           <div className="flex items-center gap-6">
-            <div className="w-[0.5px] h-7 bg-newblue"></div>
+            <div className="w-[0.5px] h-7 bg-newblue dark:bg-white"></div>
             <a
           className="text-lg hover:scale-110"
           href="https://www.linkedin.com/in/bibekghoshh/"
@@ -82,7 +95,7 @@ const Header = () => {
           <BsGithub />
         </a>
         
-        <button className="text-xl hover:scale-110"><MdLightMode/></button>
+        <button className="text-xl hover:scale-110" onClick={themeTogglerHandleClick}><MdLightMode/></button>
           </div>
           
         </div>

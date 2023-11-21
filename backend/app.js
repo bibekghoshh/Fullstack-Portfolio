@@ -5,8 +5,8 @@ import cors from 'cors';
 
 app.use(cors({
   // origin: 'http://localhost:3000',
-  origin: 'https://www.bibekghosh.tech',
-  // origin: '*',
+  // origin: 'https://www.bibekghosh.tech',
+  origin: '*',
   credentials: true,
 }));
 

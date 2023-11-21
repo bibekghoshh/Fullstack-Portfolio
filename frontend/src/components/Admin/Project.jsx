@@ -4,7 +4,7 @@ import { addProject, getUser } from "../../actions/user";
 import { MdKeyboardBackspace } from "react-icons/md";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
-import { ProjectCard } from "../Projects/ProjectCard";
+import { ProjectCard } from "../ProjectCard";
 import { toast } from "react-toastify";
 
 const Project = () => {

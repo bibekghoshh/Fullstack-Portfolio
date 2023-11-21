@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Projects from "./components/Projects/ProjectCard";
 import Login from "./components/Admin/Login";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -46,18 +45,17 @@ function App() {
               }
             />
 
-            <Route
+            {/* <Route
               path="/projects"
-              // element={<Projects projects={user.projects} />}
               element={
                 user && user.projects ? (
                   <Projects projects={user.projects} />
                 ) : null
               }
-            />
+            /> */}
 
             <Route
-              path="/account"
+              path="/login"
               element={isAuthenticated ? <AdminPanel /> : <Login />}
             />
             <Route

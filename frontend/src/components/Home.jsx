@@ -2,7 +2,7 @@ import React from "react";
 import TimeLine from "./TimeLine";
 // import YoutubeCard from "./YoutubeCard/YoutubeCard";
 import Skills from "./Skills";
-import Projects from "./Projects/ProjectCard";
+import Projects from "./ProjectCard";
 import {FaArrowCircleUp,FaArrowCircleDown} from "react-icons/fa";
 import {animateScroll as scroll} from "react-scroll";
 import GitHub from "./GitHub";
@@ -17,12 +17,12 @@ const Home = ({ timelines, youtubes, skills, projects}) => {
   }
   
   return (
-    <section className="flex flex-col items-center mt-40">
+    <section className="flex flex-col items-center pt-40 dark:bg-slate-800 dark:text-white">
       <section className="flex w-[95%]  justify-center mb-20 gap-20" id="home">
         <div className="flex flex-col w-1/2 gap-5">
           <div className="text-xl">
             <p>Hi, my name is</p>
-            <h1 className="text-7xl font-roboto text-newblue">Bibek Ghosh</h1>
+            <h1 className="text-7xl font-roboto text-newblue dark:text-white">Bibek Ghosh</h1>
             <h2>
               An aspiring <span className="role">Software developer</span>{" "}
             </h2>
@@ -35,7 +35,7 @@ const Home = ({ timelines, youtubes, skills, projects}) => {
           <div>
             <p>+917478828907</p>
           </div>
-          <div className="bg-bgcolor flex rounded-3xl text-white gap-5 w-[500px] h-24 items-center justify-center px-5">
+          <div className="bg-bgcolor dark:bg-violet-500 flex rounded-3xl text-white gap-5 w-[500px] h-24 items-center justify-center px-5">
             <div className="text-center">
               <p className="text-5xl font-bold font-roboto">{skills.length}</p>
               <p className="text-xs font-medium">VERIFIED SKILLS</p>
@@ -62,14 +62,14 @@ const Home = ({ timelines, youtubes, skills, projects}) => {
       </section>
 
       <div className="flex flex-col items-center justify-center gap-8 mb-12">
-          <button className="px-4 py-2 font-medium text-white transition duration-300 rounded-md bg-newblue hover:scale-105">
+          <button className="px-4 py-2 font-medium text-white transition duration-300 rounded-md bg-newblue hover:scale-105 dark:bg-violet-500">
             <a href="https://drive.google.com/file/d/1il1CfXN7Tosvghi5pytvmjj3LGEy7Ayn/view?usp=share_link">
               View Resume
             </a>
           </button>
       </div>
 
-      <div className="fixed flex flex-col gap-2 text-2xl bottom-4 right-5 text-bgcolor">
+      <div className="fixed flex flex-col gap-2 text-2xl bottom-4 right-5 text-bgcolor dark:text-violet-500">
         <div onClick={scrollToTop}><FaArrowCircleUp/></div>
         <div onClick={scrollToBottom}><FaArrowCircleDown/></div>
       </div>

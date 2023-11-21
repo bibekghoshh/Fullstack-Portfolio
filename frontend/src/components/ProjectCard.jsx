@@ -1,7 +1,7 @@
 import { Button } from "@mui/material";
 import React from "react";
 import { Delete } from "@mui/icons-material";
-import { deleteProject, getUser } from "../../actions/user";
+import { deleteProject, getUser } from "../actions/user";
 import { useDispatch } from "react-redux";
 
 export const ProjectCard = ({ isAdmin = false, projectDetails }) => {
@@ -19,33 +19,33 @@ export const ProjectCard = ({ isAdmin = false, projectDetails }) => {
 
   return (
     <>
-      <div className="flex items-center justify-around  px-5 py-8 bg-blue-50 rounded-3xl w-[75%] drop-shadow-xl">
-        <div className="flex flex-col w-8/12 gap-2 border-blue-500">
+      <div className="flex items-center justify-around  px-5 py-8 bg-blue-50 rounded-3xl w-[75%] drop-shadow-xl dark:bg-slate-900">
+        <div className="flex flex-col w-8/12 gap-2">
           <div>
-            <h2 className="mb-2 text-4xl font-bold text-newblue">{title}</h2>
+            <h2 className="mb-2 text-4xl font-bold text-newblue dark:text-white">{title}</h2>
             <p className="mb-1 font-medium">June 2023</p>
           </div>
           <div>
-            <p className="w-9/12 text-sm text-slate-600">{description}</p>
-            <p className="w-9/12 ml-12 text-sm text-slate-600">{description}</p>
+            <p className="w-9/12 text-sm text-slate-600 dark:text-slate-200">{description}</p>
+            <p className="w-9/12 ml-12 text-sm text-slate-600 dark:text-slate-200">{description}</p>
           </div>
           <div className="flex flex-wrap w-9/12 gap-4 py-4">
             {technologies.map((item, index) => (
               <p
                 key={index}
-                className="px-4 py-2 text-xs bg-white rounded-md drop-shadow-md"
+                className="px-4 py-2 text-xs bg-white rounded-md drop-shadow-md dark:bg-slate-800"
               >
                 {item}
               </p>
             ))}
           </div>
           <div className="flex gap-5">
-            <button className="px-10 py-3 text-sm font-medium bg-yellow-400 border-2 rounded-full text-newblue drop-shadow-lg hover:bg-blue-50 hover:border-yellow-400">
+            <button className="px-10 py-3 text-sm font-medium transition duration-500 bg-yellow-400 border-2 rounded-full text-newblue drop-shadow-lg hover:bg-blue-50 hover:border-yellow-400 dark:bg-white dark:hover:bg-slate-800 dark:border-white dark:text-blue-500">
               <a href={liveUrl} target="_blank" rel="noreferrer">
                 View Live
               </a>
             </button>
-            <button className="px-8 py-3 text-sm font-medium bg-white border-2 rounded-full border-newblue text-newblue drop-shadow-lg">
+            <button className="px-8 py-3 text-sm font-medium bg-white border-2 rounded-full border-newblue text-newblue drop-shadow-lg dark:bg-slate-900 dark:border-white dark:text-white">
               <a href={githubUrl} target="_blank" rel="noreferrer">
                 View-Project Details
               </a>
@@ -76,10 +76,10 @@ const Projects = ({ projects }) => {
       id="projects"
     >
       <div className="flex items-center w-9/12 gap-8">
-        <p className="text-4xl font-semibold text-newblue min-w-fit font-roboto">
+        <p className="text-4xl font-semibold text-newblue min-w-fit font-roboto dark:text-white">
           My Projects
         </p>
-        <div className="h-[3px] w-full bg-newblue"></div>
+        <div className="h-[3px] w-full bg-newblue dark:bg-white"></div>
       </div>
 
       <div className="flex flex-col items-center w-full gap-8 py-5 ">
