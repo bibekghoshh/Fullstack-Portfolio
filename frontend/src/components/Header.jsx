@@ -50,7 +50,7 @@ const Header = () => {
   return (
     <>
       <header
-        className={`fixed top-0 z-50 flex items-center justify-between px-[5%] w-full h-20 drop-shadow-lg transition duration-300 dark:text-white  ${
+        className={`fixed top-0 z-50 flex items-center text-newblue justify-between px-[5%] w-full h-20 drop-shadow-lg transition duration-300 dark:text-white  ${
           scrolling
             ? "bg-bgcolor text-white dark:bg-violet-500"
             : "text-newblue"
@@ -71,19 +71,19 @@ const Header = () => {
           </p>
         </div>
 
-        <div className="flex flex-col">
+        <div className="flex flex-col lg:flex-row">
           <div
-            className={`items-center fixed right-0 py-16 text-white bg-sky-950 w-full  px-5 top-0 flex-col gap-10 lg:gap-5 lg:flex-row lg:relative lg:flex lg:bg-transparent  ${
-              navBarOpen ? "flex " : "hidden"
+            className={`items-center fixed right-0 py-16 lg:py-0  bg-sky-950 w-full  px-5 top-0 flex-col gap-10 lg:gap-5 lg:flex-row lg:relative lg:flex lg:bg-transparent  ${
+              navBarOpen ? "flex  text-white" : "hidden"
             }`}
           >
             <ul className="flex flex-col items-center gap-6 font-bold lg:gap-12 lg:flex-row nav-items">
-              <li className="flex flex-col">
+              <li className="flex flex-col items-center">
                 <a
                   onClick={() => navbarItemHandleClick("skills")}
                   href="#skills"
                   className={` px-6 py-1 ${
-                    activeItem === "skills"
+                   navBarOpen && activeItem === "skills"
                       ? "bg-violet-400 rounded-full"
                       : null
                   }`}
@@ -91,17 +91,17 @@ const Header = () => {
                   Skills Acquired
                 </a>
                 {activeItem === "skills" ? (
-                  <div className="absolute h-1 bg-orange-300 w-28 top-[76px] dark:bg-white hidden lg:block"></div>
+                  <div className="absolute h-[6px] bg-orange-300 w-28 top-[51px] dark:bg-white hidden lg:block"></div>
                 ) : null}
               </li>
-              <li>
+              <li className="flex flex-col items-center">
                 <a
                   onClick={() => {
                     navbarItemHandleClick("projects");
                   }}
                   href="#projects"
                   className={`px-6 py-1 ${
-                    activeItem === "projects"
+                    navBarOpen && activeItem === "projects"
                       ? "bg-violet-400  rounded-full"
                       : null
                   }`}
@@ -109,17 +109,17 @@ const Header = () => {
                   My Projects
                 </a>
                 {activeItem === "projects" ? (
-                  <div className="absolute h-1 bg-orange-300 w-[90px] top-[76px] hidden lg:block"></div>
+                  <div className="absolute h-[6px] bg-orange-300 w-24 top-[51px] hidden lg:block"></div>
                 ) : null}
               </li>
-              <li>
+              <li className="flex flex-col items-center">
                 <a
                   onClick={() => {
                     navbarItemHandleClick("github");
                   }}
                   href="#github"
                   className={`px-6 py-1 ${
-                    activeItem === "github"
+                    navBarOpen &&  activeItem === "github"
                       ? "bg-violet-400  rounded-full"
                       : null
                   }`}
@@ -127,7 +127,7 @@ const Header = () => {
                   GitHub
                 </a>
                 {activeItem === "github" ? (
-                  <div className="absolute h-1 bg-orange-300 w-[60px] top-[76px] hidden lg:block"></div>
+                  <div className="absolute h-[6px] bg-orange-300 w-16 top-[51px] hidden lg:block"></div>
                 ) : null}
               </li>
             </ul>
@@ -152,15 +152,15 @@ const Header = () => {
               </a>
             </div>
           </div>
-          <div className={`fixed flex gap-5 top-6 right-12 lg:absolute  border-8 ${navBarOpen?'text-white':null} `}>
+          <div className={` flex items-center gap-5 ${navBarOpen?'text-white':null} `}>
             <button
-              className="mt-1 mr-12 text-xl hover:scale-110"
+              className="text-xl hover:scale-110"
               onClick={themeTogglerHandleClick}
             >
               <MdLightMode />
             </button>
             <button
-              className="fixed text-3xl lg:hidden right-12"
+              className="z-50 text-3xl lg:hidden"
               onClick={navbarHandleClick}
             >
               {" "}
