@@ -8,7 +8,7 @@ const Footer = () => {
     <div className="flex flex-col items-center justify-center gap-5 h-80 bg-slate-200 dark:bg-slate-900 dark:text-white">
       <p className="text-4xl font-medium text-newblue dark:text-violet-500">Get in touch</p>
       <div className="w-[80%] h-[3px] bg-bgcolor dark:bg-violet-500"></div>
-      <div className="flex gap-12">
+      <div className="flex flex-col gap-2 lg:gap-12 lg:flex-row">
         <a className="flex items-center gap-2" href="tel:+917478828907">
           <SlCallOut className="text-2xl" />
           <p className="font-medium text-slate-600 dark:text-white">+917478828907</p>
