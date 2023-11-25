@@ -17,46 +17,46 @@ const Home = ({ timelines, youtubes, skills, projects}) => {
   }
   
   return (
-    <section className="flex flex-col items-center pt-40 dark:bg-slate-800 dark:text-white">
-      <section className="flex w-[95%]  justify-center mb-20 gap-20 flex-col-reverse items-center lg:flex-row" id="home">
-        <div className="flex flex-col w-1/2 gap-5">
-          <div className="text-xl">
-            <p>Hi, my name is</p>
-            <h1 className="text-7xl font-roboto text-newblue dark:text-white">Bibek Ghosh</h1>
+    <section className="flex flex-col items-center pt-20 lg:pt-40 dark:bg-slate-800 dark:text-white ">
+      <section className="flex w-[95%] justify-center lg:mb-20 mb-10 lg:gap-20 gap-8 flex-col-reverse items-center lg:flex-row" id="home">
+        <div className="flex flex-col gap-5 lg:w-1/2 w-[95%] items-center lg:items-start">
+          <div className="flex flex-col items-center gap-2 text-xl lg:items-start">
+            <p className="text-sm font-medium lg:text-base text-slate-700 dark:text-slate-400">Hi, my name is</p>
+            <h1 className="text-4xl font-medium lg:text-7xl font-roboto text-newblue dark:text-white">Bibek Ghosh</h1>
             <h2>
               An aspiring <span className="role">Software developer</span>{" "}
             </h2>
           </div>
-          <p className="w-4/5 my-2 text-slate-400">
+          <p className="my-2 text-center lg:w-4/5 text-slate-400">
             I have built many industry grade projects from scratch and am armed
             with many technological skills useful for tech projects. Check out
             my projects below. :)
           </p>
-          <div>
+          <div className="font-medium ">
             <p>+917478828907</p>
           </div>
-          <div className="bg-bgcolor dark:bg-violet-500 flex rounded-3xl text-white gap-5 w-[500px] h-24 items-center justify-center px-5">
+          <div className="bg-bgcolor dark:bg-violet-500 flex rounded-3xl text-white gap-5 w-[95vw] lg:w-[500px] h-24 items-center justify-around px-5">
             <div className="text-center">
-              <p className="text-5xl font-bold font-roboto">{skills.length}</p>
-              <p className="text-xs font-medium">VERIFIED SKILLS</p>
+              <p className="text-3xl font-bold lg:text-5xl font-roboto">{skills.length}</p>
+              <p className="font-medium lg:text-xs text-[8px]">VERIFIED SKILLS</p>
             </div>
-            <div className="bg-slate-200 w-[1px] h-24"></div>
+            <div className="bg-slate-200 w-[1px] h-24 hidden lg:block"></div>
             <div className="text-center">
-              <p className="text-5xl font-bold font-roboto">{projects.length}</p>
-              <p className="text-xs font-medium">PROFESSIONAL PROJECTS</p>
+              <p className="text-3xl font-bold lg:text-5xl font-roboto">{projects.length}</p>
+              <p className="font-medium lg:text-xs text-[8px]">PROFESSIONAL PROJECTS</p>
             </div>
-            <div className="bg-slate-200 w-[1px] h-24"></div>
+            <div className="bg-slate-200 w-[1px] h-24 hidden lg:block"></div>
             <div className="text-center">
-              <p className="text-5xl font-bold font-roboto">200+</p>
-              <p className="text-xs font-medium">DSA PROBLEMS SOLVED</p>
+              <p className="text-3xl font-bold lg:text-5xl font-roboto">200+</p>
+              <p className="font-medium lg:text-xs text-[8px]">DSA PROBLEMS SOLVED</p>
             </div>
           </div>
         </div>
-        <div className="col col2 ">
+        <div>
           <img
             src="https://images.pexels.com/photos/19088938/pexels-photo-19088938.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-            alt="bibek's phot"
-            className="myphoto w-[400px] rounded-full"
+            alt="bibek's img"
+            className=" lg:w-[400px] rounded-full w-48"
           />
         </div>
       </section>

@@ -50,7 +50,7 @@ const Header = () => {
   return (
     <>
       <header
-        className={`fixed top-0 z-50 flex items-center text-newblue justify-between px-[5%] w-full h-20 drop-shadow-lg transition duration-300 dark:text-white  ${
+        className={`fixed top-0 z-50 flex items-center text-newblue justify-between lg:px-[5%] px-2 w-full lg:h-20 h-16 drop-shadow-lg transition duration-300 dark:text-white  ${
           scrolling
             ? "bg-bgcolor text-white dark:bg-violet-500"
             : "text-newblue"
