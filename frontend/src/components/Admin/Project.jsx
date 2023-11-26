@@ -148,7 +148,7 @@ const Project = () => {
             Add
           </Button>
           <Link
-            to="/account"
+            to="/login"
             className="flex items-center justify-center gap-2 py-1 font-medium border-2 bg-slate-100"
           >
             <MdKeyboardBackspace /> BACK

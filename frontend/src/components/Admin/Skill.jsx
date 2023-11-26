@@ -77,7 +77,7 @@ const Skill = () => {
           <Button type="submit" variant="contained" disabled={loading}>
             Add
           </Button>
-          <Link to="/account" className="flex items-center justify-center gap-2 py-1 font-medium border-2 bg-slate-100">
+          <Link to="/login" className="flex items-center justify-center gap-2 py-1 font-medium border-2 bg-slate-100">
              <MdKeyboardBackspace /> BACK
           </Link>
 

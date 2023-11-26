@@ -5,7 +5,7 @@ import { deleteProject, getUser } from "../actions/user";
 import { useDispatch } from "react-redux";
 
 export const ProjectCard = ({ isAdmin = false, projectDetails }) => {
-  console.log(projectDetails);
+  // console.log(projectDetails);
   const { githubUrl, liveUrl, title, description, techStack, _id } =
     projectDetails;
   const projectImage = projectDetails.image.url;
@@ -20,15 +20,15 @@ export const ProjectCard = ({ isAdmin = false, projectDetails }) => {
 
   return (
     <>
-      <div className="flex flex-col-reverse md:flex-row items-center md:justify-around gap-8 md:gap-0 px-5 py-8 bg-blue-50 rounded-3xl lg:w-[1024px] w-full drop-shadow-xl dark:bg-slate-900 ">
+      <div className="flex flex-col-reverse md:flex-row items-center md:justify-around gap-8 md:gap-0 px-6 py-8 bg-blue-50 rounded-3xl lg:w-[1024px] w-full drop-shadow-xl dark:bg-slate-900 ">
         <div className="flex flex-col items-center w-full gap-2 md:w-8/12 md:items-start">
           <div>
             <h2 className="mb-2 text-2xl font-bold md:text-4xl text-newblue dark:text-white">{title}</h2>
             <p className="mb-1 font-medium text-center md:text-left">June 2023</p>
           </div>
           <div>
-            <p className="w-full text-sm md:w-9/12 text-slate-500 dark:text-slate-200">{description}</p>
-            <p className="ml-12 text-sm w-[90%] md:w-9/12 text-slate-600 dark:text-slate-200">{description}</p>
+            <p className="w-full text-sm text-gray-700 md:w-9/12 dark:text-slate-200">{description}</p>
+            <p className="ml-12 text-sm w-[90%] md:w-9/12 text-gray-700 dark:text-slate-200">{description}</p>
           </div>
           <div className="flex flex-wrap justify-center w-full gap-2 py-1 md:py-4 md:gap-4 md:w-9/12 md:justify-start">
             {technologies.map((item, index) => (
@@ -76,7 +76,7 @@ const Projects = ({ projects }) => {
       className="flex flex-col items-center w-full gap-10 mb-20 mt-28"
       id="projects"
     >
-      <div className="flex items-center gap-8 md:w-9/12">
+      <div className="flex items-center gap-8 md:w-8/12">
         <p className="text-3xl font-semibold md:text-4xl text-newblue min-w-fit font-roboto dark:text-white">
           My Projects
         </p>

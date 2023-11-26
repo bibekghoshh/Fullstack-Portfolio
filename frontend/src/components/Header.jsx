@@ -11,7 +11,7 @@ const Header = () => {
   const [activeItem, setActiveItem] = useState("");
   const [scrolling, setScrolling] = useState(false);
   const [darkMode, setDarkMode] = useState(true);
-  console.log(navBarOpen);
+  
   const navbarItemHandleClick = (itemName) => {
     setActiveItem(itemName);
     setNavBarOpen(false);
@@ -50,7 +50,7 @@ const Header = () => {
   return (
     <>
       <header
-        className={`fixed top-0 z-50 flex items-center text-newblue justify-between lg:px-[5%] px-2 w-full lg:h-20 h-16 drop-shadow-lg transition duration-300 dark:text-white  ${
+        className={`fixed top-0 z-50 flex items-center text-newblue justify-between lg:px-[15%] px-2 w-full lg:h-20 h-16 drop-shadow-xl transition duration-300 dark:text-white  ${
           scrolling
             ? "bg-bgcolor text-white dark:bg-violet-500"
             : "text-newblue"
@@ -73,11 +73,11 @@ const Header = () => {
 
         <div className="flex flex-col lg:flex-row">
           <div
-            className={`items-center fixed right-0 py-16 lg:py-0  bg-sky-950 w-full  px-5 top-0 flex-col gap-10 lg:gap-5 lg:flex-row lg:relative lg:flex lg:bg-transparent  ${
+            className={`items-center fixed right-0 py-16 lg:py-0  bg-sky-950 w-full  px-5 top-0 flex-col gap-10 lg:gap-1 lg:flex-row lg:relative lg:flex lg:bg-transparent  ${
               navBarOpen ? "flex  text-white" : "hidden"
             }`}
           >
-            <ul className="flex flex-col items-center gap-6 font-bold lg:gap-12 lg:flex-row nav-items">
+            <ul className="flex flex-col items-center gap-6 font-bold lg:gap-2 lg:flex-row nav-items">
               <li className="flex flex-col items-center">
                 <a
                   onClick={() => navbarItemHandleClick("skills")}

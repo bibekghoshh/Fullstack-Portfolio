@@ -42,7 +42,7 @@ const Skills = ({ skills }) => {
         className="flex flex-col items-center w-[99.7vw] gap-8 py-12 mt-24 bg-blue-100 md:py-16 dark:bg-slate-900"
         id="skills"
       >
-        <div className="flex items-center gap-8 md:w-9/12 ">
+        <div className="flex items-center gap-8 md:w-8/12 ">
           <p className="text-3xl font-semibold md:text-4xl text-newblue min-w-fit font-roboto dark:text-white">
             Skills Acquired
           </p>

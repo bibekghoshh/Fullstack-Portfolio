@@ -85,7 +85,7 @@ const Timeline = () => {
             Add
           </Button>
           
-          <Link to="/account" className="flex items-center justify-center gap-2 font-medium border-4 rounded-md bg-slate-200">
+          <Link to="/login" className="flex items-center justify-center gap-2 font-medium border-4 rounded-md bg-slate-200">
             <MdKeyboardBackspace /> BACK 
           </Link>
         </form>
