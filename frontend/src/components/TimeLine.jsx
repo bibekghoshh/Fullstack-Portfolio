@@ -13,11 +13,11 @@ const TimeLine = ({ timelines = [] }) => {
   // console.log(timelines);
   return (
     <div className="flex flex-col items-center gap-10 ">
-      <div className="flex items-center sm:gap-8 gap-3 sm:w-9/12 w-[90%]">
-        <p className="text-4xl font-semibold text-newblue min-w-fit font-roboto dark:text-white">
+      <div className="flex items-center gap-3 sm:gap-8 md:w-9/12 ">
+        <p className="text-3xl font-semibold md:text-4xl text-newblue min-w-fit font-roboto dark:text-white">
           My Timeline
         </p>
-        <div className="h-[3px] w-full bg-newblue dark:bg-white"></div>
+        <div className="h-[3px] w-full bg-newblue dark:bg-white hidden md:block"></div>
       </div>
 
       <Timeline position="alternate" sx={{ px: "0px" }}>

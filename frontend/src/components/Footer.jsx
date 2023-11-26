@@ -21,7 +21,7 @@ const Footer = () => {
           <p className="font-medium text-slate-600 dark:text-white">bibek7478@gmail.com</p>
         </a>
       </div>
-      <div className="flex gap-6 mt-2 text-4xl">
+      <div className="flex flex-wrap gap-6 mt-2 text-4xl">
         <a
           className="transition duration-300 hover:scale-110 hover:text-sky-900"
           href="https://github.com/bibekghoshh"
