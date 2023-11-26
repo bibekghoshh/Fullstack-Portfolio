@@ -17,7 +17,7 @@ const Home = ({ timelines, youtubes, skills, projects}) => {
   }
   
   return (
-    <section className="flex flex-col items-center pt-20 lg:pt-40 dark:bg-slate-800 dark:text-white ">
+    <section className="flex flex-col items-center pt-20 lg:pt-40 dark:bg-slate-800 dark:text-white">
       <section className="flex w-[95%] justify-center lg:mb-20 mb-10 lg:gap-20 gap-8 flex-col-reverse items-center lg:flex-row" id="home">
         <div className="flex flex-col gap-5 lg:w-1/2 w-[95%] items-center lg:items-start">
           <div className="flex flex-col items-center gap-2 text-xl lg:items-start">

@@ -155,19 +155,13 @@ const Project = () => {
           </Link>
         </form>
 
-        <div className="flex flex-col items-center justify-center w-full gap-12 border-4 border-green-800">
+        <div className="flex flex-col items-center justify-center w-full gap-12 ">
           {user &&
             user.projects &&
             user.projects.map((item) => (
               <ProjectCard
-                id={item._id}
                 key={item._id}
-                githubUrl={item.githubUrl}
-                liveUrl={item.liveUrl}
-                projectImage={item.image.url}
-                projectTitle={item.title}
-                description={item.description}
-                technologies={item.techStack}
+                projectDetails={item}
                 isAdmin={true}
               />
             ))}

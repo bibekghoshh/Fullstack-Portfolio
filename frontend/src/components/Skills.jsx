@@ -39,7 +39,7 @@ const Skills = ({ skills }) => {
   return (
     <>
       <div
-        className="flex flex-col items-center w-[100vw] gap-8 py-12 mt-24 bg-blue-100  md:py-16 dark:bg-slate-900"
+        className="flex flex-col items-center w-[99.7vw] gap-8 py-12 mt-24 bg-blue-100 md:py-16 dark:bg-slate-900"
         id="skills"
       >
         <div className="flex items-center gap-8 md:w-9/12 ">

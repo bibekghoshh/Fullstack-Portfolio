@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import logo from "../Images/logo.jpg";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
-import { MdLightMode } from "react-icons/md";
+import { MdLightMode,MdNightlight } from "react-icons/md";
 import { IoMenu, IoClose } from "react-icons/io5";
 // import { Link } from "react-router-dom";
 
@@ -156,8 +156,8 @@ const Header = () => {
             <button
               className="text-xl hover:scale-110"
               onClick={themeTogglerHandleClick}
-            >
-              <MdLightMode />
+            >{darkMode?<MdNightlight />:<MdLightMode />}
+              
             </button>
             <button
               className="z-50 text-3xl lg:hidden"

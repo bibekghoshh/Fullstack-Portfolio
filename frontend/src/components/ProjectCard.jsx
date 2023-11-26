@@ -5,6 +5,7 @@ import { deleteProject, getUser } from "../actions/user";
 import { useDispatch } from "react-redux";
 
 export const ProjectCard = ({ isAdmin = false, projectDetails }) => {
+  console.log(projectDetails);
   const { githubUrl, liveUrl, title, description, techStack, _id } =
     projectDetails;
   const projectImage = projectDetails.image.url;
