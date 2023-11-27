@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import logo from "../Images/logo.jpg";
+import logo from "../Images/logo.ico";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { MdLightMode,MdNightlight } from "react-icons/md";
 import { IoMenu, IoClose } from "react-icons/io5";
