@@ -1,21 +1,15 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-// import Home from "./components/Home";
-// import Header from "./components/Header";
-// import Footer from "./components/Footer";
-// import Login from "./components/Admin/Login";
 import { Suspense, lazy, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getUser, loadUser } from "./actions/user";
-// import AdminPanel from "./components/Admin/AdminPanel";
-// import Timeline from "./components/Admin/Timeline";
-// import Youtube from "./components/Admin/Youtube";
-// import Project from "./components/Admin/Project";
-// import Skill from "./components/Admin/Skill";
-// import Loader from "./components/Loader/Loader";
+
+import HeaderShimmer from "./components/ShimmerUi/HeaderShimmer";
+import HomeShimmer from "./components/ShimmerUi/HomeShimmer";
+
 
 const Header = lazy(() => import("./components/Header"));
 const Home = lazy(() => import("./components/Home"));
-const Login=lazy(()=>import("./components/Admin/Login"))
+const Login = lazy(() => import("./components/Admin/Login"));
 const AdminPanel = lazy(() => import("./components/Admin/AdminPanel"));
 const Timeline = lazy(() => import("./components/Admin/Timeline"));
 const Project = lazy(() => import("./components/Admin/Project"));
@@ -36,7 +30,7 @@ function App() {
 
   return (
     <Router>
-      <Suspense fallback={<div>Header is loading.....</div>}>
+      <Suspense fallback={<HeaderShimmer />}>
         <Header />
       </Suspense>
 
@@ -44,7 +38,7 @@ function App() {
         <Route
           path="/"
           element={
-            <Suspense fallback={<div>Loading.......</div>}>
+            <Suspense fallback={<HomeShimmer/>}>
               <Home
                 youtubes={user && user.youtube ? user.youtube : []}
                 timelines={user && user.timeline ? user.timeline : []}
@@ -55,7 +49,6 @@ function App() {
             </Suspense>
           }
         />
-
         <Route
           path="/login"
           element={
@@ -118,7 +111,8 @@ function App() {
           }
         />
       </Routes>
-      <Suspense fallback={<div>Footer is Loading..</div>}>
+
+      <Suspense fallback={<div></div>}>
         <Footer />
       </Suspense>
     </Router>

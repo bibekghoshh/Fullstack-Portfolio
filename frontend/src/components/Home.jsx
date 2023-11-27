@@ -2,15 +2,14 @@ import React, { Suspense, lazy } from "react";
 // import YoutubeCard from "./YoutubeCard/YoutubeCard";
 import { FaArrowCircleUp, FaArrowCircleDown } from "react-icons/fa";
 import { animateScroll as scroll } from "react-scroll";
-// import TimeLine from "./TimeLine";
-// import Skills from "./Skills";
-// import Projects from "./ProjectCard";
-// import GitHub from "./GitHub";
+import TimeLineShimmer from "./ShimmerUi/TimelineShimmer";
+
 
 const TimeLine = lazy(() => import("./TimeLine"));
 const Skills = lazy(() => import("./Skills"));
 const Projects = lazy(() => import("./ProjectCard"));
 const GitHub = lazy(() => import("./GitHub"));
+
 
 const Home = ({ timelines, youtubes, skills, projects }) => {
   const scrollToTop = () => {
@@ -103,26 +102,21 @@ const Home = ({ timelines, youtubes, skills, projects }) => {
       </div>
 
       <div>
-        <Suspense fallback={<div>Timeline is loading</div>}>
+        <Suspense fallback={<TimeLineShimmer />}>
           <TimeLine timelines={timelines} />{" "}
         </Suspense>
-        {/* <TimeLine timelines={timelines} /> */}
+
         <Suspense fallback={<div>Skills are loading</div>}>
           <Skills skills={skills} />
         </Suspense>
-        {/* <Skills skills={skills} /> */}
 
         <Suspense fallback={<div>Project is loading</div>}>
           <Projects projects={projects} />
         </Suspense>
 
-        {/* <Projects projects={projects}/> */}
-
         <Suspense fallback={<div>loading</div>}>
           <GitHub />
         </Suspense>
-
-        {/* <GitHub/> */}
 
         {/* <div className="homeYoutube">
           <Typography variant="h3">VIDEOS</Typography>
