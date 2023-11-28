@@ -32,6 +32,7 @@ export const login = (email, password) => async (dispatch) => {
         email,
         password,
       },
+      { withCredentials: true },
       {
         headers: {
           "Content-Type": "application/json",
@@ -57,7 +58,7 @@ export const logout = () => async (dispatch) => {
       type: "LOGOUT_REQUEST",
     });
 
-    const { data } = await axios.get(`${server}/logout`);
+    const { data } = await axios.get(`${server}/logout`,{ withCredentials: true });
 
     dispatch({
       type: "LOGOUT_SUCCESS",
@@ -77,7 +78,7 @@ export const loadUser = () => async (dispatch) => {
       type: "LOAD_USER_REQUEST",
     });
 
-    const { data } = await axios.get(`${server}/me`);
+    const { data } = await axios.get(`${server}/me`,{ withCredentials: true });
 
     dispatch({
       type: "LOAD_USER_SUCCESS",
@@ -105,6 +106,7 @@ export const updateUser = (name, email, password, about) => async (dispatch) => 
           password,
           about,
         },
+        { withCredentials: true },
         {
           headers: {
             "Content-Type": "application/json",
@@ -138,6 +140,7 @@ export const addTimeline = (title, description, startdate, enddate) => async (di
         startdate,
         enddate,
       },
+      { withCredentials: true },
       {
         headers: {
           "Content-Type": "application/json",
@@ -163,7 +166,7 @@ export const deleteTimeline = (id) => async (dispatch) => {
       type: "DELETE_TIMELINE_REQUEST",
     });
 
-    const { data } = await axios.delete(`${server}/admin/timeline/${id}`);
+    const { data } = await axios.delete(`${server}/admin/timeline/${id}`,{ withCredentials: true });
 
     dispatch({
       type: "DELETE_TIMELINE_SUCCESS",
@@ -185,7 +188,7 @@ export const addYoutube = (title, url, image) => async (dispatch) => {
 
     const { data } = await axios.post(
       `${server}/admin/youtube/add`,
-      { title, url, image },
+      { title, url, image },{ withCredentials: true },
       {
         headers: {
           "Content-Type": "application/json",
@@ -213,7 +216,7 @@ export const addSkills = (title, image) => async (dispatch) => {
 
     const { data } = await axios.post(
       `${server}/admin/skill/add`,
-      { title, image },
+      { title, image },{ withCredentials: true },
       {
         headers: {
           "Content-Type": "application/json",
@@ -239,7 +242,7 @@ export const deleteSkill = (id) => async (dispatch) => {
       type: "DELETE_SKILL_REQUEST",
     });
 
-    const { data } = await axios.delete(`${server}/admin/skill/${id}`);
+    const { data } = await axios.delete(`${server}/admin/skill/${id}`,{ withCredentials: true });
 
     dispatch({
       type: "DELETE_SKILL_SUCCESS",
@@ -259,7 +262,7 @@ export const deleteYoutube = (id) => async (dispatch) => {
       type: "DELETE_YOUTUBE_REQUEST",
     });
 
-    const { data } = await axios.delete(`${server}/admin/youtube/${id}`);
+    const { data } = await axios.delete(`${server}/admin/youtube/${id}`,{ withCredentials: true });
 
     dispatch({
       type: "DELETE_YOUTUBE_SUCCESS",
@@ -281,7 +284,7 @@ export const addProject = (title, githubUrl, liveUrl, image, description,details
 
       const { data } = await axios.post(
         `${server}/admin/project/add`,
-        { title, githubUrl, liveUrl, image, description,detailsDescription, techStack,startdate,enddate },
+        { title, githubUrl, liveUrl, image, description,detailsDescription, techStack,startdate,enddate },{ withCredentials: true },
         {
           headers: {
             "Content-Type": "application/json",
@@ -307,7 +310,7 @@ export const deleteProject = (id) => async (dispatch) => {
       type: "DELETE_PROJECT_REQUEST",
     });
 
-    const { data } = await axios.delete(`${server}/admin/project/${id}`);
+    const { data } = await axios.delete(`${server}/admin/project/${id}`,{ withCredentials: true });
 
     dispatch({
       type: "DELETE_PROJECT_SUCCESS",
