@@ -3,6 +3,7 @@ import React, { Suspense, lazy } from "react";
 import { FaArrowCircleUp, FaArrowCircleDown } from "react-icons/fa";
 import { animateScroll as scroll } from "react-scroll";
 import TimeLineShimmer from "./ShimmerUi/TimelineShimmer";
+import HomeShimmer from "./ShimmerUi/HomeShimmer";
 
 
 const TimeLine = lazy(() => import("./TimeLine"));
@@ -19,7 +20,7 @@ const Home = ({ timelines, youtubes, skills, projects }) => {
     scroll.scrollToBottom();
   };
 
-  return (
+  return skills.length===0?<HomeShimmer/>:(
     <section className="flex flex-col items-center pt-20 lg:pt-40 dark:bg-slate-800 dark:text-white">
       <section
         className="flex w-[95%] justify-center lg:mb-20 mb-10 lg:gap-5 gap-8 flex-col-reverse items-center lg:flex-row"

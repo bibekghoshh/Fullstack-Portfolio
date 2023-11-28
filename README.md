@@ -5,7 +5,8 @@
  Welcome to my Fullstack Portfolio Web App! This project showcases my skills and projects in a visually appealing and user-friendly manner. With a combination of interactive features, modern design, and a robust tech stack, it provides an immersive experience for visitors.
 
 ### Key Features
-1. **Interactive Header:** Engage visitors with an interactive header that sets the tone for a dynamic user experience.
+
+1. **Lazy Loading:** Enhance page load times and user experience by implementing lazy loading for optimized performance.
 
 2. **Single User Base Login Auth:** Ensure personalized interactions through a secure single-user login authentication system.
 
@@ -15,9 +16,10 @@
 
 5. **Dark Mode and Light Mode:** Cater to user preferences with a sleek design that seamlessly transitions between dark and light modes.
 
-6. **Lazy Loading:** Enhance page load times and user experience by implementing lazy loading for optimized performance.
+6. **Shimmer Effect:** Elevate the UI experience with a shimmer effect, adding a touch of sophistication and interactivity.
 
-7. **Shimmer Effect:** Elevate the UI experience with a shimmer effect, adding a touch of sophistication and interactivity.
+7. **Interactive Header:** Engage visitors with an interactive header that sets the tone for a dynamic user experience.
+
 
 
 ### Tech Stack Highlights
