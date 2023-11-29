@@ -5,6 +5,8 @@ export const isAuthenticated = async (req, res, next) => {
   try {
     const { token } = req.cookies;
 
+    // console.log(req.cookies.token);
+
     if (!token) {
       return res.status(400).json({
         success: false,

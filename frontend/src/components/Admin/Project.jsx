@@ -72,7 +72,7 @@ const Project = () => {
   }, [error, message, dispatch, loginMessage]);
 
   const inputStyle =
-    "px-4 py-2 border-2 border-blue-500 rounded w-72 drop-shadow-md";
+    "px-4 py-2 border-2 border-blue-500 rounded sm:w-96 drop-shadow-md w-[90vw]";
 
   return (
       <div className="flex flex-col items-center justify-center gap-10 py-5 mt-28">
@@ -99,22 +99,22 @@ const Project = () => {
             className={inputStyle}
           />
 
-          <input
+          <textarea
             type="text"
             placeholder="Description"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             className={inputStyle}
           />
-          <input
+          <textarea
             type="text"
-            placeholder="Bullet Points should seperated by coma (,)"
+            placeholder="Bullet Points should seperated by dot (.)"
             value={detailsDescription}
             onChange={(e) => setDetailsDescription(e.target.value)}
             className={inputStyle}
           />
 
-          <input
+          <textarea
             type="text"
             placeholder="tech should sepeerated by coma(,)"
             value={techStack}

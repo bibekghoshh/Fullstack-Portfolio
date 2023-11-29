@@ -50,7 +50,7 @@ const userSchema = new mongoose.Schema({
       startdate: Date,
       enddate: Date,
       description: String,
-      detailsDescribtion:String,
+      detailsDescription:String,
       techStack: String,
       liveUrl: String,
       githubUrl: String,

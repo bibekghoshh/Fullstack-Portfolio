@@ -6,10 +6,23 @@ import { useDispatch } from "react-redux";
 
 export const ProjectCard = ({ isAdmin = false, projectDetails }) => {
   // console.log(projectDetails);
-  const { githubUrl, liveUrl, title, description, techStack, _id } =
-    projectDetails;
+  const {
+    githubUrl,
+    liveUrl,
+    title,
+    startdate,
+    enddate,
+    description,
+    detailsDescription,
+    techStack,
+    _id,
+  } = projectDetails;
   const projectImage = projectDetails.image.url;
   const technologies = techStack.split(",");
+  const projectDescription = detailsDescription
+    ? detailsDescription.split(".")
+    : null;
+  console.log("bibek" + detailsDescription);
 
   const dispatch = useDispatch();
 
@@ -23,12 +36,32 @@ export const ProjectCard = ({ isAdmin = false, projectDetails }) => {
       <div className="flex flex-col-reverse md:flex-row items-center md:justify-around gap-8 md:gap-0 px-6 py-8 bg-blue-50 rounded-3xl lg:w-[1024px] w-full drop-shadow-xl dark:bg-slate-900 ">
         <div className="flex flex-col items-center w-full gap-2 md:w-8/12 md:items-start">
           <div>
-            <h2 className="mb-2 text-2xl font-bold md:text-4xl text-newblue dark:text-white">{title}</h2>
-            <p className="mb-1 font-medium text-center md:text-left">June 2023</p>
+            <h2 className="mb-2 text-2xl font-bold md:text-4xl text-newblue dark:text-white">
+              {title}
+            </h2>
+            <p className="mb-1 font-medium text-center md:text-left">
+              {new Date(startdate).toLocaleDateString("en-US", {
+                month: "short",
+                year: "numeric",
+              })}{" "}
+              -{" "}
+              {new Date(enddate).toLocaleDateString("en-US", {
+                month: "short",
+                year: "numeric",
+              })}
+            </p>
           </div>
           <div>
-            <p className="w-full text-sm text-gray-700 md:w-9/12 dark:text-slate-200">{description}</p>
-            <p className="ml-12 text-sm w-[90%] md:w-9/12 text-gray-700 dark:text-slate-200">{description}</p>
+            <p className="w-full text-sm text-gray-700 md:w-9/12 dark:text-slate-200">
+              {description}
+            </p>
+            <div className="ml-12 text-sm w-[90%] md:w-9/12 text-gray-700 dark:text-slate-200">
+              {projectDescription &&
+                projectDescription.map((item, index) => (
+                  <p key={index}>• {item}</p>
+                ))}
+            </div>
+            {/* <div className="ml-12 text-sm w-[90%] md:w-9/12 text-gray-700 dark:text-slate-200">{detailsDescription}</div> */}
           </div>
           <div className="flex flex-wrap justify-center w-full gap-2 py-1 md:py-4 md:gap-4 md:w-9/12 md:justify-start">
             {technologies.map((item, index) => (

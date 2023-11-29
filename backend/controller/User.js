@@ -22,7 +22,8 @@ export const login = async (req, res) => {
       .cookie("token", token, {
         expires: new Date(Date.now() + 6000000),
         httpOnly: true,
-        sameSite: 'None', 
+        sameSite: 'None',
+        secure: true,
       })
       .json({
         success: true,
@@ -43,6 +44,8 @@ export const logout = async (req, res) => {
       .cookie("token", null, {
         expires: new Date(Date.now()),
         httpOnly: true,
+        sameSite: 'None',
+        secure: true,
       })
       .json({
         success: true,

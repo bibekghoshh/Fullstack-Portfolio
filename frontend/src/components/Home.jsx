@@ -66,7 +66,7 @@ const Home = ({ timelines, youtubes, skills, projects }) => {
             </div>
             <div className="bg-slate-200 w-[1px] h-24 hidden lg:block"></div>
             <div className="text-center">
-              <p className="text-3xl font-bold lg:text-5xl font-roboto">200+</p>
+              <p className="text-3xl font-bold lg:text-5xl font-roboto">150+</p>
               <p className="font-medium lg:text-xs text-[8px]">
                 DSA PROBLEMS SOLVED
               </p>
