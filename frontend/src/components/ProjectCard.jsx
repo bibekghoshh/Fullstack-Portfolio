@@ -1,11 +1,12 @@
 import { Button } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import { Delete } from "@mui/icons-material";
 import { deleteProject, getUser } from "../actions/user";
 import { useDispatch } from "react-redux";
+import { IoIosArrowDown,IoIosArrowUp } from "react-icons/io";
 
 export const ProjectCard = ({ isAdmin = false, projectDetails }) => {
-  // console.log(projectDetails);
+
   const {
     githubUrl,
     liveUrl,
@@ -22,7 +23,9 @@ export const ProjectCard = ({ isAdmin = false, projectDetails }) => {
   const projectDescription = detailsDescription
     ? detailsDescription.split(".")
     : null;
-  console.log("bibek" + detailsDescription);
+
+const [showAll,setShowAll]=useState(false);
+const visibleTechStack=showAll?technologies:technologies.slice(0,5);
 
   const dispatch = useDispatch();
 
@@ -33,7 +36,7 @@ export const ProjectCard = ({ isAdmin = false, projectDetails }) => {
 
   return (
     <>
-      <div className="flex flex-col-reverse md:flex-row items-center md:justify-around gap-8 md:gap-0 px-6 py-8 bg-blue-50 rounded-3xl lg:w-[1024px] w-full drop-shadow-xl dark:bg-slate-900 ">
+      <div className="flex flex-col-reverse md:flex-row items-center md:items-start md:justify-around gap-8 md:gap-0 px-6 py-8 bg-blue-50 rounded-3xl lg:w-[1024px] w-full drop-shadow-xl dark:bg-slate-900 ">
         <div className="flex flex-col items-center w-full gap-2 md:w-8/12 md:items-start">
           <div>
             <h2 className="mb-2 text-2xl font-bold md:text-4xl text-newblue dark:text-white">
@@ -61,17 +64,23 @@ export const ProjectCard = ({ isAdmin = false, projectDetails }) => {
                   <p key={index}>• {item}</p>
                 ))}
             </div>
-            {/* <div className="ml-12 text-sm w-[90%] md:w-9/12 text-gray-700 dark:text-slate-200">{detailsDescription}</div> */}
           </div>
-          <div className="flex flex-wrap justify-center w-full gap-2 py-1 md:py-4 md:gap-4 md:w-9/12 md:justify-start">
-            {technologies.map((item, index) => (
+          <div className="flex flex-wrap justify-center w-full gap-2 py-1 md:py-4 md:w-9/12 md:justify-start">
+            {visibleTechStack.map((item, index) => (
               <p
                 key={index}
-                className="px-2 py-1 text-xs bg-white rounded-md md:px-4 md:py-2 drop-shadow-md dark:bg-slate-800"
+                className="px-2 py-1 text-xs bg-white rounded-md md:px-4 md:py-2 drop-shadow-md dark:bg-slate-800 dark:text-white"
               >
                 {item}
               </p>
-            ))}
+            ))}{technologies.length > 5 && (
+              <button
+                className="flex items-center gap-1 px-1 py-1 text-xs font-medium rounded-md md:px-4 md:py-2 drop-shadow-md dark:text-white"
+                onClick={() => setShowAll(!showAll)}
+              >
+                {showAll ? 'Hide Skills' : `+${technologies.length-5} more`}{showAll?<IoIosArrowUp />:<IoIosArrowDown />}
+              </button>
+            )}
           </div>
           <div className="flex flex-col gap-5 md:flex-row">
             <button className="px-10 py-3 text-sm font-medium transition duration-500 bg-yellow-400 border-2 rounded-full text-newblue drop-shadow-lg hover:bg-blue-50 hover:border-yellow-400 dark:bg-white dark:hover:bg-slate-800 dark:border-white dark:text-blue-500">
@@ -86,7 +95,7 @@ export const ProjectCard = ({ isAdmin = false, projectDetails }) => {
             </button>
           </div>
         </div>
-        <div>
+        <div className="mt-0 md:mt-8"> 
           <img className="w-48 md:w-80" src={projectImage} alt="Project" />
         </div>
       </div>
