@@ -4,9 +4,9 @@ export const app = express();
 import cors from 'cors';
 
 app.use(cors({
-  origin: 'http://localhost:3000',
-  // origin: 'https://www.bibekghosh.tech',
-  // origin: '*',
+  // origin: 'http://localhost:3000',
+  // origin: 'https://www.bibekghosh.live',
+  origin: '*',
   credentials: true,
 }));
 
