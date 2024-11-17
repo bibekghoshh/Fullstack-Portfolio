@@ -37,17 +37,17 @@ const Home = () => {
               Bibek Ghosh
             </h1>
             <h2>
-              An aspiring <span className="role">Software developer</span>{" "}
+              An <span className="role">Frontend developer</span>{" "}
             </h2>
           </div>
           <p className="my-2 text-center lg:w-4/5 text-slate-400 lg:text-start">
-            I have built many industry grade projects from scratch and am armed
+            {/* I have built many industry grade projects from scratch and am armed
             with many technological skills useful for tech projects. Check out
-            my projects below. :)
+            my projects below. :) */}
+            I’m a passionate frontend developer with hands-on experience in modern web technologies. Having completed a full-stack JavaScript bootcamp, I’m constantly learning and refining my skills. I enjoy solving complex web development problems, creating seamless user experiences. Currently seeking frontend development opportunities to apply my knowledge and grow professionally.
+            {/* I love to Dig and Explore Fundamental Engineering concepts around the WEB by listening to conferences, podcasts and reading articles over the internet. */}
           </p>
-          <div className="font-semibold ">
-            <p>+917478828907</p>
-          </div>
+
           <div className="bg-bgcolor dark:bg-violet-500 flex rounded-3xl text-white gap-5 w-[95vw] lg:w-[500px] h-24 items-center justify-around px-5">
             <div className="text-center">
               <p className="text-3xl font-bold lg:text-5xl font-roboto">
@@ -97,12 +97,12 @@ const Home = () => {
         </button>
       </div>
 
-      <div className="fixed z-50 flex flex-col gap-2 text-2xl bottom-4 right-5 text-bgcolor dark:text-violet-500">
+      <div className="fixed z-50 flex flex-col gap-2 text-3xl bottom-4 right-4 text-bgcolor dark:text-violet-500">
         <div onClick={scrollToTop}>
           <FaArrowCircleUp />
         </div>
         <div onClick={scrollToBottom}>
-          <FaArrowCircleDown />
+          <FaArrowCircleDown/>
         </div>
       </div>
 
