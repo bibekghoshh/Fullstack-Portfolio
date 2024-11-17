@@ -1,3 +1,10 @@
+import { FaCss3Alt, FaGitAlt, FaGithub, FaHtml5, FaNodeJs, FaReact } from "react-icons/fa";
+import { IoLogoJavascript } from "react-icons/io";
+import { TbBrandTailwind } from "react-icons/tb";
+import { SiMongodb } from "react-icons/si";
+import { MdOutlineCatchingPokemon } from "react-icons/md";
+import { RiNpmjsFill } from "react-icons/ri";
+
 export const timeline = [
   {
     title: "Ineuron.ai",
@@ -86,69 +93,17 @@ export const projects = [
   },
 ];
 
-export const skills = [
-  {
-    image: {
-      public_id: "portfolio/f2fmbrliyvgumfjfgewj",
-      url: "https://res.cloudinary.com/dq2yspfur/image/upload/v1701180881/portfolio/f2fmbrliyvgumfjfgewj.jpg",
-    },
-    title: "Tailwind",
-    _id: "6565f5d28ca228131a85aba7",
-  },
-  {
-    image: {
-      public_id: "portfolio/veieb1qlskutp8p97zev",
-      url: "https://res.cloudinary.com/dq2yspfur/image/upload/v1687415253/portfolio/veieb1qlskutp8p97zev.jpg",
-    },
-    title: "JavaScript",
-    _id: "6493e9d5bb2b7b1198d1821f",
-  },
-  {
-    image: {
-      public_id: "portfolio/t19z3p4wuchklqniksiv",
-      url: "https://res.cloudinary.com/dq2yspfur/image/upload/v1687415235/portfolio/t19z3p4wuchklqniksiv.jpg",
-    },
-    title: "React JS",
-    _id: "6493e9c3bb2b7b1198d181f9",
-  },
-  {
-    image: {
-      public_id: "portfolio/apzvsovbkqmjrhnssz4n",
-      url: "https://res.cloudinary.com/dq2yspfur/image/upload/v1687415214/portfolio/apzvsovbkqmjrhnssz4n.jpg",
-    },
-    title: "Node JS",
-    _id: "6493e9afbb2b7b1198d181d6",
-  },
-  {
-    image: {
-      public_id: "portfolio/xiegqigryhq6eysvcoh2",
-      url: "https://res.cloudinary.com/dq2yspfur/image/upload/v1687415134/portfolio/xiegqigryhq6eysvcoh2.jpg",
-    },
-    title: "CSS",
-    _id: "6493e95fbb2b7b1198d18198",
-  },
-  {
-    image: {
-      public_id: "portfolio/ek3oobtftdwbgv0wfgpx",
-      url: "https://res.cloudinary.com/dq2yspfur/image/upload/v1687415014/portfolio/ek3oobtftdwbgv0wfgpx.jpg",
-    },
-    title: "HTML",
-    _id: "6493e8e6bb2b7b1198d1817b",
-  },
-  {
-    image: {
-      public_id: "portfolio/kwk5yhaotpoysixlrfek",
-      url: "https://res.cloudinary.com/dq2yspfur/image/upload/v1687414906/portfolio/kwk5yhaotpoysixlrfek.jpg",
-    },
-    title: "XML",
-    _id: "6493e87abb2b7b1198d18161",
-  },
-  {
-    image: {
-      public_id: "portfolio/gn3igvjj4bsous843l96",
-      url: "https://res.cloudinary.com/dq2yspfur/image/upload/v1687414759/portfolio/gn3igvjj4bsous843l96.jpg",
-    },
-    title: "Java",
-    _id: "6493e7e8bb2b7b1198d1814a",
-  },
+
+export const skillsWithIcons = [
+  { title: "ReactJs", icons: <FaReact /> },
+  {title:"Javascript",icons:<IoLogoJavascript />},
+  { title: "Html", icons:<FaHtml5 /> },
+  { title: "Css", icons: <FaCss3Alt />},
+  { title: "Tailwind", icons: <TbBrandTailwind /> },
+  { title: "Git", icons: <FaGitAlt /> },
+  { title: "Github", icons: <FaGithub /> },
+  { title: "MongoDB", icons: <SiMongodb /> },
+  { title: "Npm", icons:<RiNpmjsFill />},
+  { title: "NodeJs", icons: <FaNodeJs /> },
+  { title: "Dev tool", icons: <MdOutlineCatchingPokemon /> },
 ];

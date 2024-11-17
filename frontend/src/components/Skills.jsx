@@ -1,12 +1,13 @@
 import React from "react";
+import { skillsWithIcons } from "../Data/Data";
 
-export const SkillCard = ({ SkillTitle, SkillImage, id }) => {
+export const SkillCard = ({ SkillTitle, SkillIcon}) => {
 
   return (
     <>
       <div className="flex flex-col items-center w-16 gap-2 py-2 md:py-4 md:w-24 rounded-2xl bg-gradient-to-br from-blue-300 via-blue-500 to-blue-500 dark:from-gray-800 dark:via-gray-700 dark:to-gray-600 drop-shadow-lg">
-        <div className="skill-image">
-          <img className="w-6 md:w-8" src={SkillImage} alt="C Programming" />
+        <div className="text-4xl text-white">
+          {SkillIcon}
         </div>
         <div className="text-xs text-white md:text-base">
           <h4>{SkillTitle}</h4>
@@ -16,7 +17,7 @@ export const SkillCard = ({ SkillTitle, SkillImage, id }) => {
   );
 };
 
-const Skills = ({ skills }) => {
+const Skills = () => {
   return (
     <>
       <div
@@ -30,12 +31,11 @@ const Skills = ({ skills }) => {
           <div className="h-[3px] w-full bg-newblue dark:bg-white hidden md:block"></div>
         </div>
         <div className="flex flex-row flex-wrap items-center justify-center lg:gap-20 lg:w-[1000px] w-full gap-10">
-          {skills.map((item) => (
+          {skillsWithIcons.map((item,index) => (
             <SkillCard
-              id={item._id}
-              key={item._id}
+              key={index}
               SkillTitle={item.title}
-              SkillImage={item.image.url}
+              SkillIcon={item.icons}
             />
           ))}
         </div>
