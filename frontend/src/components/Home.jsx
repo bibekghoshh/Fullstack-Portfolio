@@ -3,7 +3,9 @@ import React, { Suspense, lazy } from "react";
 import { FaArrowCircleUp, FaArrowCircleDown } from "react-icons/fa";
 import { animateScroll as scroll } from "react-scroll";
 import TimeLineShimmer from "./ShimmerUi/TimelineShimmer";
-import HomeShimmer from "./ShimmerUi/HomeShimmer";
+// import HomeShimmer from "./ShimmerUi/HomeShimmer";
+import { projects, skills, timeline } from "../Data/Data";
+
 
 
 const TimeLine = lazy(() => import("./TimeLine"));
@@ -12,7 +14,7 @@ const Projects = lazy(() => import("./ProjectCard"));
 const GitHub = lazy(() => import("./GitHub"));
 
 
-const Home = ({ timelines, youtubes, skills, projects }) => {
+const Home = () => {
   const scrollToTop = () => {
     scroll.scrollToTop();
   };
@@ -20,7 +22,7 @@ const Home = ({ timelines, youtubes, skills, projects }) => {
     scroll.scrollToBottom();
   };
 
-  return skills.length===0?<HomeShimmer/>:(
+  return(
     <section className="flex flex-col items-center pt-20 lg:pt-40 dark:bg-slate-800 dark:text-white">
       <section
         className="flex w-[95%] justify-center lg:mb-20 mb-10 lg:gap-5 gap-8 flex-col-reverse items-center lg:flex-row"
@@ -49,7 +51,7 @@ const Home = ({ timelines, youtubes, skills, projects }) => {
           <div className="bg-bgcolor dark:bg-violet-500 flex rounded-3xl text-white gap-5 w-[95vw] lg:w-[500px] h-24 items-center justify-around px-5">
             <div className="text-center">
               <p className="text-3xl font-bold lg:text-5xl font-roboto">
-                {skills.length}
+                8
               </p>
               <p className="font-medium lg:text-xs text-[8px]">
                 VERIFIED SKILLS
@@ -58,7 +60,7 @@ const Home = ({ timelines, youtubes, skills, projects }) => {
             <div className="bg-slate-200 w-[1px] h-24 hidden lg:block"></div>
             <div className="text-center">
               <p className="text-3xl font-bold lg:text-5xl font-roboto">
-                {projects.length}
+                {5}
               </p>
               <p className="font-medium lg:text-xs text-[8px]">
                 PROFESSIONAL PROJECTS
@@ -66,7 +68,7 @@ const Home = ({ timelines, youtubes, skills, projects }) => {
             </div>
             <div className="bg-slate-200 w-[1px] h-24 hidden lg:block"></div>
             <div className="text-center">
-              <p className="text-3xl font-bold lg:text-5xl font-roboto">150+</p>
+              <p className="text-3xl font-bold lg:text-5xl font-roboto">120+</p>
               <p className="font-medium lg:text-xs text-[8px]">
                 DSA PROBLEMS SOLVED
               </p>
@@ -75,7 +77,9 @@ const Home = ({ timelines, youtubes, skills, projects }) => {
         </div>
         <div>
           <img
-            src="https://images.pexels.com/photos/19088938/pexels-photo-19088938.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            // src="https://images.pexels.com/photos/19088938/pexels-photo-19088938.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            src="https://images.pexels.com/photos/28587367/pexels-photo-28587367.png"
+
             alt="bibek's img"
             className=" lg:w-[400px] rounded-full w-48"
           />
@@ -93,7 +97,7 @@ const Home = ({ timelines, youtubes, skills, projects }) => {
         </button>
       </div>
 
-      <div className="fixed flex flex-col gap-2 text-2xl bottom-4 right-5 text-bgcolor dark:text-violet-500">
+      <div className="fixed z-50 flex flex-col gap-2 text-2xl bottom-4 right-5 text-bgcolor dark:text-violet-500">
         <div onClick={scrollToTop}>
           <FaArrowCircleUp />
         </div>
@@ -104,7 +108,7 @@ const Home = ({ timelines, youtubes, skills, projects }) => {
 
       <div>
         <Suspense fallback={<TimeLineShimmer />}>
-          <TimeLine timelines={timelines} />{" "}
+          <TimeLine timelines={timeline} />{" "}
         </Suspense>
 
         <Suspense fallback={<div>Skills are loading</div>}>
@@ -118,22 +122,6 @@ const Home = ({ timelines, youtubes, skills, projects }) => {
         <Suspense fallback={<div>loading</div>}>
           <GitHub />
         </Suspense>
-
-        {/* <div className="homeYoutube">
-          <Typography variant="h3">VIDEOS</Typography>
-
-          <div className="homeYoutubeWrapper">
-            {youtubes.map((item) => (
-              <YoutubeCard
-                image={item.image.url}
-                title={item.title}
-                url={item.url}
-                id={item._id}
-                key={item._id}
-              />
-            ))}
-          </div>
-        </div> */}
       </div>
     </section>
   );

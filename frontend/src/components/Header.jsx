@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import logo from "../Images/logo.ico";
+// import logo from "../Images/logo.ico";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { MdLightMode,MdNightlight } from "react-icons/md";
 import { IoMenu, IoClose } from "react-icons/io5";
@@ -58,7 +58,8 @@ const Header = () => {
       >
         <div className="flex items-center gap-1 sm:gap-4">
           <img
-            src={logo}
+            // src={logo}
+            src="https://images.pexels.com/photos/28587367/pexels-photo-28587367.png"
             alt="logo"
             className="w-12 rounded-full border-[1px] border-slate-700 dark:border-white"
           />
