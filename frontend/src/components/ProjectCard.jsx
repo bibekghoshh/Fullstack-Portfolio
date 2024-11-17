@@ -1,11 +1,7 @@
-import { Button } from "@mui/material";
 import React, { useState } from "react";
-import { Delete } from "@mui/icons-material";
-import { deleteProject, getUser } from "../actions/user";
-import { useDispatch } from "react-redux";
 import { IoIosArrowDown,IoIosArrowUp } from "react-icons/io";
 
-export const ProjectCard = ({ isAdmin = false, projectDetails }) => {
+export const ProjectCard = ({projectDetails }) => {
 
   const {
     githubUrl,
@@ -16,7 +12,6 @@ export const ProjectCard = ({ isAdmin = false, projectDetails }) => {
     description,
     detailsDescription,
     techStack,
-    _id,
   } = projectDetails;
   const projectImage = projectDetails.image.url;
   const technologies = techStack.split(",");
@@ -26,13 +21,6 @@ export const ProjectCard = ({ isAdmin = false, projectDetails }) => {
 
 const [showAll,setShowAll]=useState(false);
 const visibleTechStack=showAll?technologies:technologies.slice(0,5);
-
-  const dispatch = useDispatch();
-
-  const deleteHandler = async (id) => {
-    await dispatch(deleteProject(id));
-    dispatch(getUser());
-  };
 
   return (
     <>
@@ -99,15 +87,6 @@ const visibleTechStack=showAll?technologies:technologies.slice(0,5);
           <img className="w-48 md:w-80" src={projectImage} alt="Project" />
         </div>
       </div>
-
-      {isAdmin && (
-        <Button
-          style={{ color: "rgba(40,40,40,0.7)" }}
-          onClick={() => deleteHandler(_id)}
-        >
-          <Delete />
-        </Button>
-      )}
     </>
   );
 };
