@@ -39,7 +39,7 @@ export const projects = [
       "Welcome to my Fullstack Portfolio Web App! This project showcases my skills in full-stack development.",
     techStack:
       "ReactJs, MongoDB, ExpressJS, NodeJS, Webpack, REST APIs, Mongoose ODM, Tailwind CSS",
-    liveUrl: "https://www.bibekghosh.tech",
+    liveUrl: "https://www.bibekghosh.live",
     githubUrl: "https://github.com/bibekghoshh/Fullstack-Portfolio",
     _id: "6565fe0e8ca228131a85ac07",
     detailsDescription:

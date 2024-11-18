@@ -13,4 +13,11 @@ html {
     background-color: #888;
   }
  
+  .animated-text {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #7262e8; /* Adjust color and width as needed */
+    animation: typing 3s steps(20, end), blink 0.75s step-end infinite;
+  }
   

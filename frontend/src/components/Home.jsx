@@ -1,15 +1,15 @@
 import React, { Suspense, lazy } from "react";
-// import YoutubeCard from "./YoutubeCard/YoutubeCard";
 import { FaArrowCircleUp, FaArrowCircleDown } from "react-icons/fa";
 import { animateScroll as scroll } from "react-scroll";
 import TimeLineShimmer from "./ShimmerUi/TimelineShimmer";
-// import HomeShimmer from "./ShimmerUi/HomeShimmer";
 import { projects, timeline } from "../Data/Data";
+import resume from "../Assets/resume.pdf"
 
 const TimeLine = lazy(() => import("./TimeLine"));
 const Skills = lazy(() => import("./Skills"));
 const Projects = lazy(() => import("./ProjectCard"));
 const GitHub = lazy(() => import("./GitHub"));
+
 
 const Home = () => {
   const scrollToTop = () => {
@@ -35,7 +35,7 @@ const Home = () => {
               Bibek Ghosh
             </h1>
             <h2>
-              An <span className="role">Frontend developer</span>{" "}
+              An <span className="text-2xl font-semibold text-blue-500">Frontend developer</span>{" "}
             </h2>
           </div>
           <p className="my-2 text-center lg:w-4/5 text-slate-400 lg:text-start">
@@ -85,9 +85,10 @@ const Home = () => {
       </section>
 
       <div className="flex flex-col items-center justify-center gap-8 mb-12">
-        <button className="px-4 py-2 font-medium text-white transition duration-300 rounded-md bg-newblue hover:scale-105 dark:bg-violet-500">
+        <button className="px-4 py-2 font-medium text-white transition duration-300 rounded-md bg-newblue hover:scale-105 dark:bg-violet-500 animate-bounce">
           <a
-            href="https://drive.google.com/file/d/1MQRJFNBx1t6fuiUEO6uu6YTagHKJPEYq/view?usp=drive_link"
+            // href="https://drive.google.com/file/d/1MQRJFNBx1t6fuiUEO6uu6YTagHKJPEYq/view?usp=drive_link"
+            href={resume}
             target="_blank"
             rel="noopener noreferrer"
           >

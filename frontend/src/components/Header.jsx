@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
-// import logo from "../Images/logo.ico";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { MdLightMode,MdNightlight } from "react-icons/md";
 import { IoMenu, IoClose } from "react-icons/io5";
-// import { Link } from "react-router-dom";
 
 const Header = () => {
   const [navBarOpen, setNavBarOpen] = useState(false);

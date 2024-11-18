@@ -30,7 +30,7 @@ function App() {
         />
       </Routes>
 
-      <Suspense fallback={<div></div>}>
+      <Suspense fallback={<div>Footer is loading</div>}>
         <Footer />
       </Suspense>
     </Router>
