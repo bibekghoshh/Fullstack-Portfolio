@@ -57,7 +57,8 @@ const Header = () => {
         <div className="flex items-center gap-1 sm:gap-4">
           <img
             // src={logo}
-            src="https://images.pexels.com/photos/28587367/pexels-photo-28587367.png"
+            // src="https://images.pexels.com/photos/28587367/pexels-photo-28587367.png"
+            src="https://images.pexels.com/photos/36244506/pexels-photo-36244506.png?auto=compress&cs=tinysrgb&h=100"
             alt="logo"
             className="w-12 rounded-full border-[1px] border-slate-700 dark:border-white"
           />

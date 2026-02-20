@@ -77,7 +77,8 @@ const Home = () => {
         <div>
           <img
             // src="https://images.pexels.com/photos/19088938/pexels-photo-19088938.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-            src="https://images.pexels.com/photos/28587367/pexels-photo-28587367.png"
+            // src="https://images.pexels.com/photos/28587367/pexels-photo-28587367.png"
+            src="https://images.pexels.com/photos/36244506/pexels-photo-36244506.png?auto=compress&cs=tinysrgb&h=500"
             alt="bibek's img"
             className=" lg:w-[400px] rounded-full w-48"
           />
