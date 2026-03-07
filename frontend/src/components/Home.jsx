@@ -3,7 +3,6 @@ import { FaArrowCircleUp, FaArrowCircleDown } from "react-icons/fa";
 import { animateScroll as scroll } from "react-scroll";
 import TimeLineShimmer from "./ShimmerUi/TimelineShimmer";
 import { projects, timeline } from "../Data/Data";
-import resume from "../Assets/resume.pdf"
 
 const TimeLine = lazy(() => import("./TimeLine"));
 const Skills = lazy(() => import("./Skills"));
@@ -39,15 +38,11 @@ const Home = () => {
             </h2>
           </div>
           <p className="my-2 text-center lg:w-4/5 text-slate-400 lg:text-start">
-            {/* I have built many industry grade projects from scratch and am armed
-            with many technological skills useful for tech projects. Check out
-            my projects below. :) */}
-            I’m a passionate frontend developer with hands-on experience in
-            modern web technologies. Having completed a full-stack JavaScript
-            bootcamp, I’m constantly learning and refining my skills. I enjoy
-            solving complex web development problems, creating seamless user
-            experiences. Currently seeking frontend development opportunities to
-            apply my knowledge and grow professionally.
+              I’m a frontend-focused Full Stack Developer who builds fast, scalable, and 
+              user-centric web applications using React, JavaScript, and modern web 
+              technologies. I turn complex problems into clean, intuitive interfaces 
+              and performant systems. Constantly learning, constantly building — focused 
+              on delivering real-world impact through code.
             {/* I love to Dig and Explore Fundamental Engineering concepts around the WEB by listening to conferences, podcasts and reading articles over the internet. */}
           </p>
 
@@ -76,8 +71,6 @@ const Home = () => {
         </div>
         <div>
           <img
-            // src="https://images.pexels.com/photos/19088938/pexels-photo-19088938.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-            // src="https://images.pexels.com/photos/28587367/pexels-photo-28587367.png"
             src="https://images.pexels.com/photos/36244506/pexels-photo-36244506.png?auto=compress&cs=tinysrgb&h=500"
             alt="bibek's img"
             className=" lg:w-[400px] rounded-full w-48"
@@ -88,8 +81,7 @@ const Home = () => {
       <div className="flex flex-col items-center justify-center gap-8 mb-12">
         <button className="px-4 py-2 font-medium text-white transition duration-300 rounded-md bg-newblue hover:scale-105 dark:bg-violet-500 animate-bounce">
           <a
-            // href="https://drive.google.com/file/d/1MQRJFNBx1t6fuiUEO6uu6YTagHKJPEYq/view?usp=drive_link"
-            href={resume}
+            href="https://drive.google.com/file/d/1rchSCkwjuQIM9DFnfcVAM2byDrTE1jvN/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
           >
