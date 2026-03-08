@@ -8,18 +8,17 @@ import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 import { Event } from "@mui/icons-material";
 
-
 const TimeLine = ({ timelines = [] }) => {
   return (
-    <div className="flex flex-col items-center gap-10 ">
-      <div className="flex items-center gap-3 sm:gap-8 md:w-8/12 ">
-        <p className="text-3xl font-semibold md:text-4xl text-newblue min-w-fit font-roboto dark:text-white">
+    <div className="flex flex-col items-center gap-10">
+      <div className="flex items-center gap-3 sm:gap-8 md:w-8/12" data-reveal>
+        <p className="text-3xl font-semibold md:text-4xl text-slate-900 min-w-fit text-display dark:text-white">
           My Timeline
         </p>
-        <div className="h-[3px] w-full bg-newblue dark:bg-white hidden md:block"></div>
+        <div className="h-[3px] w-full bg-emerald-400 hidden md:block"></div>
       </div>
 
-      <Timeline position="alternate" sx={{ px: "0px" }}>
+      <Timeline position="alternate" sx={{ px: "0px" }} data-reveal data-reveal-delay="120">
         {timelines.map((item, index) => (
           <TimelineItem key={index}>
             <TimelineOppositeContent
@@ -41,14 +40,20 @@ const TimeLine = ({ timelines = [] }) => {
             </TimelineOppositeContent>
             <TimelineSeparator>
               <TimelineConnector />
-              <TimelineDot>
+              <TimelineDot color="success" variant="outlined">
                 <Event />
               </TimelineDot>
               <TimelineConnector />
             </TimelineSeparator>
-            <TimelineContent sx={{ py: "20px", }}>
-              <h6 className="text-base font-medium sm:text-lg lg:text-xl">{item.title}</h6>
-              <p className="text-xs sm:text-sm lg:text-base">{item.description}</p>
+            <TimelineContent sx={{ py: "20px" }}>
+              <div className="surface-2 rounded-2xl px-4 py-3 shadow-md dark:bg-slate-900">
+                <h6 className="text-base font-semibold sm:text-lg lg:text-xl text-slate-900 dark:text-white">
+                  {item.title}
+                </h6>
+                <p className="text-xs sm:text-sm lg:text-base text-slate-600 dark:text-slate-200">
+                  {item.description}
+                </p>
+              </div>
             </TimelineContent>
           </TimelineItem>
         ))}

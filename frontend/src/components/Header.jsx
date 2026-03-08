@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
-import { MdLightMode,MdNightlight } from "react-icons/md";
+import { MdLightMode, MdNightlight } from "react-icons/md";
 import { IoMenu, IoClose } from "react-icons/io5";
 
 const Header = () => {
@@ -9,7 +9,7 @@ const Header = () => {
   const [activeItem, setActiveItem] = useState("");
   const [scrolling, setScrolling] = useState(false);
   const [darkMode, setDarkMode] = useState(true);
-  
+
   const navbarItemHandleClick = (itemName) => {
     setActiveItem(itemName);
     setNavBarOpen(false);
@@ -48,22 +48,20 @@ const Header = () => {
   return (
     <>
       <header
-        className={`fixed top-0 z-50 flex items-center text-newblue justify-between lg:px-[15%] px-2 w-full lg:h-20 h-16 drop-shadow-xl transition duration-300 dark:text-white  ${
+        className={`fixed top-0 z-50 flex items-center justify-between w-full lg:h-20 h-16 px-3 lg:px-[12%] transition duration-300 ${
           scrolling
-            ? "bg-bgcolor text-white dark:bg-violet-500"
-            : "text-newblue"
+            ? "glass text-slate-900 dark:text-white"
+            : "text-slate-800 dark:text-white"
         }`}
       >
-        <div className="flex items-center gap-1 sm:gap-4">
+        <div className="flex items-center gap-2 sm:gap-4">
           <img
-            // src={logo}
-            // src="https://images.pexels.com/photos/28587367/pexels-photo-28587367.png"
             src="https://images.pexels.com/photos/36244506/pexels-photo-36244506.png?auto=compress&cs=tinysrgb&h=100"
             alt="logo"
-            className="w-12 rounded-full border-[1px] border-slate-700 dark:border-white"
+            className="w-11 rounded-2xl border-[1px] border-slate-300 dark:border-slate-600"
           />
           <p
-            className={`text-2xl font-medium ${
+            className={`text-xl font-semibold text-display ${
               nameInNavbar ? "block" : "hidden"
             }`}
           >
@@ -73,25 +71,25 @@ const Header = () => {
 
         <div className="flex flex-col lg:flex-row">
           <div
-            className={`items-center fixed right-0 py-16 lg:py-0  bg-sky-950 w-full  px-5 top-0 flex-col gap-10 lg:gap-1 lg:flex-row lg:relative lg:flex lg:bg-transparent  ${
-              navBarOpen ? "flex  text-white" : "hidden"
-            }`}
+            className={`items-center fixed right-0 py-20 lg:py-0 w-full px-6 top-0 flex-col gap-10 lg:gap-1 lg:flex-row lg:relative lg:flex lg:bg-transparent ${
+              navBarOpen ? "flex" : "hidden"
+            } ${navBarOpen ? "bg-slate-900/95 text-white" : ""}`}
           >
-            <ul className="flex flex-col items-center gap-6 font-bold lg:gap-2 lg:flex-row nav-items">
+            <ul className="flex flex-col items-center gap-6 font-semibold lg:gap-2 lg:flex-row nav-items">
               <li className="flex flex-col items-center">
                 <a
                   onClick={() => navbarItemHandleClick("skills")}
                   href="#skills"
-                  className={` px-6 py-1 ${
-                   navBarOpen && activeItem === "skills"
-                      ? "bg-violet-400 rounded-full"
-                      : null
+                  className={`px-6 py-2 rounded-full transition ${
+                    navBarOpen && activeItem === "skills"
+                      ? "bg-emerald-500 text-white"
+                      : "hover:bg-emerald-500/10"
                   }`}
                 >
                   Skills Acquired
                 </a>
                 {activeItem === "skills" ? (
-                  <div className="absolute h-[6px] bg-orange-300 w-28 top-[51px] dark:bg-white hidden lg:block"></div>
+                  <div className="absolute h-[4px] bg-emerald-400 w-28 top-[50px] hidden lg:block"></div>
                 ) : null}
               </li>
               <li className="flex flex-col items-center">
@@ -100,16 +98,16 @@ const Header = () => {
                     navbarItemHandleClick("projects");
                   }}
                   href="#projects"
-                  className={`px-6 py-1 ${
+                  className={`px-6 py-2 rounded-full transition ${
                     navBarOpen && activeItem === "projects"
-                      ? "bg-violet-400  rounded-full"
-                      : null
+                      ? "bg-emerald-500 text-white"
+                      : "hover:bg-emerald-500/10"
                   }`}
                 >
                   My Projects
                 </a>
                 {activeItem === "projects" ? (
-                  <div className="absolute h-[6px] bg-orange-300 w-24 top-[51px] hidden lg:block"></div>
+                  <div className="absolute h-[4px] bg-emerald-400 w-24 top-[50px] hidden lg:block"></div>
                 ) : null}
               </li>
               <li className="flex flex-col items-center">
@@ -118,33 +116,30 @@ const Header = () => {
                     navbarItemHandleClick("github");
                   }}
                   href="#github"
-                  className={`px-6 py-1 ${
-                    navBarOpen &&  activeItem === "github"
-                      ? "bg-violet-400  rounded-full"
-                      : null
+                  className={`px-6 py-2 rounded-full transition ${
+                    navBarOpen && activeItem === "github"
+                      ? "bg-emerald-500 text-white"
+                      : "hover:bg-emerald-500/10"
                   }`}
                 >
                   GitHub
                 </a>
                 {activeItem === "github" ? (
-                  <div className="absolute h-[6px] bg-orange-300 w-16 top-[51px] hidden lg:block"></div>
+                  <div className="absolute h-[4px] bg-emerald-400 w-16 top-[50px] hidden lg:block"></div>
                 ) : null}
               </li>
             </ul>
-            {/* <Link to="/account">
-              <button className="loginbtn">Login</button>
-            </Link> */}
-            <div className="flex items-center gap-6 ">
-              <div className="w-[0.5px] h-7 bg-newblue dark:bg-white hidden lg:block"></div>
+            <div className="flex items-center gap-6">
+              <div className="w-[1px] h-7 bg-slate-300 dark:bg-slate-600 hidden lg:block"></div>
               <a
-                className="text-lg hover:scale-110"
+                className="text-lg hover:scale-110 transition"
                 href="https://www.linkedin.com/in/bibekghoshh/"
                 target="black"
               >
                 <BsLinkedin />
               </a>
               <a
-                className="text-lg hover:scale-110"
+                className="text-lg hover:scale-110 transition"
                 href="https://github.com/bibekghoshh"
                 target="black"
               >
@@ -152,32 +147,21 @@ const Header = () => {
               </a>
             </div>
           </div>
-          <div className={` flex items-center gap-5 ${navBarOpen?'text-white':null} `}>
+          <div className={`flex items-center gap-5 ${navBarOpen ? "text-white" : ""}`}>
             <button
-              className="text-xl hover:scale-110"
+              className="text-xl hover:scale-110 transition"
               onClick={themeTogglerHandleClick}
-            >{darkMode?<MdNightlight />:<MdLightMode />}
-              
+            >
+              {darkMode ? <MdNightlight /> : <MdLightMode />}
             </button>
             <button
               className="z-50 text-3xl lg:hidden"
               onClick={navbarHandleClick}
             >
-              {" "}
               {navBarOpen ? <IoClose /> : <IoMenu />}
             </button>
           </div>
         </div>
-        {/* <button
-          className="menu-item"
-          onClick={() => setNavBarOpen((prev) => !prev)}
-        >
-          {navBarOpen ? (
-            <img src={crossIcon} alt="menu-icon" className="menu-icon" />
-          ) : (
-            <img src={menuIcon} alt="menu-icon" className="menu-icon" />
-          )}
-        </button> */}
       </header>
     </>
   );
