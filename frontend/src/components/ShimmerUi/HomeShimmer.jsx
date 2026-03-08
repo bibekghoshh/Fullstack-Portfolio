@@ -15,7 +15,7 @@ const HomeShimmer = () => {
             <p className="w-full h-8 bg-slate-300 rounded-xl animate-pulse"></p>
             <p className="w-48 h-8 bg-slate-300 rounded-xl animate-pulse"></p>
           </div>
-          <div className="bg-slate-300 flex rounded-3xl  gap-5 w-[95vw] lg:w-[500px] h-24 items-center justify-around px-5 mt-8 animate-pulse">
+          <div className="bg-slate-300 flex rounded-3xl gap-5 w-full max-w-[500px] h-24 items-center justify-around px-5 mt-8 animate-pulse">
             <div className="flex flex-col items-center gap-1">
               <p className="w-12 h-8 bg-slate-400 rounded-xl animate-pulse"></p>
               <p className="w-24 h-6 bg-slate-400 rounded-xl animate-pulse"></p>

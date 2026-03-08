@@ -79,7 +79,7 @@ const Home = () => {
             </a>
           </div>
 
-          <div className="border-gradient w-[95vw] lg:w-[520px] mt-2">
+          <div className="border-gradient w-full max-w-[520px] mt-2">
             <div className="flex rounded-3xl text-slate-900 dark:text-white gap-5 h-24 items-center justify-around px-5 surface dark:bg-slate-800">
               <div className="text-center">
                 <p className="text-3xl font-bold lg:text-5xl text-display">8</p>
