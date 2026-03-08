@@ -22,13 +22,13 @@ export const ProjectCard = ({ projectDetails }) => {
   return (
     <>
       <div className="border-gradient w-full lg:w-[1024px]">
-        <div className="flex flex-col-reverse md:flex-row items-center md:items-start md:justify-around gap-8 md:gap-0 px-6 py-10 surface-2 rounded-3xl drop-shadow-xl dark:bg-slate-900">
-          <div className="flex flex-col items-center w-full gap-3 md:w-8/12 md:items-start">
-            <div>
-              <h2 className="mb-2 text-2xl font-bold md:text-4xl text-slate-900 dark:text-white text-display">
-                {title}
-              </h2>
-              <p className="mb-1 font-medium text-center md:text-left text-slate-500 dark:text-slate-400">
+        <div className="flex flex-col-reverse md:flex-row items-center md:items-start md:justify-between gap-8 md:gap-6 px-6 py-10 surface-2 rounded-3xl drop-shadow-xl dark:bg-slate-900">
+          <div className="flex flex-col items-center w-full gap-4 md:w-7/12 md:items-start">
+            <div className="flex flex-wrap items-center justify-center md:justify-start gap-3">
+              <span className="px-3 py-1 text-xs font-semibold rounded-full bg-emerald-100 text-emerald-700 dark:bg-emerald-500/20 dark:text-emerald-300">
+                Production Project
+              </span>
+              <span className="px-3 py-1 text-xs font-semibold rounded-full bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300">
                 {new Date(startdate).toLocaleDateString("en-US", {
                   month: "short",
                   year: "numeric",
@@ -38,20 +38,30 @@ export const ProjectCard = ({ projectDetails }) => {
                   month: "short",
                   year: "numeric",
                 })}
-              </p>
+              </span>
             </div>
             <div>
-              <p className="w-full text-sm text-slate-600 md:w-9/12 dark:text-slate-200">
+              <h2 className="mb-2 text-2xl font-bold md:text-4xl text-slate-900 dark:text-white text-display text-center md:text-left">
+                {title}
+              </h2>
+              <p className="text-sm text-slate-600 md:w-11/12 dark:text-slate-200 text-center md:text-left">
                 {description}
               </p>
-              <div className="ml-4 text-sm w-[90%] md:w-9/12 text-slate-600 dark:text-slate-200">
+            </div>
+
+            <div className="w-full md:w-11/12">
+              <p className="text-xs uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
+                Highlights
+              </p>
+              <div className="mt-2 ml-4 text-sm text-slate-600 dark:text-slate-200">
                 {projectDescription &&
                   projectDescription.map((item, index) => (
                     <p key={index}>- {item}</p>
                   ))}
               </div>
             </div>
-            <div className="flex flex-wrap justify-center w-full gap-2 py-2 md:w-9/12 md:justify-start">
+
+            <div className="flex flex-wrap justify-center w-full gap-2 py-1 md:w-11/12 md:justify-start">
               {visibleTechStack.map((item, index) => (
                 <p
                   key={index}
@@ -70,25 +80,40 @@ export const ProjectCard = ({ projectDetails }) => {
                 </button>
               )}
             </div>
-            <div className="flex flex-col gap-4 md:flex-row">
-              <button className="px-10 py-3 text-sm font-medium transition duration-300 bg-amber-400 border-2 rounded-full text-slate-900 drop-shadow-lg hover:bg-amber-300 dark:bg-amber-300">
-                <a href={liveUrl} target="_blank" rel="noreferrer">
-                  View Live
-                </a>
-              </button>
-              <button className="px-8 py-3 text-sm font-medium transition duration-300 bg-white border-2 rounded-full border-slate-300 text-slate-800 drop-shadow-lg hover:border-emerald-400 hover:text-emerald-600 dark:bg-slate-900 dark:border-slate-700 dark:text-white dark:hover:text-emerald-300">
-                <a href={githubUrl} target="_blank" rel="noreferrer">
-                  View Project Details
-                </a>
-              </button>
+
+            <div className="flex flex-col gap-3 md:flex-row">
+              <a
+                className="px-10 py-3 text-sm font-medium transition duration-300 bg-emerald-600 rounded-full text-white drop-shadow-lg hover:bg-emerald-500"
+                href={liveUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Live Demo
+              </a>
+              <a
+                className="px-8 py-3 text-sm font-medium transition duration-300 bg-white border-2 rounded-full border-slate-300 text-slate-800 drop-shadow-lg hover:border-emerald-400 hover:text-emerald-600 dark:bg-slate-900 dark:border-slate-700 dark:text-white dark:hover:text-emerald-300"
+                href={githubUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                View Code
+              </a>
             </div>
           </div>
-          <div className="mt-0 md:mt-8">
-            <img
-              className="w-48 md:w-80 rounded-2xl shadow-xl float-slow"
-              src={projectImage}
-              alt="Project"
-            />
+          <div className="mt-0 md:mt-4 w-full md:w-5/12">
+            <div className="border-gradient">
+              <div className="surface rounded-2xl p-4 dark:bg-slate-800">
+                <img
+                  className="w-full rounded-xl shadow-xl float-slow"
+                  src={projectImage}
+                  alt="Project"
+                />
+                <div className="mt-3 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+                  <span>Responsive UI</span>
+                  <span>Performance tuned</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

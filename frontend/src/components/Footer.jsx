@@ -8,9 +8,12 @@ const Footer = () => {
     <div className="flex flex-col items-center justify-center gap-6 py-16 surface-2 dark:bg-slate-900 dark:text-white">
       <div className="text-center" data-aos="fade-up">
         <p className="text-4xl font-semibold text-slate-900 dark:text-white text-display">
-          Get in touch
+          Let’s Build Something Great
         </p>
         <div className="w-40 h-[3px] bg-emerald-400 mx-auto mt-3"></div>
+        <p className="mt-3 text-sm text-slate-500 dark:text-slate-300">
+          Open to full-time roles, freelance projects, and collaborations.
+        </p>
       </div>
 
       <div className="border-gradient w-[90%] max-w-3xl" data-aos="fade-up" data-aos-delay="120">
@@ -34,7 +37,8 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="flex flex-wrap gap-6 mt-2 text-3xl" data-aos="fade-up" data-aos-delay="200">
+      <div className="flex flex-col items-center gap-4" data-aos="fade-up" data-aos-delay="200">
+        <div className="flex flex-wrap gap-6 text-3xl">
         <a
           className="transition duration-300 hover:scale-110 text-slate-600 hover:text-slate-900 dark:text-slate-300"
           href="https://github.com/bibekghoshh"
@@ -70,6 +74,10 @@ const Footer = () => {
         >
           <BsInstagram />
         </a>
+        </div>
+        <div className="text-xs text-slate-500 dark:text-slate-400">
+          © {new Date().getFullYear()} Bibek Ghosh • Crafted with React & Tailwind
+        </div>
       </div>
     </div>
   );
