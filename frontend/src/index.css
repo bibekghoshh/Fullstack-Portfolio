@@ -43,6 +43,9 @@ body {
 * {
   outline-color: var(--ring);
 }
+ /* * {
+  outline: 1px solid red;
+} */
 
 /* Utilities */
 .text-display {

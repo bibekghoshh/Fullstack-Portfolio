@@ -124,6 +124,9 @@ export const ProjectCard = ({ projectDetails }) => {
 };
 
 const Projects = ({ projects }) => {
+  const [showAllProjects, setShowAllProjects] = useState(false);
+  const visibleProjects = showAllProjects ? projects : projects.slice(0, 2);
+
   return (
     <div className="flex flex-col items-center w-full gap-10 mb-20 mt-28 px-4 sm:px-6" id="projects">
       <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 md:gap-8 w-[90vw] max-w-6xl md:w-[80vw]" data-aos="fade-up">
@@ -134,12 +137,21 @@ const Projects = ({ projects }) => {
       </div>
 
       <div className="flex flex-col items-center w-[90vw] gap-8 py-5 max-w-6xl">
-        {projects.map((item, index) => (
+        {visibleProjects.map((item, index) => (
           <div key={item._id} data-aos="fade-up" data-aos-delay={index * 80}>
             <ProjectCard projectDetails={item} />
           </div>
         ))}
       </div>
+
+      {projects.length > 2 && (
+        <button
+          className="animate-bounce px-6 py-3 text-sm font-medium transition duration-300 rounded-full border border-slate-300 text-slate-700 hover:border-emerald-400 hover:text-emerald-600 dark:border-slate-600 dark:text-slate-200 dark:hover:text-emerald-300"
+          onClick={() => setShowAllProjects((prev) => !prev)}
+        >
+          {showAllProjects ? "Show Less Projects" : "Show More Projects"}
+        </button>
+      )}
     </div>
   );
 };

@@ -1,6 +1,6 @@
 const GitHub = () => {
   return (
-    <div className="flex flex-col items-center gap-10 mt-16 mb-16" id="github">
+    <div className="flex flex-col items-center gap-10 mt-16 mb-16 w-[99vw]" id="github">
       <div className="flex flex-col w-[95vw] md:flex-row md:items-center md:gap-8 md:w-8/12 gap-4" data-aos="fade-up">
         <div className="flex items-center gap-3">
           <p className="text-3xl font-semibold md:text-4xl text-slate-900 min-w-fit text-display dark:text-white">

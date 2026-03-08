@@ -41,7 +41,7 @@ const TimeLine = ({ timelines = [] }) => {
         {timelines.map((item, index) => (
           <TimelineItem key={index}>
             <TimelineOppositeContent
-              sx={{ m: "auto 0", display: { xs: "none", md: "block" } }}
+              sx={{ m: "auto 0", display: { xs: "none", md: "block" }, flex: "0 0 35vw"  }}
               variant="body2"
               className={`text-slate-500 dark:text-slate-400 ${
                 isMdUp ? "text-right" : "text-left"

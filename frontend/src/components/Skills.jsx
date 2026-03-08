@@ -21,7 +21,7 @@ const Skills = () => {
   return (
     <>
       <div
-        className="flex flex-col items-center w-full gap-10 py-14 mt-24 surface-2 md:py-20 dark:bg-slate-900"
+        className="flex flex-col items-center w-full gap-10 py-14 mt-12 surface-2 md:py-20 dark:bg-slate-900"
         id="skills"
       >
         <div className="flex flex-col w-[95vw] md:flex-row md:items-center md:gap-8 md:w-8/12 gap-4 px-4 sm:px-6 lg:px-0" data-aos="fade-up">

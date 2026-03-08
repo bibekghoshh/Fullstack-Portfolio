@@ -71,7 +71,7 @@ const Header = () => {
 
         <div className="flex flex-col lg:flex-row">
           <div
-            className={`items-center fixed right-0 py-20 lg:py-0 w-screen px-6 top-0 flex-col gap-10 lg:gap-1 lg:flex-row lg:relative lg:flex lg:bg-transparent ${
+            className={`items-center fixed right-0 py-20 lg:py-0 w-full px-6 top-0 flex-col gap-10 lg:gap-1 lg:flex-row lg:relative lg:flex lg:bg-transparent ${
               navBarOpen ? "flex" : "hidden"
             } ${navBarOpen ? "bg-slate-900/95 text-white max-h-screen overflow-y-auto" : ""}`}
           >
