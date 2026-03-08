@@ -11,14 +11,14 @@ import { Event } from "@mui/icons-material";
 const TimeLine = ({ timelines = [] }) => {
   return (
     <div className="flex flex-col items-center gap-10">
-      <div className="flex items-center gap-3 sm:gap-8 md:w-8/12" data-reveal>
+      <div className="flex items-center gap-3 sm:gap-8 md:w-8/12" data-aos="fade-up">
         <p className="text-3xl font-semibold md:text-4xl text-slate-900 min-w-fit text-display dark:text-white">
           My Timeline
         </p>
         <div className="h-[3px] w-full bg-emerald-400 hidden md:block"></div>
       </div>
 
-      <Timeline position="alternate" sx={{ px: "0px" }} data-reveal data-reveal-delay="120">
+      <Timeline position="alternate" sx={{ px: "0px" }} data-aos="fade-up" data-aos-delay="120">
         {timelines.map((item, index) => (
           <TimelineItem key={index}>
             <TimelineOppositeContent

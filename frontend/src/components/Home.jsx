@@ -25,9 +25,9 @@ const Home = () => {
       >
         <div
           className="flex flex-col gap-6 lg:w-1/2 w-[95%] items-center lg:items-start"
-          data-reveal
+          data-aos="fade-up"
         >
-          <div className="flex flex-col items-center gap-3 text-xl lg:items-start reveal-up">
+          <div className="flex flex-col items-center gap-3 text-xl lg:items-start">
             <p className="text-sm font-medium lg:text-lg text-slate-700 dark:text-slate-400">
               Hi, my name is
             </p>
@@ -41,7 +41,7 @@ const Home = () => {
               </span>
             </h2>
           </div>
-          <p className="my-2 text-center lg:w-4/5 text-slate-600 lg:text-start dark:text-slate-300 reveal-up reveal-delay-1">
+          <p className="my-2 text-center lg:w-4/5 text-slate-600 lg:text-start dark:text-slate-300">
             I'm a frontend-focused Full Stack Developer who builds fast, scalable, and
             user-centric web applications using React, JavaScript, and modern web
             technologies. I turn complex problems into clean, intuitive interfaces
@@ -49,7 +49,7 @@ const Home = () => {
             on delivering real-world impact through code.
           </p>
 
-          <div className="border-gradient w-[95vw] lg:w-[520px] reveal-up reveal-delay-2">
+          <div className="border-gradient w-[95vw] lg:w-[520px]">
             <div className="flex rounded-3xl text-slate-900 dark:text-white gap-5 h-24 items-center justify-around px-5 surface dark:bg-slate-800">
               <div className="text-center">
                 <p className="text-3xl font-bold lg:text-5xl text-display">8</p>
@@ -74,7 +74,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div data-reveal data-reveal-delay="120">
+        <div data-aos="fade-left" data-aos-delay="120">
           <img
             src="https://images.pexels.com/photos/36244506/pexels-photo-36244506.png?auto=compress&cs=tinysrgb&h=500"
             alt="bibek's img"
@@ -85,8 +85,8 @@ const Home = () => {
 
       <div
         className="flex flex-col items-center justify-center gap-8 mb-12"
-        data-reveal
-        data-reveal-delay="160"
+        data-aos="fade-up"
+        data-aos-delay="160"
       >
         <button className="px-6 py-3 font-medium text-white transition duration-300 rounded-full bg-emerald-600 hover:bg-emerald-500 hover:scale-105 pulse-glow">
           <a

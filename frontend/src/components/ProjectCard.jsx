@@ -99,7 +99,7 @@ export const ProjectCard = ({ projectDetails }) => {
 const Projects = ({ projects }) => {
   return (
     <div className="flex flex-col items-center w-full gap-10 mb-20 mt-28" id="projects">
-      <div className="flex items-center gap-8 md:w-8/12" data-reveal>
+      <div className="flex items-center gap-8 md:w-8/12" data-aos="fade-up">
         <p className="text-3xl font-semibold md:text-4xl text-slate-900 min-w-fit text-display dark:text-white">
           My Projects
         </p>
@@ -108,7 +108,7 @@ const Projects = ({ projects }) => {
 
       <div className="flex flex-col items-center w-full gap-8 py-5">
         {projects.map((item, index) => (
-          <div key={item._id} data-reveal data-reveal-delay={index * 80}>
+          <div key={item._id} data-aos="fade-up" data-aos-delay={index * 80}>
             <ProjectCard projectDetails={item} />
           </div>
         ))}

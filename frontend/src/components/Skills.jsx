@@ -23,7 +23,7 @@ const Skills = () => {
         className="flex flex-col items-center w-[99.7vw] gap-8 py-12 mt-24 surface-2 md:py-16 dark:bg-slate-900"
         id="skills"
       >
-        <div className="flex items-center gap-8 md:w-8/12" data-reveal>
+        <div className="flex items-center gap-8 md:w-8/12" data-aos="fade-up">
           <p className="text-3xl font-semibold md:text-4xl text-slate-900 min-w-fit text-display dark:text-white">
             Skills Acquired
           </p>
@@ -31,7 +31,7 @@ const Skills = () => {
         </div>
         <div className="flex flex-row flex-wrap items-center justify-center lg:gap-16 lg:w-[1000px] w-full gap-10">
           {skillsWithIcons.map((item, index) => (
-            <div key={index} data-reveal data-reveal-delay={index * 40}>
+            <div key={index} data-aos="zoom-in" data-aos-delay={index * 40}>
               <SkillCard SkillTitle={item.title} SkillIcon={item.icons} />
             </div>
           ))}
