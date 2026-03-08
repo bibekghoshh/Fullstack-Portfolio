@@ -7,12 +7,17 @@ import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 import { Event } from "@mui/icons-material";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const TimeLine = ({ timelines = [] }) => {
+  const theme = useTheme();
+  const isMdUp = useMediaQuery(theme.breakpoints.up("md"));
+
   return (
     <div className="flex flex-col items-center gap-10">
-      <div className="flex flex-col md:flex-row md:items-center md:gap-8 md:w-8/12 gap-4" data-aos="fade-up">
-        <div className="flex items-center gap-3">
+      <div className="flex flex-col w-[95vw] md:flex-row md:items-center md:gap-8 md:w-8/12 gap-4 px-4 sm:px-6 lg:px-0" data-aos="fade-up">
+        <div className="flex items-center gap-3 flex-col md:flex-row">
           <p className="text-3xl font-semibold md:text-4xl text-slate-900 min-w-fit text-display dark:text-white">
             Professional Timeline
           </p>
@@ -27,13 +32,20 @@ const TimeLine = ({ timelines = [] }) => {
         </p>
       </div>
 
-      <Timeline position="alternate" sx={{ px: "0px" }} data-aos="fade-up" data-aos-delay="120">
+      <Timeline
+        position="right"
+        sx={{ px: "0px", width: "90vw" }}
+        data-aos="fade-up"
+        data-aos-delay="120"
+      >
         {timelines.map((item, index) => (
           <TimelineItem key={index}>
             <TimelineOppositeContent
-              sx={{ m: "auto 0" }}
+              sx={{ m: "auto 0", display: { xs: "none", md: "block" } }}
               variant="body2"
-              className="text-right text-slate-500 dark:text-slate-400"
+              className={`text-slate-500 dark:text-slate-400 ${
+                isMdUp ? "text-right" : "text-left"
+              }`}
             >
               <div className="font-medium">
                 {new Date(item.startdate).toLocaleDateString("en-US", {
@@ -60,6 +72,23 @@ const TimeLine = ({ timelines = [] }) => {
             <TimelineContent sx={{ py: "20px" }}>
               <div className="border-gradient">
                 <div className="surface rounded-2xl px-5 py-4 shadow-md dark:bg-slate-900">
+                  <div className="md:hidden flex flex-wrap items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
+                    <span className="uppercase tracking-[0.2em] text-emerald-600 dark:text-emerald-300">
+                      Milestone
+                    </span>
+                    <span className="h-[1px] w-6 bg-emerald-300/70"></span>
+                    <span>
+                      {new Date(item.startdate).toLocaleDateString("en-US", {
+                        month: "long",
+                        year: "numeric",
+                      })}{" "}
+                      -{" "}
+                      {new Date(item.enddate).toLocaleDateString("en-US", {
+                        month: "long",
+                        year: "numeric",
+                      })}
+                    </span>
+                  </div>
                   <div className="flex items-center justify-between">
                     <h6 className="text-base font-semibold sm:text-lg lg:text-xl text-slate-900 dark:text-white">
                       {item.title}

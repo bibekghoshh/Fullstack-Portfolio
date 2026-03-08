@@ -20,11 +20,11 @@ const Home = () => {
   return (
     <section className="flex flex-col items-center pt-20 lg:pt-40 dark:bg-slate-900 dark:text-white">
       <section
-        className="flex w-[95%] justify-center lg:mb-20 mb-10 lg:gap-10 gap-8 flex-col-reverse items-center lg:flex-row"
+        className="flex w-[90vw] max-w-6xl px-4 sm:px-6 lg:px-10 justify-center lg:mb-20 mb-10 lg:gap-10 gap-8 flex-col-reverse items-center lg:flex-row"
         id="home"
       >
         <div
-          className="flex flex-col gap-6 lg:w-1/2 w-[95%] items-center lg:items-start"
+          className="flex flex-col gap-6 lg:w-1/2 w-[90vw] items-center lg:items-start"
           data-aos="fade-up"
         >
           <div className="flex flex-col items-center gap-4 text-xl lg:items-start">
@@ -32,10 +32,10 @@ const Home = () => {
               <span className="inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
               Open to Frontend / Full Stack Roles
             </div>
-            <h1 className="text-4xl font-semibold lg:text-7xl text-display text-slate-900 dark:text-white text-center lg:text-left">
+            <h1 className="text-4xl sm:text-5xl font-semibold lg:text-7xl text-display text-slate-900 dark:text-white text-center lg:text-left">
               Bibek Ghosh
             </h1>
-            <h2 className="text-base font-medium text-slate-600 dark:text-slate-300 lg:text-xl text-center lg:text-left">
+            <h2 className="text-sm sm:text-base font-medium text-slate-600 dark:text-slate-300 lg:text-xl text-center lg:text-left">
               Frontend developer crafting{" "}
               <span className="text-emerald-600 dark:text-emerald-400 font-semibold">
                 clean, fast, and accessible
@@ -62,9 +62,9 @@ const Home = () => {
             </span>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center gap-4 pt-2">
+          <div className="flex flex-col sm:flex-row items-center gap-4 pt-2 w-[90vw] sm:w-auto">
             <a
-              className="px-6 py-3 font-medium text-white transition duration-300 rounded-full bg-emerald-600 hover:bg-emerald-500 hover:scale-105 pulse-glow"
+              className="px-6 py-3 font-medium text-white transition duration-300 rounded-full bg-emerald-600 hover:bg-emerald-500 hover:scale-105 pulse-glow w-[90vw] sm:w-auto text-center"
               href="https://drive.google.com/file/d/1rchSCkwjuQIM9DFnfcVAM2byDrTE1jvN/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
@@ -72,29 +72,29 @@ const Home = () => {
               View Resume
             </a>
             <a
-              className="px-6 py-3 font-medium transition duration-300 rounded-full border border-slate-300 text-slate-700 hover:border-emerald-400 hover:text-emerald-600 dark:border-slate-600 dark:text-slate-200 dark:hover:text-emerald-300"
+              className="px-6 py-3 font-medium transition duration-300 rounded-full border border-slate-300 text-slate-700 hover:border-emerald-400 hover:text-emerald-600 dark:border-slate-600 dark:text-slate-200 dark:hover:text-emerald-300 w-[90vw] sm:w-auto text-center"
               href="mailto:bibek7478@gmail.com"
             >
               Contact Me
             </a>
           </div>
 
-          <div className="border-gradient w-full max-w-[520px] mt-2">
-            <div className="flex rounded-3xl text-slate-900 dark:text-white gap-5 h-24 items-center justify-around px-5 surface dark:bg-slate-800">
+          <div className="border-gradient w-[90vw] max-w-[520px] mt-2">
+            <div className="flex flex-col sm:flex-row rounded-3xl text-slate-900 dark:text-white gap-5 sm:h-24 items-center justify-around px-5 py-4 sm:py-0 surface dark:bg-slate-800">
               <div className="text-center">
                 <p className="text-3xl font-bold lg:text-5xl text-display">8</p>
                 <p className="font-medium lg:text-xs text-[8px] text-slate-500 dark:text-slate-400">
                   VERIFIED SKILLS
                 </p>
               </div>
-              <div className="bg-slate-200/70 w-[1px] h-12 hidden lg:block"></div>
+              <div className="bg-slate-200/70 w-[1px] h-12 hidden sm:block"></div>
               <div className="text-center">
                 <p className="text-3xl font-bold lg:text-5xl text-display">{5}</p>
                 <p className="font-medium lg:text-xs text-[8px] text-slate-500 dark:text-slate-400">
                   PROFESSIONAL PROJECTS
                 </p>
               </div>
-              <div className="bg-slate-200/70 w-[1px] h-12 hidden lg:block"></div>
+              <div className="bg-slate-200/70 w-[1px] h-12 hidden sm:block"></div>
               <div className="text-center">
                 <p className="text-3xl font-bold lg:text-5xl text-display">120+</p>
                 <p className="font-medium lg:text-xs text-[8px] text-slate-500 dark:text-slate-400">
@@ -105,7 +105,7 @@ const Home = () => {
           </div>
         </div>
         <div data-aos="fade-left" data-aos-delay="120" className="w-full lg:w-auto">
-          <div className="border-gradient w-[90vw] sm:w-[360px] lg:w-[420px]">
+          <div className="border-gradient w-full max-w-[420px] mx-auto">
             <div className="surface rounded-[32px] p-5 dark:bg-slate-800">
               <img
                 src="https://images.pexels.com/photos/36244506/pexels-photo-36244506.png?auto=compress&cs=tinysrgb&h=500"
@@ -113,7 +113,7 @@ const Home = () => {
                 className="w-full rounded-[24px] shadow-2xl ring-2 ring-emerald-200 dark:ring-emerald-500/30 float-slow"
               />
               <div className="mt-4 flex flex-col gap-3">
-                <div className="flex items-center justify-between text-sm text-slate-600 dark:text-slate-300">
+                <div className="flex items-center justify-between text-xs sm:text-sm text-slate-600 dark:text-slate-300">
                   <span>Based in India (IST)</span>
                   <span>Remote-friendly</span>
                 </div>
@@ -128,11 +128,11 @@ const Home = () => {
       </section>
 
       <div
-        className="flex flex-col items-center justify-center gap-8 mb-12"
+        className="flex flex-col items-center justify-center gap-8 mb-12 px-4"
         data-aos="fade-up"
         data-aos-delay="160"
       >
-        <div className="flex items-center gap-3 text-xs font-medium text-slate-500 dark:text-slate-400">
+        <div className="flex flex-wrap items-center justify-center gap-3 text-xs font-medium text-slate-500 dark:text-slate-400">
           <span className="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800">
             Fast learner
           </span>

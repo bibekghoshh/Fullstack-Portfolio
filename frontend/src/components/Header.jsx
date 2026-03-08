@@ -48,7 +48,7 @@ const Header = () => {
   return (
     <>
       <header
-        className={`fixed top-0 z-50 flex items-center justify-between w-full lg:h-20 h-16 px-3 lg:px-[12%] transition duration-300 ${
+        className={`fixed top-0 z-50 flex items-center justify-between w-screen lg:h-20 h-16 px-3 sm:px-6 lg:px-[12%] transition duration-300 ${
           scrolling
             ? "glass text-slate-900 dark:text-white"
             : "text-slate-800 dark:text-white"
@@ -71,9 +71,9 @@ const Header = () => {
 
         <div className="flex flex-col lg:flex-row">
           <div
-            className={`items-center fixed right-0 py-20 lg:py-0 w-full px-6 top-0 flex-col gap-10 lg:gap-1 lg:flex-row lg:relative lg:flex lg:bg-transparent ${
+            className={`items-center fixed right-0 py-20 lg:py-0 w-screen px-6 top-0 flex-col gap-10 lg:gap-1 lg:flex-row lg:relative lg:flex lg:bg-transparent ${
               navBarOpen ? "flex" : "hidden"
-            } ${navBarOpen ? "bg-slate-900/95 text-white" : ""}`}
+            } ${navBarOpen ? "bg-slate-900/95 text-white max-h-screen overflow-y-auto" : ""}`}
           >
             <ul className="flex flex-col items-center gap-6 font-semibold lg:gap-2 lg:flex-row nav-items">
               <li className="flex flex-col items-center">
