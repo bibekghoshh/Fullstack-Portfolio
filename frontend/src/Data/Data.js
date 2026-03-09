@@ -7,22 +7,74 @@ import { RiNpmjsFill } from "react-icons/ri";
 
 export const timeline = [
   {
-    title: "Ineuron.ai",
-    description: "JavaScript Fullstack Bootcamp",
-    startdate: "2023-08-20T00:00:00.000+00:00",
-    enddate: "2024-03-15T00:00:00.000+00:00",
+    role: "Full Stack Developer",
+    company: "Leaprobots LLP",
+    type: "Full-time",
+    startdate: "02-12-2024",
+    enddate: "Present",
+    description:
+      "Developing LeapCodex, a desktop platform that teaches robotics programming using Blockly and Arduino.",
+
+    achievements: [
+      "Built cross-platform desktop app using Electron.js",
+      "🚀 Built desktop robotics IDE used for STEM education",
+      "Implemented Blockly-based visual programming for Arduino robots",
+      "Designed modular robot control modes (line follow, obstacle avoid)"
+    ],
+
+    tech: ["React", "Electron.js", "Node.js", "Blockly", "JavaScript"]
   },
   {
-    title: "Chandigarh University",
-    description: "MCA (Master's of Computer Application)",
-    startdate: "2021-08-20T00:00:00.000+00:00",
-    enddate: "2023-06-15T00:00:00.000+00:00",
+    role: "Full Stack JavaScript Bootcamp",
+    company: "iNeuron.ai",
+    type: "Training Program",
+    startdate: "20-08-2023",
+    enddate: "15-03-2024",
+    description:
+    "Completed an intensive full-stack JavaScript program focused on modern web development and production-ready applications.",
+
+    achievements: [
+      "Built multiple full-stack projects using the MERN stack",
+      "Developed REST APIs using Node.js and Express",
+      "Implemented authentication systems and responsive UI components",
+      "Strengthened core JavaScript, React, and backend architecture skills"
+    ],
+
+    tech: ["JavaScript", "React", "Node.js", "Express", "MongoDB", "HTML", "CSS"]
   },
   {
-    title: "ABS Academy of Science Technology and Management",
-    description: "BCA (Bachelor's in Computer Application)",
-    startdate: "2018-08-08T00:00:00.000+00:00",
-    enddate: "2021-07-14T00:00:00.000+00:00",
+    role: "Master of Computer Applications (MCA)",
+    company: "Chandigarh University",
+    type: "Education",
+    startdate: "20-08-2021",
+    enddate: "15-06-2023",
+    description:
+    "Focused on software engineering, system design, and advanced programming concepts.",
+
+    achievements: [
+      "Studied advanced data structures, algorithms, and software engineering",
+      "Built academic software projects and web applications",
+      "Developed strong foundations in database management and system architecture"
+    ],
+
+    tech: ["Java", "Data Structures", "Algorithms", "DBMS", "Software Engineering"]
+  },
+  {
+    role: "Bachelor of Computer Applications (BCA)",
+    company: "ABS Academy of Science Technology and Management",
+    type: "Education",
+    startdate: "20-08-2018",
+    enddate: "14-07-2021",
+    description:
+    "Built strong programming fundamentals and gained exposure to web development and computer science principles.",
+
+    achievements: [
+      "Learned programming fundamentals and computer science concepts",
+      "Built early web development projects using HTML, CSS, and JavaScript",
+      "Studied operating systems, networking, and database fundamentals"
+    ],
+
+    tech: ["C", "Java", "HTML", "CSS", "JavaScript", "SQL"]
   },
 ];
 
