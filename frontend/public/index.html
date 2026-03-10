@@ -23,6 +23,16 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem("theme");
+          var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          var shouldDark = stored ? stored === "dark" : prefersDark;
+          if (shouldDark) document.documentElement.classList.add("dark");
+        } catch (e) {}
+      })();
+    </script>
     <title>Bibek Ghosh - Developer</title>
   </head>
   <body>

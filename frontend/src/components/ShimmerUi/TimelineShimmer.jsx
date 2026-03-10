@@ -15,15 +15,15 @@ const TimeLineShimmer = () => {
   return (
     <div className="flex flex-col items-center gap-10 ">
       <div className="flex items-center gap-3 sm:gap-8 md:w-9/12 ">
-        <p className="h-12 rounded-2xl sm:w-80 bg-slate-300 w-60 animate-pulse"></p>
-        <div className="h-[3px] w-full bg-slate-300  hidden md:block animate-pulse"></div>
+        <p className="h-12 rounded-2xl sm:w-80 w-60 shimmer"></p>
+        <div className="h-[3px] w-full bg-slate-300 dark:bg-slate-700 hidden md:block animate-pulse"></div>
       </div>
 
       <Timeline position="alternate" sx={{ px: "0px" }}>
         {timelines.map((item, index) => (
           <TimelineItem key={index}>
             <TimelineOppositeContent sx={{ m: "auto 0" }} variant="body2">
-              <div className="w-full h-5 rounded-full bg-slate-300 animate-pulse"></div>
+              <div className="w-full h-5 rounded-full shimmer"></div>
             </TimelineOppositeContent>
             <TimelineSeparator>
               <TimelineConnector />
@@ -35,8 +35,8 @@ const TimeLineShimmer = () => {
             <TimelineContent
               sx={{ py: "20px", width: ["70vw", "80vw", "600px"] }}
             >
-              <p className="h-10 mb-2 w-[full] bg-slate-300 rounded-full animate-pulse"></p>
-              <p className="h-7 bg-slate-300 w-[90%] md:w-full rounded-full animate-pulse"></p>
+              <p className="h-10 mb-2 w-[full] rounded-full shimmer"></p>
+              <p className="h-7 w-[90%] md:w-full rounded-full shimmer"></p>
             </TimelineContent>
           </TimelineItem>
         ))}
