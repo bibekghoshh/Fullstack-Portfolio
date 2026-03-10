@@ -1,74 +1,81 @@
-import React from "react";
-import { skillsWithIcons } from "../Data/Data";
-
-export const SkillCard = ({ SkillTitle, SkillIcon }) => {
-  return (
-    <>
-      <div className="group flex flex-col items-center w-20 sm:w-24 md:w-28 gap-2 py-4 md:py-6 rounded-3xl surface shadow-md hover:-translate-y-1 transition duration-300 dark:bg-slate-800">
-        <div className="text-3xl sm:text-4xl text-emerald-600 group-hover:text-emerald-500 transition">
-          {SkillIcon}
-        </div>
-        <div className="text-[11px] sm:text-xs md:text-sm text-slate-700 dark:text-slate-200 text-center">
-          <h4>{SkillTitle}</h4>
-        </div>
-        <div className="h-[2px] w-10 bg-emerald-400/80 rounded-full opacity-0 group-hover:opacity-100 transition"></div>
-      </div>
-    </>
-  );
-};
+import { skillGroups } from "../Data/Data";
 
 const Skills = () => {
-  return (
-    <>
+return ( <section
+   id="skills"
+   className="py-20 bg-white dark:bg-slate-900 flex flex-col items-center"
+ >
+{/* Header */} <div
+     className="max-w-4xl text-center mb-16 px-6"
+     data-aos="fade-up"
+   > <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">
+Technical Skills </h2>
+
+    <p className="mt-4 text-slate-500 dark:text-slate-400">
+      Technologies I use to build scalable web applications and real-world products.
+    </p>
+  </div>
+
+  {/* Skill Groups */}
+  <div className="grid md:grid-cols-3 gap-10 max-w-6xl w-full px-6">
+
+    {skillGroups.map((group, index) => (
       <div
-        className="flex flex-col items-center w-full gap-10 py-14 mt-12 surface-2 md:py-20 dark:bg-slate-900"
-        id="skills"
+        key={index}
+        data-aos="fade-up"
+        data-aos-delay={index * 120}
+        className="rounded-2xl border border-slate-200 dark:border-slate-700 p-6 bg-white dark:bg-slate-900 shadow-md hover:shadow-xl transition"
       >
-        <div className="flex flex-col w-[95vw] md:flex-row md:items-center md:gap-8 md:w-8/12 gap-4 px-4 sm:px-6 lg:px-0" data-aos="fade-up">
-          <div className="flex items-center gap-3">
-            <p className="text-3xl font-semibold md:text-4xl text-slate-900 min-w-fit text-display dark:text-white">
-              Core Skills
-            </p>
-            <span className="px-3 py-1 text-xs font-semibold rounded-full bg-emerald-100 text-emerald-700 dark:bg-emerald-500/20 dark:text-emerald-300">
-              Production Ready
-            </span>
-          </div>
-          <div className="h-[3px] w-full bg-emerald-400 hidden md:block"></div>
-          <p className="text-sm text-slate-500 dark:text-slate-300 md:max-w-sm">
-            A focused toolkit built through shipping projects, collaboration, and real-world
-            problem solving.
-          </p>
-        </div>
+        <h3 className="text-lg font-semibold text-emerald-600 mb-6">
+          {group.title}
+        </h3>
 
-        <div className="border-gradient w-[94vw] sm:w-[92%] max-w-5xl md:w-[90vw]" data-aos="fade-up" data-aos-delay="120">
-          <div className="surface rounded-3xl px-6 py-8 dark:bg-slate-900">
-            <div className="flex flex-row flex-wrap items-center justify-center lg:gap-14 w-full gap-6 sm:gap-8">
-              {skillsWithIcons.map((item, index) => (
-                <div key={index} data-aos="zoom-in" data-aos-delay={index * 35}>
-                  <SkillCard SkillTitle={item.title} SkillIcon={item.icons} />
-                </div>
-              ))}
+        <div className="grid grid-cols-3 gap-6">
+          {group.skills.map((skill, i) => (
+            <div
+              key={i}
+              className="flex flex-col items-center text-center gap-2 hover:-translate-y-1 transition"
+            >
+              <div className="text-3xl text-emerald-500">
+                {skill.icon}
+              </div>
+
+              <p className="text-xs text-slate-600 dark:text-slate-300">
+                {skill.name}
+              </p>
             </div>
-          </div>
-        </div>
-
-        <div className="flex flex-wrap w-[95vw] items-center justify-center gap-3 text-xs font-medium text-slate-500 dark:text-slate-400" data-aos="fade-up" data-aos-delay="200">
-          <span className="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800">
-            Accessible UI
-          </span>
-          <span className="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800">
-            Performance Optimization
-          </span>
-          <span className="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800">
-            Responsive Design
-          </span>
-          <span className="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800">
-            Collaboration Ready
-          </span>
+          ))}
         </div>
       </div>
-    </>
-  );
+    ))}
+
+  </div>
+
+  {/* Extra Recruiter Info */}
+  <div
+    className="flex flex-wrap justify-center gap-4 mt-16 text-sm"
+    data-aos="fade-up"
+    data-aos-delay="200"
+  >
+    <span className="px-4 py-2 rounded-full bg-slate-100 dark:bg-slate-800">
+      2+ Years Production Experience
+    </span>
+
+    <span className="px-4 py-2 rounded-full bg-slate-100 dark:bg-slate-800">
+      Robotics Software Development
+    </span>
+
+    <span className="px-4 py-2 rounded-full bg-slate-100 dark:bg-slate-800">
+      Full Stack JavaScript
+    </span>
+
+    <span className="px-4 py-2 rounded-full bg-slate-100 dark:bg-slate-800">
+      Cross Platform Desktop Apps
+    </span>
+  </div>
+</section>
+
+);
 };
 
 export default Skills;

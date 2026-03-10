@@ -1,9 +1,7 @@
 import { FaCss3Alt, FaGitAlt, FaGithub, FaHtml5, FaNodeJs, FaReact } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io";
-import { TbBrandTailwind } from "react-icons/tb";
-import { SiMongodb } from "react-icons/si";
+import { SiArduino, SiDocker, SiElectron, SiExpress, SiJavascript, SiKubernetes, SiMongodb, SiTailwindcss } from "react-icons/si";
 import { MdOutlineCatchingPokemon } from "react-icons/md";
-import { RiNpmjsFill } from "react-icons/ri";
 
 export const timeline = [
   {
@@ -146,16 +144,36 @@ export const projects = [
 ];
 
 
-export const skillsWithIcons = [
-  { title: "ReactJs", icons: <FaReact /> },
-  {title:"Javascript",icons:<IoLogoJavascript />},
-  { title: "Html", icons:<FaHtml5 /> },
-  { title: "Css", icons: <FaCss3Alt />},
-  { title: "Tailwind", icons: <TbBrandTailwind /> },
-  { title: "Git", icons: <FaGitAlt /> },
-  { title: "Github", icons: <FaGithub /> },
-  { title: "MongoDB", icons: <SiMongodb /> },
-  { title: "Npm", icons:<RiNpmjsFill />},
-  { title: "NodeJs", icons: <FaNodeJs /> },
-  { title: "Dev tool", icons: <MdOutlineCatchingPokemon /> },
+
+export const skillGroups = [
+{
+title: "Frontend",
+skills: [
+{ name: "React", icon: <FaReact /> },
+{ name: "JavaScript", icon: <IoLogoJavascript /> },
+{ name: "Tailwind", icon: <SiTailwindcss /> },
+{ name: "HTML5", icon: <FaHtml5 /> },
+{ name: "CSS3", icon: <FaCss3Alt /> }
+]
+},
+{
+title: "Backend",
+skills: [
+{ name: "Node.js", icon: <FaNodeJs /> },
+{ name: "Express", icon: <SiExpress /> },
+{ name: "MongoDB", icon: <SiMongodb /> },
+{ name: "Mongoose", icon: <SiMongodb /> }
+]
+},
+{
+title: "Tools & Platforms",
+skills: [
+{ name: "Electron", icon: <SiElectron /> },
+{ name: "Git", icon: <FaGitAlt /> },
+{ name: "Github", icon: <FaGithub /> },
+{ name: "Dev Tools", icon: <MdOutlineCatchingPokemon /> },
+{ name: "Docker", icon: <SiDocker /> },
+{ name: "Kubernetes", icon: <SiKubernetes /> }
+]
+}
 ];
