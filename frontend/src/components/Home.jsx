@@ -82,23 +82,23 @@ const Home = () => {
           <div className="border-gradient w-[90vw] max-w-[520px] mt-2">
             <div className="flex flex-col sm:flex-row rounded-3xl text-slate-900 dark:text-white gap-5 sm:h-24 items-center justify-around px-5 py-4 sm:py-0 surface dark:bg-slate-800">
               <div className="text-center">
-                <p className="text-3xl font-bold lg:text-5xl text-display">8</p>
+                <p className="text-3xl font-bold lg:text-5xl text-display">2+ </p>
                 <p className="font-medium lg:text-xs text-[8px] text-slate-500 dark:text-slate-400">
-                  VERIFIED SKILLS
+                  Years Professional Experience
                 </p>
               </div>
               <div className="bg-slate-200/70 w-[1px] h-12 hidden sm:block"></div>
               <div className="text-center">
-                <p className="text-3xl font-bold lg:text-5xl text-display">{5}</p>
+                <p className="text-3xl font-bold lg:text-5xl text-display">10+ </p>
                 <p className="font-medium lg:text-xs text-[8px] text-slate-500 dark:text-slate-400">
-                  PROFESSIONAL PROJECTS
+                  Projects Built
                 </p>
               </div>
               <div className="bg-slate-200/70 w-[1px] h-12 hidden sm:block"></div>
               <div className="text-center">
-                <p className="text-3xl font-bold lg:text-5xl text-display">120+</p>
+                <p className="text-3xl font-bold lg:text-5xl text-display">5+</p>
                 <p className="font-medium lg:text-xs text-[8px] text-slate-500 dark:text-slate-400">
-                  DSA PROBLEMS SOLVED
+                  Technologies Used
                 </p>
               </div>
             </div>
@@ -111,6 +111,9 @@ const Home = () => {
                 src="https://images.pexels.com/photos/36244506/pexels-photo-36244506.png?auto=compress&cs=tinysrgb&h=500"
                 alt="bibek's img"
                 className="w-full rounded-[24px] shadow-2xl ring-2 ring-emerald-200 dark:ring-emerald-500/30 float-slow"
+                loading="eager"
+                decoding="async"
+                fetchpriority="high"
               />
               <div className="mt-4 flex flex-col gap-3">
                 <div className="flex items-center justify-between text-xs sm:text-sm text-slate-600 dark:text-slate-300">
@@ -146,12 +149,22 @@ const Home = () => {
       </div>
 
       <div className="fixed z-50 flex flex-col gap-2 text-3xl bottom-4 right-4 text-emerald-600 dark:text-emerald-400">
-        <div onClick={scrollToTop}>
+        <button
+          className="focus-ring"
+          onClick={scrollToTop}
+          aria-label="Scroll to top"
+          type="button"
+        >
           <FaArrowCircleUp />
-        </div>
-        <div onClick={scrollToBottom}>
+        </button>
+        <button
+          className="focus-ring"
+          onClick={scrollToBottom}
+          aria-label="Scroll to bottom"
+          type="button"
+        >
           <FaArrowCircleDown />
-        </div>
+        </button>
       </div>
 
       <div>

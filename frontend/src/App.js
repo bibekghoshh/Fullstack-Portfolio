@@ -12,11 +12,14 @@ const Footer = lazy(() => import("./components/Footer"));
 
 function App() {
   useEffect(() => {
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const isSmallScreen = window.matchMedia("(max-width: 768px)").matches;
     AOS.init({
       once: true,
       duration: 600,
       easing: "ease-out-cubic",
       offset: 80,
+      disable: prefersReduced || isSmallScreen,
     });
   }, []);
 

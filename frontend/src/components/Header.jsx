@@ -35,14 +35,21 @@ const Header = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const root = document.documentElement;
+    const stored = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const shouldDark = stored ? stored === "dark" : prefersDark;
+    setDarkMode(shouldDark);
+    root.classList.toggle("dark", shouldDark);
+  }, []);
+
   const themeTogglerHandleClick = () => {
-    setDarkMode(!darkMode);
+    const next = !darkMode;
+    setDarkMode(next);
     const rootHtmlElement = document.querySelector("html");
-    if (darkMode) {
-      rootHtmlElement.classList.add("dark");
-    } else {
-      rootHtmlElement.classList.remove("dark");
-    }
+    rootHtmlElement.classList.toggle("dark", next);
+    localStorage.setItem("theme", next ? "dark" : "light");
   };
 
   return (
@@ -134,14 +141,16 @@ const Header = () => {
               <a
                 className="text-lg hover:scale-110 transition"
                 href="https://www.linkedin.com/in/bibekghoshh/"
-                target="black"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <BsLinkedin />
               </a>
               <a
                 className="text-lg hover:scale-110 transition"
                 href="https://github.com/bibekghoshh"
-                target="black"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <BsGithub />
               </a>

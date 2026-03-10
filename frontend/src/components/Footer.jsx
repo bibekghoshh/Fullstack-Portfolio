@@ -42,35 +42,40 @@ const Footer = () => {
           <a
             className="transition duration-300 hover:scale-110 text-slate-600 hover:text-slate-900 dark:text-slate-300"
             href="https://github.com/bibekghoshh"
-            target="black"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <BsGithub />
           </a>
           <a
             className="transition duration-300 hover:text-blue-600 hover:scale-110 text-slate-600 dark:text-slate-300"
             href="https://www.linkedin.com/in/bibekghoshh/"
-            target="black"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <BsLinkedin />
           </a>
           <a
             className="transition duration-300 hover:text-sky-500 hover:scale-110 text-slate-600 dark:text-slate-300"
             href="https://twitter.com/bibekghoshh"
-            target="black"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <BsTwitter />
           </a>
           <a
             className="transition duration-300 hover:text-gray-700 hover:scale-110 text-slate-600 dark:text-slate-300"
             href="https://leetcode.com/bibekghosh/"
-            target="black"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <SiLeetcode />
           </a>
           <a
             className="transition duration-300 hover:text-red-500 hover:scale-110 text-slate-600 dark:text-slate-300"
             href="https://www.instagram.com/bibekghoshh/"
-            target="black"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <BsInstagram />
           </a>

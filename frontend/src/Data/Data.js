@@ -1,6 +1,6 @@
 import { FaCss3Alt, FaGitAlt, FaGithub, FaHtml5, FaNodeJs, FaReact } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io";
-import { SiArduino, SiDocker, SiElectron, SiExpress, SiJavascript, SiKubernetes, SiMongodb, SiTailwindcss } from "react-icons/si";
+import { SiDocker, SiElectron, SiExpress, SiKubernetes, SiMongodb, SiTailwindcss } from "react-icons/si";
 import { MdOutlineCatchingPokemon } from "react-icons/md";
 
 export const timeline = [
